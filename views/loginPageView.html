@@ -1,0 +1,107 @@
+<div class="loginPage">
+  <div class="loginPage__bg"></div>
+  <div class="loginPage__container">
+    <div class="loginForm">
+      <div class="loginForm__logo">
+        <img src="../images/homePage/logo.webp" alt="WebLogo" class="lgLogo" />
+        <h2 class="lgHeader">Sneakers | Shop</h2>
+      </div>
+      <div class="loginForm__inputs">
+        <fieldset>
+          <legend>Username</legend>
+          <input type="text" id="usernameLg" class="loginInputs" />
+        </fieldset>
+      </div>
+      <div class="loginForm__inputs">
+        <fieldset>
+          <legend>Password</legend>
+          <input
+            type="password"
+            id="passwordLg"
+            class="loginInputs"
+            autocomplete="off"
+          />
+          <span class="hideOrShowPass" onclick="hideOrShowPass(0)"
+            ><i class="fa fa-eye-slash"></i
+          ></span>
+        </fieldset>
+      </div>
+      <div class="loginForm__options">
+        <span class="loginOptions">Forgot your password?</span>
+        <span class="loginOptions" onclick="rotateToRegisterPage()"
+          >Register an account</span
+        >
+      </div>
+      <button class="loginBtn" onclick="getData()">
+        <span class="loginBtn__text">Login</span>
+      </button>
+      <div class="loginWithAnotherOptions">
+        <fieldset>
+          <legend>Or</legend>
+          <span class="loginOptionsIcon-1"><i class="fa fa-google"></i></span>
+          <span class="loginOptionsIcon-2"><i class="fa fa-facebook"></i></span>
+          <span class="loginOptionsIcon-3"><i class="fa fa-linkedin"></i></span>
+        </fieldset>
+      </div>
+    </div>
+    <div class="registerForm">
+      <div class="registerForm__logo">
+        <img src="../images/homePage/logo.webp" alt="WebLogo" class="rgLogo" />
+        <h2 class="rgHeader">Sneakers | Shop</h2>
+      </div>
+      <div class="registerForm__inputs">
+        <fieldset id="userRg" class="userRg">
+          <legend>Username or email</legend>
+          <input type="text" class="registerInputs" maxlength="25" />
+        </fieldset>
+      </div>
+      <div class="registerForm__inputs">
+        <fieldset class="dynamicBorder">
+          <legend>Password</legend>
+          <input
+            type="password"
+            class="registerInputs"
+            maxlength="25"
+            id="passChecker-1"
+          />
+          <span class="hideOrShowPass" onclick="hideOrShowPass(1)"
+            ><i class="fa fa-eye-slash"></i
+          ></span>
+        </fieldset>
+      </div>
+      <div class="registerForm__inputs">
+        <fieldset class="dynamicBorder">
+          <legend>Re-enter password</legend>
+          <input
+            type="password"
+            class="registerInputs"
+            maxlength="25"
+            id="passChecker-2"
+          />
+        </fieldset>
+      </div>
+      <div class="registerForm__options">
+        <p class="registerOption" onclick="rotateToLoginPage()">
+          Alreay a member ? Login
+        </p>
+      </div>
+      <button class="registerBtn" onclick="postData()">
+        <span class="registerBtn__text">Continue</span>
+      </button>
+      <div class="registerWithAnotherOptions">
+        <fieldset>
+          <legend>Or</legend>
+          <span class="registerOptionsIcon-1"
+            ><i class="fa fa-google"></i
+          ></span>
+          <span class="registerOptionsIcon-2"
+            ><i class="fa fa-facebook"></i
+          ></span>
+          <span class="registerOptionsIcon-3"
+            ><i class="fa fa-linkedin"></i
+          ></span>
+        </fieldset>
+      </div>
+    </div>
+  </div>
+</div>

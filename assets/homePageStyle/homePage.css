@@ -1,0 +1,1149 @@
+@font-face {
+  font-family: "mont";
+  src: url(../../fonts/Mont-Black.ttf);
+}
+@font-face {
+  font-family: "couture";
+  src: url("../../fonts/couture-bld.otf");
+}
+@font-face {
+  font-family: "futura";
+  src: url("../../fonts/FuturaFuturisBlackC.otf");
+}
+@font-face {
+  font-family: "bigJohn";
+  src: url("../../fonts/FontsFree-Net-BIGJOHN.ttf");
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.homePage {
+  width: 100%;
+  height: 100%;
+}
+.homePage__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.homePage__container .homePageHeader {
+  width: 100%;
+  margin-top: 8%;
+}
+@media screen and (max-width: 1200px) {
+  .homePage__container .homePageHeader {
+    margin-top: 12%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .homePage__container .homePageHeader {
+    margin-top: 15%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .homePage__container .homePageHeader {
+    margin-top: 20%;
+  }
+}
+.homePage__container .homePageHeader__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+.homePage__container .homePageHeader__container .homePageHeaderBackground {
+  transition: all 1s ease-in-out;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  overflow: hidden;
+  z-index: -1;
+  opacity: 0;
+}
+.homePage__container .homePageHeader__container .homePageHeaderBackground.fadeIn {
+  opacity: 1;
+}
+.homePage__container .homePageHeader__container .homePageHeaderBackground__img {
+  width: 100%;
+  height: 600px;
+  background: url(../../images/homePage/newBg2.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+@media screen and (max-width: 600px) {
+  .homePage__container .homePageHeader__container .homePageHeaderBackground__img {
+    height: 400px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .homePage__container .homePageHeader__container .homePageHeaderBackground__img {
+    height: 350px;
+  }
+}
+.homePage__container .homePageHeader__container .homePageHeaderTitle {
+  width: 100%;
+  will-change: transform;
+}
+.homePage__container .homePageHeader__container .homePageHeaderTitle__text {
+  transition: all 1s ease-in-out;
+  width: 100%;
+  color: #fdfffc;
+  font-family: "mont";
+  font-size: 40px;
+  will-change: transform;
+  background: url(../../images/homePage/lines.png) repeat-y;
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+  animation: headerTextAnimation 80s linear infinite;
+  text-transform: uppercase;
+  text-align: center;
+  filter: hue-rotate(220deg);
+  text-shadow: 0 0 50px rgb(188, 188, 188);
+  transform: translateX(-30%);
+  opacity: 0;
+}
+@media screen and (max-width: 600px) {
+  .homePage__container .homePageHeader__container .homePageHeaderTitle__text {
+    font-size: 30px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .homePage__container .homePageHeader__container .homePageHeaderTitle__text {
+    font-size: 20px;
+  }
+}
+.homePage__container .homePageHeader__container .homePageHeaderTitle__text.fadeIn {
+  transform: translateX(0);
+  opacity: 1;
+}
+.homePage__container .homePageHeader__container .homePageHeaderDescription {
+  width: 45%;
+  margin-top: 1.5%;
+  overflow: hidden;
+}
+@media screen and (max-width: 1200px) {
+  .homePage__container .homePageHeader__container .homePageHeaderDescription {
+    width: 65%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .homePage__container .homePageHeader__container .homePageHeaderDescription {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .homePage__container .homePageHeader__container .homePageHeaderDescription {
+    width: 75%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .homePage__container .homePageHeader__container .homePageHeaderDescription {
+    width: 80%;
+  }
+}
+.homePage__container .homePageHeader__container .homePageHeaderDescription__text {
+  transition: all 1s ease-in-out;
+  width: 100%;
+  font-family: "couture";
+  font-size: large;
+  text-align: justify;
+  color: #bebdbd;
+  transform: translateX(30%);
+  opacity: 0;
+}
+@media screen and (max-width: 800px) {
+  .homePage__container .homePageHeader__container .homePageHeaderDescription__text {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .homePage__container .homePageHeader__container .homePageHeaderDescription__text {
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .homePage__container .homePageHeader__container .homePageHeaderDescription__text {
+    font-size: 13px;
+  }
+}
+.homePage__container .homePageHeader__container .homePageHeaderDescription__text.fadeIn {
+  opacity: 1;
+  transform: translateX(0);
+}
+.homePage__container .homePageHeader__container .homePageHeaderButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 1%;
+}
+@media screen and (max-width: 800px) {
+  .homePage__container .homePageHeader__container .homePageHeaderButton {
+    margin-top: 3%;
+  }
+}
+.homePage__container .homePageHeader__container .homePageHeaderButton__btn {
+  transition: all 0.4s ease-in-out;
+  padding: 10px 20px;
+  background-color: transparent;
+  border: 2px solid #a27b5c;
+  border-radius: 5px;
+  cursor: pointer;
+  transform: translateX(-70%);
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  color: #a27b5c;
+  font-weight: bold;
+  text-decoration: none;
+  font-family: "mont";
+}
+@media screen and (max-width: 400px) {
+  .homePage__container .homePageHeader__container .homePageHeaderButton__btn {
+    padding: 8px 10px;
+  }
+}
+.homePage__container .homePageHeader__container .homePageHeaderButton__btn.fadeIn {
+  transform: translateX(0);
+  opacity: 1;
+}
+.homePage__container .homePageHeader__container .homePageHeaderButton__btn:hover {
+  background-color: #a27b5c;
+  color: #dcd7c9;
+}
+.homePage__container .homePageHeader__container .homePageHeaderCarousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 600px;
+  height: 400px;
+  margin-top: 1%;
+}
+@media screen and (max-width: 1200px) {
+  .homePage__container .homePageHeader__container .homePageHeaderCarousel {
+    width: 500px;
+    height: 400px;
+    margin-top: 3%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .homePage__container .homePageHeader__container .homePageHeaderCarousel {
+    width: 480px;
+    height: 300px;
+    margin-top: 15%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .homePage__container .homePageHeader__container .homePageHeaderCarousel {
+    width: 420px;
+    height: 360px;
+    margin-top: 1%;
+  }
+}
+@media screen and (max-width: 509px) {
+  .homePage__container .homePageHeader__container .homePageHeaderCarousel {
+    width: 380px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .homePage__container .homePageHeader__container .homePageHeaderCarousel {
+    width: 320px;
+    height: 300px;
+  }
+}
+.homePage__container .homePageHeader__container .homePageHeaderCarousel__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: all 1s ease-in-out;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  scale: 0;
+}
+.homePage__container .homePageHeader__container .homePageHeaderCarousel__container.fadeIn {
+  scale: 1;
+  opacity: 1;
+}
+.homePage__container .homePageHeader__container .homePageHeaderCarousel__container .carouselContent {
+  transition: all 1s cubic-bezier(0.13, 1.77, 0.68, 1.27);
+  width: 100%;
+  position: absolute;
+}
+.homePage__container .homePageHeader__container .homePageHeaderCarousel__container .carouselContent:nth-child(1) {
+  left: 0px;
+}
+.homePage__container .homePageHeader__container .homePageHeaderCarousel__container .carouselContent:nth-child(2) {
+  left: -600px;
+}
+.homePage__container .homePageHeader__container .homePageHeaderCarousel__container .carouselContent:nth-child(3) {
+  left: -1200px;
+}
+.homePage__container .homePageHeader__container .homePageHeaderCarousel__container .carouselContent:nth-child(4) {
+  left: -1800px;
+}
+.homePage__container .homePageHeader__container .homePageHeaderCarousel__container .carouselContent:nth-child(5) {
+  left: -2400px;
+}
+.homePage__container .homePageHeader__container .homePageHeaderCarousel__container .carouselContent__container {
+  width: 100%;
+}
+.homePage__container .homePageHeader__container .homePageHeaderCarousel__container .carouselContent__container__image {
+  width: 100%;
+}
+.homePage__container .homePageHeader__container .homePageHeaderCarousel__buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  position: absolute;
+  pointer-events: none;
+  gap: 800px;
+  overflow: hidden;
+}
+@media screen and (max-width: 1200px) {
+  .homePage__container .homePageHeader__container .homePageHeaderCarousel__buttons {
+    gap: 600px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .homePage__container .homePageHeader__container .homePageHeaderCarousel__buttons {
+    gap: 500px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .homePage__container .homePageHeader__container .homePageHeaderCarousel__buttons {
+    position: relative;
+    gap: 15px;
+    margin-bottom: 5%;
+    padding: 10px 0;
+  }
+}
+.homePage__container .homePageHeader__container .homePageHeaderCarousel__buttons .homePageHeaderCarousel-prevButton .mainCarouselPrevBtn {
+  transition: all 0.2s ease-in-out;
+  pointer-events: painted;
+  padding: 10px;
+  border-radius: 100px;
+  background-color: #6987c9;
+  border: 2px solid #6987c9;
+  cursor: pointer;
+  visibility: hidden;
+}
+.homePage__container .homePageHeader__container .homePageHeaderCarousel__buttons .homePageHeaderCarousel-prevButton .mainCarouselPrevBtn:hover {
+  opacity: 0.7;
+}
+.homePage__container .homePageHeader__container .homePageHeaderCarousel__buttons .homePageHeaderCarousel-prevButton .mainCarouselPrevBtn:hover .mainCarouselPrevBtn__text {
+  rotate: -360deg;
+}
+.homePage__container .homePageHeader__container .homePageHeaderCarousel__buttons .homePageHeaderCarousel-prevButton .mainCarouselPrevBtn__text {
+  transition: all 0.2s ease-in-out;
+  color: #dcd7c9;
+  font-weight: bold;
+  font-size: large;
+}
+.homePage__container .homePageHeader__container .homePageHeaderCarousel__buttons .homePageHeaderCarousel-nextButton .mainCarouselNextBtn {
+  transition: all 0.5s ease-in-out;
+  pointer-events: painted;
+  padding: 10px;
+  border-radius: 100px;
+  background-color: #6987c9;
+  border: 2px solid #6987c9;
+  cursor: pointer;
+  transform: translateX(100%);
+  opacity: 0;
+}
+.homePage__container .homePageHeader__container .homePageHeaderCarousel__buttons .homePageHeaderCarousel-nextButton .mainCarouselNextBtn.fadeIn {
+  opacity: 1;
+  transform: translateX(0);
+}
+.homePage__container .homePageHeader__container .homePageHeaderCarousel__buttons .homePageHeaderCarousel-nextButton .mainCarouselNextBtn:hover {
+  opacity: 0.7;
+}
+.homePage__container .homePageHeader__container .homePageHeaderCarousel__buttons .homePageHeaderCarousel-nextButton .mainCarouselNextBtn:hover .mainCarouselNextBtn__text {
+  rotate: 360deg;
+}
+.homePage__container .homePageHeader__container .homePageHeaderCarousel__buttons .homePageHeaderCarousel-nextButton .mainCarouselNextBtn__text {
+  transition: all 0.2s ease-in-out;
+  color: #dcd7c9;
+  font-weight: bold;
+  font-size: large;
+}
+.homePage__container .homePageHeader__container .homePageHeaderCarousel__dots {
+  width: 100%;
+}
+.homePage__container .homePageHeader__container .homePageHeaderCarousel__dots__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  transition: all 1s ease-in-out;
+  width: 100%;
+  gap: 10px;
+  opacity: 0;
+}
+.homePage__container .homePageHeader__container .homePageHeaderCarousel__dots__container.fadeIn {
+  opacity: 1;
+}
+.homePage__container .homePageHeader__container .homePageHeaderCarousel__dots__container .mainCarouselDots {
+  transition: all 0.4s ease-in-out;
+  width: 12px;
+  height: 12px;
+  background-color: rgb(125, 125, 125);
+  border-radius: 50px;
+  cursor: pointer;
+}
+.homePage__container .homePageHeader__container .homePageHeaderCarousel__dots__container .mainCarouselDots.active {
+  width: 20px;
+  background-color: #000;
+}
+.homePage__container .homePageHeader__container .homePageHeaderBrandSupports {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 90%;
+  height: 100%;
+  margin-top: 10%;
+  position: relative;
+  overflow: hidden;
+}
+@media screen and (max-width: 800px) {
+  .homePage__container .homePageHeader__container .homePageHeaderBrandSupports {
+    margin-top: 40%;
+  }
+}
+.homePage__container .homePageHeader__container .homePageHeaderBrandSupports::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  will-change: transform;
+  background: linear-gradient(to right, #dcd7c9, transparent, transparent, #dcd7c9);
+  animation: backgroundPositionAnimation 5s infinite;
+}
+.homePage__container .homePageHeader__container .homePageHeaderBrandSupports__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  overflow: hidden;
+}
+@media screen and (max-width: 800px) {
+  .homePage__container .homePageHeader__container .homePageHeaderBrandSupports__container {
+    flex-direction: column;
+    width: 50%;
+  }
+}
+.homePage__container .homePageHeader__container .homePageHeaderBrandSupports__container .brandsImageBox {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  transform: translateX(-800%);
+}
+.homePage__container .homePageHeader__container .homePageHeaderBrandSupports__container .brandsImageBox.fadeIn {
+  animation: introBrandsLogo 1s forwards cubic-bezier(0.5, -0.11, 0.14, 1.61);
+}
+@media screen and (max-width: 800px) {
+  .homePage__container .homePageHeader__container .homePageHeaderBrandSupports__container .brandsImageBox.fadeIn {
+    animation: none;
+    transform: translateX(0);
+  }
+}
+.homePage__container .homePageHeader__container .homePageHeaderBrandSupports__container .brandsImageBox:nth-child(1) {
+  opacity: 0.4;
+  animation-delay: 0.6s;
+}
+.homePage__container .homePageHeader__container .homePageHeaderBrandSupports__container .brandsImageBox:nth-child(2) {
+  animation-delay: 0.5s;
+}
+.homePage__container .homePageHeader__container .homePageHeaderBrandSupports__container .brandsImageBox:nth-child(3) {
+  animation-delay: 0.4s;
+  opacity: 0.4;
+}
+.homePage__container .homePageHeader__container .homePageHeaderBrandSupports__container .brandsImageBox:nth-child(4) {
+  animation-delay: 0.3s;
+}
+.homePage__container .homePageHeader__container .homePageHeaderBrandSupports__container .brandsImageBox:nth-child(5) {
+  animation-delay: 0.2s;
+}
+.homePage__container .homePageHeader__container .homePageHeaderBrandSupports__container .brandsImageBox:nth-child(6) {
+  opacity: 0.4;
+}
+.homePage__container .homePageHeader__container .homePageHeaderBrandSupports__container .brandsImageBox .brandsImage {
+  transition: all 0.3s ease-in-out;
+  width: 90%;
+  opacity: 0.7;
+  cursor: pointer;
+  position: relative;
+}
+.homePage__container .homePageHeader__container .homePageHeaderBrandSupports__container .brandsImageBox .brandsImage:hover {
+  scale: 1.1;
+}
+.homePage__container .homePageNewArrival {
+  width: 100%;
+  height: 100%;
+  margin-top: 10%;
+  background-color: #393939;
+  background-image: url(../../images/homePage/vecteezy_neutral-texture-with-simple-hand-drawn-colorful-spots_.jpg);
+  background-size: 500px;
+  background-blend-mode: color-burn;
+  position: relative;
+}
+@media screen and (max-width: 1000px) {
+  .homePage__container .homePageNewArrival {
+    margin-top: 15%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .homePage__container .homePageNewArrival {
+    margin-top: 20%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .homePage__container .homePageNewArrival {
+    margin-top: 30%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .homePage__container .homePageNewArrival {
+    margin-top: 40%;
+  }
+}
+.homePage__container .homePageNewArrival::after {
+  content: "";
+  position: absolute;
+  will-change: transform;
+  bottom: -80px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  opacity: 1;
+  z-index: 3;
+  background: linear-gradient(to bottom, #000000, rgba(2, 2, 6, 0.9176470588), rgba(2, 2, 6, 0.7411764706), transparent);
+}
+.homePage__container .homePageNewArrival__header {
+  width: 100%;
+  height: 100%;
+  padding: 100px 0;
+  position: relative;
+}
+@media screen and (max-width: 800px) {
+  .homePage__container .homePageNewArrival__header {
+    flex-direction: column-reverse;
+    gap: 20px;
+  }
+}
+.homePage__container .homePageNewArrival__header__titleSection {
+  width: 100%;
+  height: 100%;
+}
+.homePage__container .homePageNewArrival__header__titleSection__container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.homePage__container .homePageNewArrival__header__titleSection__container .homePageNewArrivalHeaderTitle {
+  transition: all 1s ease-in-out;
+  width: 100%;
+  transform: translateY(-50%);
+  opacity: 0;
+}
+.homePage__container .homePageNewArrival__header__titleSection__container .homePageNewArrivalHeaderTitle.fadeIn {
+  opacity: 1;
+  transform: translateY(0);
+}
+.homePage__container .homePageNewArrival__header__titleSection__container .homePageNewArrivalHeaderTitle .firstLine {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+}
+.homePage__container .homePageNewArrival__header__titleSection__container .homePageNewArrivalHeaderTitle .firstLine .firstLine__text:nth-child(0) {
+  animation-delay: 0s;
+}
+.homePage__container .homePageNewArrival__header__titleSection__container .homePageNewArrivalHeaderTitle .firstLine .firstLine__text:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.homePage__container .homePageNewArrival__header__titleSection__container .homePageNewArrivalHeaderTitle .firstLine .firstLine__text:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.homePage__container .homePageNewArrival__header__titleSection__container .homePageNewArrivalHeaderTitle .firstLine .firstLine__text:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.homePage__container .homePageNewArrival__header__titleSection__container .homePageNewArrivalHeaderTitle .firstLine__text {
+  animation: textAnimation 1s infinite;
+  font-size: 80px;
+  font-family: "bigJohn";
+  font-weight: bold;
+  line-height: 5rem;
+  color: #dcd7c9;
+}
+@media screen and (max-width: 1200px) {
+  .homePage__container .homePageNewArrival__header__titleSection__container .homePageNewArrivalHeaderTitle .firstLine__text {
+    font-size: 60px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .homePage__container .homePageNewArrival__header__titleSection__container .homePageNewArrivalHeaderTitle .firstLine__text {
+    font-size: 50px;
+    line-height: 3.5rem;
+  }
+}
+.homePage__container .homePageNewArrival__header__titleSection__container .homePageNewArrivalHeaderTitle .secondLine {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+}
+.homePage__container .homePageNewArrival__header__titleSection__container .homePageNewArrivalHeaderTitle .secondLine .secondLine__text:nth-child(0) {
+  animation-delay: 0s;
+}
+.homePage__container .homePageNewArrival__header__titleSection__container .homePageNewArrivalHeaderTitle .secondLine .secondLine__text:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.homePage__container .homePageNewArrival__header__titleSection__container .homePageNewArrivalHeaderTitle .secondLine .secondLine__text:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.homePage__container .homePageNewArrival__header__titleSection__container .homePageNewArrivalHeaderTitle .secondLine .secondLine__text:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.homePage__container .homePageNewArrival__header__titleSection__container .homePageNewArrivalHeaderTitle .secondLine .secondLine__text:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.homePage__container .homePageNewArrival__header__titleSection__container .homePageNewArrivalHeaderTitle .secondLine .secondLine__text:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.homePage__container .homePageNewArrival__header__titleSection__container .homePageNewArrivalHeaderTitle .secondLine .secondLine__text:nth-child(6) {
+  animation-delay: 0.6s;
+}
+.homePage__container .homePageNewArrival__header__titleSection__container .homePageNewArrivalHeaderTitle .secondLine .secondLine__text:nth-child(7) {
+  animation-delay: 0.7s;
+}
+.homePage__container .homePageNewArrival__header__titleSection__container .homePageNewArrivalHeaderTitle .secondLine .secondLine__text:nth-child(8) {
+  animation-delay: 0.8s;
+}
+.homePage__container .homePageNewArrival__header__titleSection__container .homePageNewArrivalHeaderTitle .secondLine__text {
+  animation-delay: 1s;
+  animation: textAnimation 1s infinite;
+  font-size: 80px;
+  font-family: "bigJohn";
+  font-weight: bold;
+  line-height: 5rem;
+  color: #dcd7c9;
+}
+@media screen and (max-width: 1200px) {
+  .homePage__container .homePageNewArrival__header__titleSection__container .homePageNewArrivalHeaderTitle .secondLine__text {
+    font-size: 60px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .homePage__container .homePageNewArrival__header__titleSection__container .homePageNewArrivalHeaderTitle .secondLine__text {
+    font-size: 50px;
+    line-height: 3.5rem;
+  }
+}
+.homePage__container .homePageNewArrival__header__titleSection__container .homePageNewArrivalHeaderDescription {
+  transition: all 2s ease-in-out;
+  width: 100%;
+  margin-top: 1%;
+  opacity: 0;
+}
+.homePage__container .homePageNewArrival__header__titleSection__container .homePageNewArrivalHeaderDescription.fadeIn {
+  opacity: 1;
+}
+.homePage__container .homePageNewArrival__header__titleSection__container .homePageNewArrivalHeaderDescription__text {
+  width: 100%;
+  font-family: "couture";
+  font-size: large;
+  text-align: center;
+  color: #dcd7c9;
+}
+@media screen and (max-width: 1000px) {
+  .homePage__container .homePageNewArrival__header__titleSection__container .homePageNewArrivalHeaderDescription__text {
+    font-size: medium;
+  }
+}
+.homePage__container .homePageNewArrival__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: -1%;
+  padding-bottom: 150px;
+}
+@media screen and (max-width: 509px) {
+  .homePage__container .homePageNewArrival__container {
+    margin-top: 100px;
+  }
+}
+.homePage__container .homePageBestSeller {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.homePage__container .homePageBestSeller__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  background: url(../../images/homePage/sneakerShelf.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
+  position: relative;
+}
+@media screen and (max-width: 1000px) {
+  .homePage__container .homePageBestSeller__container {
+    flex-direction: column;
+  }
+}
+.homePage__container .homePageBestSeller__container .bestSellerHeader {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+  margin-left: 5%;
+}
+@media screen and (max-width: 1000px) {
+  .homePage__container .homePageBestSeller__container .bestSellerHeader {
+    width: 90%;
+    height: 50%;
+    align-items: center;
+    margin-left: 0;
+  }
+}
+@media screen and (max-width: 600px) {
+  .homePage__container .homePageBestSeller__container .bestSellerHeader {
+    width: 99%;
+  }
+}
+.homePage__container .homePageBestSeller__container .bestSellerHeader__container .bestSellerHeader-title {
+  position: relative;
+}
+.homePage__container .homePageBestSeller__container .bestSellerHeader__container .bestSellerHeader-title__text {
+  transition: all 1s ease-in-out;
+  font-family: "mont";
+  font-size: 100px;
+  transform: translateX(-50%);
+  opacity: 0;
+  width: 100%;
+  text-align: center;
+}
+.homePage__container .homePageBestSeller__container .bestSellerHeader__container .bestSellerHeader-title__text:nth-child(1) {
+  position: absolute;
+  color: #dcd7c9;
+  -webkit-text-stroke: 2px #a27b5c;
+  left: 0;
+}
+.homePage__container .homePageBestSeller__container .bestSellerHeader__container .bestSellerHeader-title__text:nth-child(2) {
+  color: #a27b5c;
+  animation: oceanAnimation 4s ease-in-out infinite;
+}
+@media screen and (max-width: 1300px) {
+  .homePage__container .homePageBestSeller__container .bestSellerHeader__container .bestSellerHeader-title__text {
+    font-size: 70px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .homePage__container .homePageBestSeller__container .bestSellerHeader__container .bestSellerHeader-title__text {
+    font-size: 80px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .homePage__container .homePageBestSeller__container .bestSellerHeader__container .bestSellerHeader-title__text {
+    font-size: 60px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .homePage__container .homePageBestSeller__container .bestSellerHeader__container .bestSellerHeader-title__text {
+    font-size: 50px;
+  }
+}
+.homePage__container .homePageBestSeller__container .bestSellerHeader__container .bestSellerHeader-title__text.fadeIn {
+  transform: translateX(0);
+  opacity: 1;
+}
+.homePage__container .homePageBestSeller__container .bestSellerHeader__container .bestSellerHeader-description__text {
+  transition: all 2s ease-in-out;
+  opacity: 0;
+  text-align: center;
+  font-size: large;
+  color: #dcd7c9;
+  font-family: "mont";
+}
+@media screen and (max-width: 1300px) {
+  .homePage__container .homePageBestSeller__container .bestSellerHeader__container .bestSellerHeader-description__text {
+    font-size: medium;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .homePage__container .homePageBestSeller__container .bestSellerHeader__container .bestSellerHeader-description__text {
+    font-size: larger;
+  }
+}
+@media screen and (max-width: 800px) {
+  .homePage__container .homePageBestSeller__container .bestSellerHeader__container .bestSellerHeader-description__text {
+    font-size: medium;
+  }
+}
+@media screen and (max-width: 600px) {
+  .homePage__container .homePageBestSeller__container .bestSellerHeader__container .bestSellerHeader-description__text {
+    font-size: small;
+  }
+}
+@media screen and (max-width: 400px) {
+  .homePage__container .homePageBestSeller__container .bestSellerHeader__container .bestSellerHeader-description__text {
+    text-align: center;
+  }
+}
+.homePage__container .homePageBestSeller__container .bestSellerHeader__container .bestSellerHeader-description__text.fadeIn {
+  opacity: 1;
+}
+.homePage__container .homePageBestSeller__container .bestSellerCarousel {
+  display: flex;
+  justify-content: center;
+  width: 43%;
+  position: relative;
+}
+@media screen and (max-width: 1000px) {
+  .homePage__container .homePageBestSeller__container .bestSellerCarousel {
+    width: 90%;
+  }
+}
+.homePage__container .homePageBestSeller__container .bestSellerCarousel .embla {
+  overflow-x: hidden;
+}
+.homePage__container .homePageBestSeller__container .bestSellerCarousel .embla__container {
+  will-change: transform;
+  display: flex;
+  width: 100%;
+}
+.homePage__container .homePageBestSeller__container .bestSellerCarousel .embla__slide {
+  width: 100%;
+  position: relative;
+  flex: 0 0 auto;
+}
+.homePage__container .homePageBestSeller__container .bestSellerCarousel .draggableCarousel {
+  transition: opacity 1s ease-in-out;
+  width: 100%;
+  transform: translateX(-3%);
+  cursor: grab;
+  position: relative;
+  opacity: 0;
+}
+@media screen and (max-width: 1200px) {
+  .homePage__container .homePageBestSeller__container .bestSellerCarousel .draggableCarousel {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .homePage__container .homePageBestSeller__container .bestSellerCarousel .draggableCarousel {
+    width: 100%;
+    transform: translateX(0);
+  }
+}
+@media screen and (max-width: 509px) {
+  .homePage__container .homePageBestSeller__container .bestSellerCarousel .draggableCarousel {
+    width: 310px;
+  }
+}
+.homePage__container .homePageBestSeller__container .bestSellerCarousel .draggableCarousel.fadeIn {
+  opacity: 1;
+}
+.homePage__container .homePageBestSeller__container .bestSellerCarousel .draggableCarousel:active {
+  cursor: grabbing;
+}
+.homePage__container .homePageBestSeller__container .bestSellerCarousel .draggableCarousel__container {
+  width: 100%;
+}
+.homePage__container .homePageBestSeller__container .bestSellerCarousel .draggableCarousel__container__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 300px;
+  height: 300px;
+  margin: 5px;
+}
+.homePage__container .homePageBestSeller__container .bestSellerCarousel .draggableCarousel__container__content:nth-child(2) .content-container::after {
+  animation-delay: 1s;
+}
+.homePage__container .homePageBestSeller__container .bestSellerCarousel .draggableCarousel__container__content:nth-child(3) .content-container::after {
+  animation-delay: 1.3s;
+}
+.homePage__container .homePageBestSeller__container .bestSellerCarousel .draggableCarousel__container__content:nth-child(4) .content-container::after {
+  animation-delay: 0.4s;
+}
+.homePage__container .homePageBestSeller__container .bestSellerCarousel .draggableCarousel__container__content:nth-child(5) .content-container::after {
+  animation-delay: 1.1;
+}
+.homePage__container .homePageBestSeller__container .bestSellerCarousel .draggableCarousel__container__content:nth-child(6) .content-container::after {
+  animation-delay: 0.6;
+}
+.homePage__container .homePageBestSeller__container .bestSellerCarousel .draggableCarousel__container__content:nth-child(7) .content-container::after {
+  animation-delay: 0.7;
+}
+.homePage__container .homePageBestSeller__container .bestSellerCarousel .draggableCarousel__container__content:nth-child(8) .content-container::after {
+  animation-delay: 1.2;
+}
+.homePage__container .homePageBestSeller__container .bestSellerCarousel .draggableCarousel__container__content:nth-child(9) .content-container::after {
+  animation-delay: 0.3;
+}
+.homePage__container .homePageBestSeller__container .bestSellerCarousel .draggableCarousel__container__content:nth-child(10) .content-container::after {
+  animation-delay: 1;
+}
+.homePage__container .homePageBestSeller__container .bestSellerCarousel .draggableCarousel__container__content:nth-child(11) .content-container::after {
+  animation-delay: 0.8;
+}
+.homePage__container .homePageBestSeller__container .bestSellerCarousel .draggableCarousel__container__content:nth-child(12) .content-container::after {
+  animation-delay: 1.2;
+}
+.homePage__container .homePageBestSeller__container .bestSellerCarousel .draggableCarousel__container__content .content-container {
+  width: 100%;
+  height: 100%;
+  background-image: url(../../images/homePage/2838458.png);
+  background-size: cover;
+  position: relative;
+  border-radius: 1rem;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #a27b5c;
+}
+.homePage__container .homePageBestSeller__container .bestSellerCarousel .draggableCarousel__container__content .content-container::after {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 10px;
+  will-change: transform;
+  background-color: #f0ede4;
+  top: 0%;
+  left: 0;
+  filter: blur(30px);
+  rotate: 45deg;
+  animation: lighting 2s linear infinite;
+}
+.homePage__container .homePageBestSeller__container .bestSellerCarousel .draggableCarousel__container__content .content-container__header {
+  width: 100%;
+  position: absolute;
+  bottom: 2%;
+}
+.homePage__container .homePageBestSeller__container .bestSellerCarousel .draggableCarousel__container__content .content-container__header__text {
+  text-align: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  font-family: "mont";
+  color: #6987c9;
+}
+.homePage__container .homePageBestSeller__container .bestSellerCarousel .draggableCarousel__container__content .content-container__img {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  width: 100%;
+}
+.homePage__container .homePageBestSeller__container .bestSellerCarousel__buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  gap: 10px;
+  position: absolute;
+  top: -15%;
+  right: 3%;
+}
+@media screen and (max-width: 1200px) {
+  .homePage__container .homePageBestSeller__container .bestSellerCarousel__buttons {
+    right: 11%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .homePage__container .homePageBestSeller__container .bestSellerCarousel__buttons {
+    right: 0;
+  }
+}
+@media screen and (max-width: 509px) {
+  .homePage__container .homePageBestSeller__container .bestSellerCarousel__buttons {
+    justify-content: center;
+    right: -0.1;
+  }
+}
+.homePage__container .homePageBestSeller__container .bestSellerCarousel__buttons .embla__prev {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: all 0.6s ease-in-out;
+  padding: 10px 10px;
+  border-radius: 100px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  background-color: #a27b5c;
+  transform: translateY(-150%);
+  opacity: 0;
+}
+@media screen and (max-width: 509px) {
+  .homePage__container .homePageBestSeller__container .bestSellerCarousel__buttons .embla__prev {
+    right: 50%;
+  }
+}
+.homePage__container .homePageBestSeller__container .bestSellerCarousel__buttons .embla__prev.fadeIn {
+  transform: translateY(0);
+  opacity: 1;
+}
+.homePage__container .homePageBestSeller__container .bestSellerCarousel__buttons .embla__prev:hover {
+  opacity: 0.7;
+}
+.homePage__container .homePageBestSeller__container .bestSellerCarousel__buttons .embla__prev:hover .embla__prev__icon {
+  rotate: -360deg;
+}
+.homePage__container .homePageBestSeller__container .bestSellerCarousel__buttons .embla__prev__icon {
+  transition: all 0.4s ease-in-out;
+  color: #dcd7c9;
+}
+.homePage__container .homePageBestSeller__container .bestSellerCarousel__buttons .embla__next {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: all 0.4s ease-in-out;
+  padding: 10px 10px;
+  border-radius: 100px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  background-color: #a27b5c;
+  transform: translateY(-150%);
+  opacity: 0;
+}
+@media screen and (max-width: 509px) {
+  .homePage__container .homePageBestSeller__container .bestSellerCarousel__buttons .embla__next {
+    right: 50%;
+  }
+}
+.homePage__container .homePageBestSeller__container .bestSellerCarousel__buttons .embla__next.fadeIn {
+  transform: translateY(0);
+  opacity: 1;
+}
+.homePage__container .homePageBestSeller__container .bestSellerCarousel__buttons .embla__next:hover {
+  opacity: 0.7;
+}
+.homePage__container .homePageBestSeller__container .bestSellerCarousel__buttons .embla__next:hover .embla__next__icon {
+  rotate: 360deg;
+}
+.homePage__container .homePageBestSeller__container .bestSellerCarousel__buttons .embla__next__icon {
+  transition: all 0.4s ease-in-out;
+  color: #dcd7c9;
+}
+
+@keyframes homaPageNewArrivalHeaderTitleAnimation {
+  0%, 100% {
+    letter-spacing: 0px;
+  }
+  50% {
+    letter-spacing: 3px;
+  }
+}
+@keyframes headerTextAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+@keyframes backgroundPositionAnimation {
+  0%, 100% {
+    background-position: -1000px;
+  }
+  50% {
+    background-position: 1000px;
+  }
+}
+@keyframes spaceTime {
+  0%, 100% {
+    rotate: 15deg;
+    transform: translateX(0) translateY(0);
+  }
+  25% {
+    rotate: 10deg;
+    transform: translateX(5px) translateY(5px);
+  }
+  50% {
+    rotate: 0deg;
+    transform: translateX(0) translateY(0);
+  }
+  75% {
+    rotate: -15deg;
+    transform: translateX(-10px) translateY(-10px);
+  }
+}
+@keyframes lighting {
+  from {
+    top: -5%;
+    left: 0;
+  }
+  to {
+    top: 200%;
+    left: -200%;
+  }
+}
+@keyframes textAnimation {
+  0%, 40%, 100% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-10px);
+  }
+}
+@keyframes introBrandsLogo {
+  from {
+    transform: translateX(-1000%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes oceanAnimation {
+  0%, 100% {
+    -webkit-clip-path: polygon(0% 45%, 16% 44%, 33% 50%, 54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%);
+            clip-path: polygon(0% 45%, 16% 44%, 33% 50%, 54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%);
+  }
+  50% {
+    -webkit-clip-path: polygon(0% 60%, 15% 65%, 34% 66%, 51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%);
+            clip-path: polygon(0% 60%, 15% 65%, 34% 66%, 51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%);
+  }
+}/*# sourceMappingURL=homePage.css.map */

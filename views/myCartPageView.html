@@ -1,0 +1,129 @@
+<div class="myCartPage">
+  <div class="myCartPage__container">
+    <div class="myCartBox">
+      <div class="myCartBox__container">
+        <div class="leftSide">
+          <div class="leftSide__container">
+            <div class="leftSide-header">
+              <div class="headerLs">
+                <h2 class="headerLs__text">Shopping Cart</h2>
+              </div>
+              <div class="itemsLs">
+                <span class="itemsLs__text">0 Item</span>
+              </div>
+            </div>
+            <div class="leftSide-body">
+              <div class="leftSide-body__container"></div>
+            </div>
+            <div class="leftSide-footer">
+              <div class="removeFromCart">
+                <div class="btnRemover">
+                  <button class="btnRemover__btn" onclick="deleteAllFromCart()">
+                    <span class="btnRemover__btn__text">Delete All</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="rightSide">
+          <div class="rightSide__container">
+            <div class="rightSide-header">
+              <h2 class="headerRs">Order Summary</h2>
+            </div>
+            <div class="rightSide-body">
+              <div class="totalbf">
+                <span class="totalbf__text">Total</span>
+                <span class="totalbf__text">$0.00</span>
+              </div>
+              <div class="comboBox-delivery">
+                <div class="comboBox-delivery__container">
+                  <div class="combo" onclick="showDeliveryCombo()">
+                    <div class="comboTitle">
+                      <span class="comboTitle__text"
+                        >Select delivery option</span
+                      >
+                    </div>
+                    <div class="comboIcon">
+                      <span class="comboIcon__icon"
+                        ><i class="fa fa-chevron-down"></i
+                      ></span>
+                    </div>
+                  </div>
+                  <div class="comboBox">
+                    <div class="comboBox__container">
+                      <div class="comboOption active">
+                        <span
+                          class="comboOption__text"
+                          onclick="deliveryOptionHandler(0)"
+                          ><i class="fa fa-truck-fast"></i> Fast Delivery</span
+                        >
+                      </div>
+                      <div class="comboOption">
+                        <span
+                          class="comboOption__text"
+                          onclick="deliveryOptionHandler(1)"
+                          ><i class="fa fa-clock-o"></i> Patiently
+                          Delivery</span
+                        >
+                      </div>
+                      <div class="comboOption">
+                        <span
+                          class="comboOption__text"
+                          onclick="deliveryOptionHandler(2)"
+                          ><i class="fa fa-hand-holding"></i> In-Person
+                          Delivery</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="promoSection">
+                <div class="promoSection__header">
+                  <h6 class="promoSection__header__text">Promo Code :</h6>
+                </div>
+                <div class="promoSection__container">
+                  <input
+                    type="text"
+                    maxlength="8"
+                    class="promoInput"
+                    placeholder="Enter your promo code"
+                  />
+                  <button class="checkPromoValidationBtn">
+                    <span class="checkPromoValidationBtn__text">Check</span>
+                  </button>
+                </div>
+              </div>
+              <div class="checkOutSection">
+                <div class="checkOutSection__container">
+                  <div class="totalPriceCheckOut">
+                    <h4 class="totalPriceCheckOut__header">Total</h4>
+                    <span class="totalPriceCheckOut__text">$0.00</span>
+                  </div>
+                  <div class="deliveryPriceCheckOut">
+                    <h4 class="deliveryPriceCheckOut__header">Delivery cost</h4>
+                    <h4 class="deliveryPriceCheckOut__text">$0.00</h4>
+                  </div>
+                  <div class="taxCheckOut">
+                    <h4 class="taxCheckOut__header">Tax</h4>
+                    <span class="taxCheckOut__text">$0.00</span>
+                  </div>
+                  <div class="subTotal">
+                    <h2 class="subTotal__header">SubTotal</h2>
+                    <span class="subTotal__text">$0.00</span>
+                  </div>
+                  <div class="checkOutButton">
+                    <button class="checkOutBtn">
+                      <span class="checkOutBtn__text">CHECKOUT</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

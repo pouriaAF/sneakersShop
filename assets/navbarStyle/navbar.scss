@@ -1,0 +1,603 @@
+@mixin flexcenter($justify, $align, $direction) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+@mixin transition($type, $time) {
+  transition: $type $time ease-in-out;
+  color: #6987c9;
+}
+@mixin max1000 {
+  @media screen and (max-width: 1000px) {
+    @content;
+  }
+}
+@mixin max850 {
+  @media screen and (max-width: 850px) {
+    @content;
+  }
+}
+@mixin max650 {
+  @media screen and (max-width: 650px) {
+    @content;
+  }
+}
+@mixin max600 {
+  @media screen and (max-width: 600px) {
+    @content;
+  }
+}
+@font-face {
+  font-family: "mont";
+  src: url(../../fonts/Mont-Black.ttf);
+}
+@font-face {
+  font-family: "trakya";
+  src: url(../../fonts/bulent-yuksel-trakya-rounded-300-light.otf);
+}
+@font-face {
+  font-family: "hiruko";
+  src: url(../../fonts/HirukoBlackAlternate.ttf);
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+.largeNavBar {
+  @include max600 {
+    display: none;
+  }
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  &__container {
+    width: 100%;
+    .largeMenu {
+      @include flexcenter(center, center, row);
+      width: 100%;
+      background-color: #2c36399b;
+      padding: 20px;
+      margin: 0;
+      .largeMenuRouters {
+        @include flexcenter(center, center, row);
+        width: 100%;
+        list-style-type: none;
+        .largeMenu-items {
+          &__text {
+            @include transition(all, 0.3s);
+            color: #dcd7c9;
+            text-decoration: none;
+            font-family: "mont";
+            font-size: small;
+            padding: 10px 15px;
+            border-radius: 30px;
+            &:hover {
+              background-color: #a27b5c;
+            }
+            &.active {
+              background-color: #dcd7c9;
+              color: #2c3639;
+              pointer-events: none;
+            }
+          }
+        }
+      }
+      .largeMenuButtons {
+        @include flexcenter(center, center, row);
+        width: 100%;
+        list-style-type: none;
+        gap: 10px;
+        .largeMenu-items {
+          @include flexcenter(center, center, row);
+          position: relative;
+          &:hover {
+            .myCartBox {
+              opacity: 1;
+              visibility: visible;
+            }
+            .loginMiniDashboard {
+              opacity: 1;
+              visibility: visible;
+            }
+          }
+          .loginMiniDashboard {
+            @include flexcenter(center, center, column);
+            @include transition(all, 0.4s);
+            width: 200px;
+            height: 100px;
+            position: absolute;
+            padding: 10px;
+            top: 0;
+            transform: translateY(52px);
+            background-color: #fff;
+            box-shadow: 0 0 5px 0 #222;
+            opacity: 0;
+            visibility: hidden;
+            .loginAlert {
+              width: 100%;
+              text-align: center;
+              font-family: "trakya";
+            }
+            .userImg {
+              width: 20%;
+            }
+            .accUser {
+              width: 100%;
+              text-align: center;
+              font-family: "trakya";
+            }
+            .accId {
+              width: 100%;
+              text-align: center;
+              font-family: "trakya";
+            }
+          }
+          .loginButton {
+            &__btn {
+              @include transition(all, 0.3s);
+              padding: 13px 15px;
+              border-radius: 100px;
+              border: 2px solid #a27b5c;
+              background-color: transparent;
+              cursor: pointer;
+              &__text {
+                @include transition(all, 0.3s);
+                color: #a27b5c;
+                font-weight: bold;
+                font-size: medium;
+                pointer-events: none;
+              }
+              &:hover {
+                background-color: #a27b5c;
+                .loginButton__btn__text {
+                  color: #dcd7c9;
+                }
+              }
+            }
+          }
+          .shoppingCart-text {
+            @include transition(all, 0.3s);
+            padding: 13px;
+            background-color: transparent;
+            border-radius: 50px;
+            border: 2px solid #6987c9;
+            color: #6987c9;
+            cursor: pointer;
+            &:hover {
+              background-color: #6987c9;
+              color: #dcd7c9;
+            }
+          }
+          .cartCount {
+            position: absolute;
+            bottom: -7px;
+            right: 0;
+            padding: 0 4px;
+            border-radius: 50px;
+            background-color: #2c2c2c;
+            color: #fdfffc;
+            font-family: "mont";
+            font-size: small;
+          }
+          .myCartBox {
+            @include transition(all, 0.5s);
+            @include max1000 {
+              transform: translateX(-80px) translateY(43px);
+            }
+            @include max850 {
+              transform: translateX(-120px) translateY(43px);
+            }
+            @include max650 {
+              transform: translateX(-150px) translateY(43px);
+            }
+            opacity: 0;
+            visibility: hidden;
+            width: 500px;
+            height: 420px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(43px) translateX(-30px);
+            background-color: #ececec;
+            border-radius: 2px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            &__container {
+              @include flexcenter(flex-start, center, column);
+              width: 100%;
+              height: 100%;
+              position: relative;
+              padding: 10px;
+              &::after {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 10px;
+                bottom: 14%;
+                background: linear-gradient(to bottom, transparent, #ececec);
+              }
+              &::before {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 10px;
+                top: 10%;
+                z-index: 2;
+                transform: translateY(10px);
+                background: linear-gradient(to top, transparent, #ececec);
+              }
+              &__header {
+                width: 100%;
+                padding: 10px;
+                .myCartBox-title {
+                  @include flexcenter(center, center, row);
+                  width: 100%;
+                  .basketIcon {
+                    color: #222;
+                    font-size: 15px;
+                  }
+                  &__text {
+                    color: #222;
+                    padding-left: 10px;
+                    font-family: "trakya";
+                  }
+                }
+                .myCartBox-removeAll {
+                  width: 100%;
+                  &__text {
+                    @include transition(all, 0.4s);
+                    color: #777;
+                    font-family: "trakya";
+                    font-size: 13px;
+                    cursor: pointer;
+                    position: relative;
+                    &:hover {
+                      color: rgb(255, 0, 34);
+                    }
+                  }
+                }
+              }
+              &__items {
+                width: 100%;
+                height: 100%;
+                overflow: scroll;
+                scrollbar-color: transparent;
+                scrollbar-width: none;
+                position: relative;
+                &::-webkit-scrollbar {
+                  display: none;
+                }
+                .emptyTextViewer {
+                  @include flexcenter(center, center, row);
+                  width: 100%;
+                  height: 100%;
+                  gap: 10px;
+                  font-family: "trakya";
+                  color: #222;
+                  font-size: larger;
+                }
+                .myCartBox-item {
+                  @include flexcenter(center, center, row);
+                  width: 100%;
+                  margin: 10px 0;
+                  background-color: #fdfffc;
+                  border-radius: 10px;
+                  &__firstPart {
+                    @include flexcenter(center, center, row);
+                    width: 50%;
+                    height: 100%;
+                    &__imageSection {
+                      width: 100%;
+                      .myCartBox-productImg {
+                        width: 100%;
+                      }
+                    }
+                    &__titleSection {
+                      width: 100%;
+                      .myCartBox-productTitle {
+                        width: 100%;
+                        font-family: "trakya";
+                        font-size: 15px;
+                        color: #222;
+                      }
+                      .myCartBox-productDescription {
+                        width: 50%;
+                        font-size: 10px;
+                        background-color: #222;
+                        padding: 5px 0;
+                        border-radius: 100px;
+                        font-family: "trakya";
+                        color: #fff;
+                        text-align: center;
+                      }
+                    }
+                  }
+                  &__secondPart {
+                    width: 50%;
+                    height: 100%;
+                    &__priceSection {
+                      width: 100%;
+                      .myCartBox-productPrice {
+                        color: #222;
+                        font-family: "trakya";
+                        text-align: center;
+                        transform: translateX(35px);
+                      }
+                    }
+                  }
+                }
+              }
+              &__footer {
+                width: 100%;
+                padding: 10px;
+                .myCartBox-showAll {
+                  width: 100%;
+                  padding: 5px;
+                  .showAllMyCart {
+                    @include transition(all, 0.4s);
+                    width: 100%;
+                    border-radius: 100px;
+                    border: none;
+                    cursor: pointer;
+                    background-color: transparent;
+                    color: #222;
+                    font-family: "trakya";
+                    position: relative;
+                    &:hover {
+                      &::after {
+                        width: 60px;
+                      }
+                    }
+                    &::after {
+                      @include transition(all, 0.3s);
+                      content: "";
+                      position: absolute;
+                      width: 0;
+                      height: 3px;
+                      background-color: #222;
+                      bottom: -5px;
+                      transform: translateX(-53px);
+                      border-radius: 100px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.smallNavBar {
+  @include max600 {
+    visibility: visible;
+    opacity: 1;
+  }
+  &.active {
+    display: flex;
+  }
+  width: 100%;
+  height: 100vh;
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  visibility: hidden;
+  display: none;
+  &__container {
+    @include flexcenter(center, center, column);
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: #1e23259b;
+    // .headerMenu{
+    //     @include flexcenter(center,center,column);
+    //     width: 100%;
+    //     &__container{
+    //         @include flexcenter(center,center,column);
+    //         width: 100%;
+    //         .headerMenuText{
+    //             font-size: 50px;
+    //             color: #DCD7C9;
+    //             z-index: 10;
+    //             font-family: 'mont';
+    //             .headerMenuIcon{
+    //                 margin: 10px;
+    //             }
+    //         }
+    //     }
+    // }
+    .smallMenu {
+      @include flexcenter(center, center, row);
+      width: 100%;
+      height: 50%;
+      list-style-type: none;
+      pointer-events: painted;
+      flex-wrap: wrap;
+      z-index: 2;
+      gap: 10px;
+      transform: translateY(50px);
+      &__items {
+        @include flexcenter(center, center, column);
+        position: relative;
+        width: 150px;
+        height: 140px;
+        padding: 15px 10px 10px 10px;
+        cursor: pointer;
+        overflow: hidden;
+        animation: boxesIntro 1s forwards;
+        scale: 0;
+        border-radius: 3px;
+        &::after {
+          content: "";
+          @include transition(all, 0.4s);
+          position: absolute;
+          left: -50%;
+          top: 100%;
+          width: 200%;
+          height: 200%;
+          border-radius: 100%;
+          background-color: #a27b5c;
+        }
+        &:hover {
+          &::after {
+            top: -20%;
+          }
+          .smallMenu__items__logo {
+            animation: logoVibrate 0.2s infinite;
+          }
+          .smallMenu__items__text {
+            animation: textVibrate 0.2s infinite;
+          }
+        }
+        &:nth-child(1) {
+          background-color: rgb(0, 54, 0);
+          animation-delay: 0.8s;
+        }
+        &:nth-child(2) {
+          background-color: rgb(0, 54, 50);
+          animation-delay: 1s;
+        }
+        &:nth-child(3) {
+          background-color: rgb(0, 63, 101);
+          animation-delay: 1.2s;
+        }
+        &:nth-child(4) {
+          background-color: rgb(155, 113, 8);
+          animation-delay: 1.4s;
+        }
+        &:nth-child(5) {
+          background-color: rgb(3, 139, 224);
+          animation-delay: 1.6s;
+        }
+        &:nth-child(6) {
+          background-color: rgb(224, 3, 66);
+          animation-delay: 1.8s;
+        }
+        &__text {
+          @include transition(all, 0.3s);
+          width: 100%;
+          height: 100%;
+          text-decoration: none;
+          color: #fdfffc;
+          border: 2px solid transparent;
+          padding: 10px;
+          font-size: larger;
+          font-family: "mont";
+          border-radius: 50px;
+          z-index: 3;
+          text-align: center;
+        }
+        &__logo {
+          width: 100%;
+          height: 100%;
+          font-size: 40px;
+          color: #dcd7c9;
+          z-index: 3;
+          text-align: center;
+        }
+      }
+    }
+    .scaledCircle {
+      transition: all 1.5s;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: -150%;
+      top: -100%;
+      background-color: #000000df;
+      border-radius: 100%;
+      &.active {
+        left: 0;
+        top: 0;
+        scale: 2;
+      }
+    }
+  }
+}
+.navIcon {
+  @include max600 {
+    display: flex;
+  }
+  &.active {
+    left: 84%;
+  }
+  transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  position: fixed;
+  top: 2%;
+  left: 3%;
+  z-index: 1000;
+  display: none;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.5;
+  }
+  &__container {
+    @include flexcenter(center, center, column);
+    gap: 2px;
+    padding: 10px;
+    background-color: #a27b5c;
+    border-radius: 1px;
+    overflow: hidden;
+    .navIcon-part {
+      @include transition(all, 0.4s);
+      width: 30px;
+      height: 5px;
+      border-radius: 40px;
+      background-color: #dcd7c9;
+      &.active {
+        &:nth-child(1) {
+          transform: rotate(45deg) translateY(4px) translateX(4px);
+        }
+        &:nth-child(2) {
+          transform: translateX(500%);
+          opacity: 0;
+        }
+        &:nth-child(3) {
+          transform: rotate(-45deg) translateY(-6px) translateX(5.5px);
+        }
+      }
+    }
+  }
+}
+@keyframes logoVibrate {
+  0%,
+  100% {
+    rotate: 0;
+  }
+  33% {
+    rotate: 3deg;
+  }
+  66% {
+    rotate: -3deg;
+  }
+  99% {
+    rotate: 0;
+  }
+}
+@keyframes textVibrate {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  33% {
+    transform: translateX(1px);
+  }
+  66% {
+    transform: translateX(-1px);
+  }
+  99% {
+    transform: translateX(0);
+  }
+}
+@keyframes boxesIntro {
+  from {
+    scale: 0;
+  }
+  to {
+    scale: 1;
+  }
+}

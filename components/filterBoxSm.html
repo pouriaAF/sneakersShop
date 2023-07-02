@@ -1,0 +1,171 @@
+<div class="filterSmIcon">
+  <button class="filterSmIcon__btn" onclick="showSmFilterBox()">
+    <span class="btnIcon"><i class="fa fa-sliders"></i></span>
+  </button>
+</div>
+<div class="searchBox">
+  <button class="searchBtn" onclick="showSmSearchBox()">
+    <span class="searchBtn__icon"><i class="fa fa-search"></i></span>
+  </button>
+  <div class="searchBox__container">
+    <input type="search" placeholder="Search..." class="searchInput" />
+    <button class="applyButton" onclick="hideSmSearchBox()">
+      <span>Apply</span>
+    </button>
+  </div>
+</div>
+<div class="filterSmBox">
+  <div class="filterSmBox__container">
+    <div class="headerSection">
+      <h5 class="headerSection__text">Filters</h5>
+    </div>
+    <div class="priceSection-range">
+      <div class="priceSection-range__container">
+        <div class="inputPriceValues">
+          <input
+            class="priceValues"
+            type="number"
+            disabled
+            min="0"
+            max="250"
+            value="46"
+            autocomplete="off"
+          />
+        </div>
+        <div class="inputPriceRange">
+          <div class="progressBar"></div>
+          <input
+            class="priceRange"
+            type="range"
+            max="250"
+            min="0"
+            value="46"
+            autocomplete="off"
+          />
+          <input
+            class="priceRange"
+            type="range"
+            max="250"
+            min="0"
+            value="200"
+            autocomplete="off"
+          />
+        </div>
+        <div class="inputPriceValues">
+          <input
+            class="priceValues"
+            type="number"
+            disabled
+            min="0"
+            max="250"
+            value="200"
+            autocomplete="off"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="brandsSection">
+      <div class="brandsSection__header">
+        <h6 class="brandsSection__header__text">Filter by brands</h6>
+      </div>
+      <div class="brandsSection__container">
+        <div class="brandsInput">
+          <div class="brandsInput__container">
+            <div class="brandsInput__container__header">
+              <h2 class="brandsInput-text">Nike</h2>
+            </div>
+            <div class="brandsInput__container__switchBtn">
+              <button class="brandsInputSwitchBtn"></button>
+            </div>
+          </div>
+        </div>
+        <div class="brandsInput">
+          <div class="brandsInput__container">
+            <div class="brandsInput__container__header">
+              <h2 class="brandsInput-text">Adidas</h2>
+            </div>
+            <div class="brandsInput__container__switchBtn">
+              <button class="brandsInputSwitchBtn"></button>
+            </div>
+          </div>
+        </div>
+        <div class="brandsInput">
+          <div class="brandsInput__container">
+            <div class="brandsInput__container__header">
+              <h2 class="brandsInput-text">Jordan</h2>
+            </div>
+            <div class="brandsInput__container__switchBtn">
+              <button class="brandsInputSwitchBtn"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="colorsSection">
+      <div class="colorsSection__header">
+        <h6 class="colorsSection__header__text">Filter by colors</h6>
+      </div>
+      <div class="colorsSection__container">
+        <span class="colorsIcon fa"
+          ><i class="fa fa-droplet dropLetHandler"></i
+          ><i class="fa fa-check checkHandler"></i
+        ></span>
+        <span class="colorsIcon fa"
+          ><i class="fa fa-droplet dropLetHandler"></i
+          ><i class="fa fa-check checkHandler"></i
+        ></span>
+        <span class="colorsIcon fa"
+          ><i class="fa fa-droplet dropLetHandler"></i
+          ><i class="fa fa-check checkHandler"></i
+        ></span>
+        <span class="colorsIcon fa"
+          ><i class="fa fa-droplet dropLetHandler"></i
+          ><i class="fa fa-check checkHandler"></i
+        ></span>
+        <span class="colorsIcon fa"
+          ><i class="fa fa-droplet dropLetHandler"></i
+          ><i class="fa fa-check checkHandler"></i
+        ></span>
+        <span class="colorsIcon fa"
+          ><i class="fa fa-droplet dropLetHandler"></i
+          ><i class="fa fa-check checkHandler"></i
+        ></span>
+        <span class="colorsIcon fa"
+          ><i class="fa fa-droplet dropLetHandler"></i
+          ><i class="fa fa-check checkHandler"></i
+        ></span>
+      </div>
+    </div>
+    <div class="dateSection">
+      <div class="dateSection__header">
+        <h6 class="dateSection__header__text">Filter by date</h6>
+      </div>
+      <div class="dateSection__container">
+        <div class="calendarProgressBar">
+          <span class="calendarProgressBar__tracker"></span>
+          <div class="calendarProgressBar__textIcon">
+            <span class="calendarProgressBar__textIcon__text dateFilterBtn"
+              ><i class="fa fa-hat-cowboy"></i> Oldest</span
+            >
+            <span class="calendarProgressBar__textIcon__text dateFilterBtn"
+              ><i class="fa fa-circle-xmark"></i> Not Matter</span
+            >
+            <span class="calendarProgressBar__textIcon__text dateFilterBtn"
+              ><i class="fa fa-building"></i> Newest</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="applyBtnSection">
+      <button class="applyButton" onclick="filterByPrice(true)">
+        <span class="applyButton__text">Apply</span>
+      </button>
+    </div>
+    <div class="cancleBtnSection">
+      <button class="cancleBtn" onclick="hideSmFilterBox()">
+        <span class="cancleBtn__text">cancle</span>
+      </button>
+    </div>
+  </div>
+</div>

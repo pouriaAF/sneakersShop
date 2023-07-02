@@ -1,0 +1,43 @@
+@import url("../assets/navbarStyle/navbar.css");
+@import url("../assets/homePageStyle/homePage.css");
+@import url("../assets/productCardStyle/productCard.css");
+@import url("../assets/footerStyle/footer.css");
+@import url("../assets/storePageStyle/storePage.css");
+@import url("../assets/filterBoxStyle/filterBox.css");
+@import url("../assets/productSelectorStyle/productSelector.css");
+@import url("../assets/myCartPageStyle/myCartPage.css");
+@import url("../assets/contactStyle/contact.css");
+@import url("../assets/loginPageStyle/loginPage.css");
+* {
+  padding: 0;
+  margin: 0;
+}
+
+::-moz-selection {
+  background-color: #a27b5c;
+}
+
+::selection {
+  background-color: #a27b5c;
+}
+
+body {
+  background-color: #dcd7c9;
+}
+
+#nav {
+  width: 100%;
+  z-index: 999;
+}
+
+#content {
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  position: relative;
+}
+
+#footer {
+  width: 100%;
+  height: 100%;
+}/*# sourceMappingURL=style.css.map */

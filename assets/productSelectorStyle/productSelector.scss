@@ -1,0 +1,377 @@
+@mixin flexcenter($justify, $align, $direction) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+@font-face {
+  font-family: "mont";
+  src: url(../../fonts/Mont-Black.ttf);
+}
+@mixin max1500 {
+  @media screen and (max-width: 1500px) {
+    @content;
+  }
+}
+@mixin max1000 {
+  @media screen and (max-width: 1000px) {
+    @content;
+  }
+}
+@mixin max850 {
+  @media screen and (max-width: 850px) {
+    @content;
+  }
+}
+@mixin max700 {
+  @media screen and (max-width: 700px) {
+    @content;
+  }
+}
+@mixin max550 {
+  @media screen and (max-width: 550px) {
+    @content;
+  }
+}
+@mixin max450 {
+  @media screen and (max-width: 450px) {
+    @content;
+  }
+}
+.productSelectorView {
+  width: 100%;
+  height: 1000px;
+  &__container {
+    @include flexcenter(center, center, row);
+    width: 100%;
+    height: 100%;
+    position: relative;
+    .rightSideBg {
+      width: 40%;
+      height: 100%;
+      // background: linear-gradient(to left , rgb(255, 0, 55) , rgb(255, 0, 55) 600px , rgba(255, 0, 55, 0));
+      background: #a27b5c;
+      z-index: 0;
+      position: relative;
+      overflow: hidden;
+      @include max850 {
+        background: #222;
+      }
+      &::after {
+        content: "";
+        @include max850 {
+          background: transparent;
+        }
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        background-color: #a27b5c;
+        left: 0;
+        transform: translateX(-50%);
+        border-radius: 100%;
+      }
+      &::before {
+        content: "";
+        @include max850 {
+          background: transparent;
+        }
+        position: absolute;
+        width: 954px;
+        height: 954px;
+        background-color: #caa383;
+        left: 0;
+        transform: translateX(-50%);
+        border-radius: 100%;
+      }
+    }
+    .leftSideBg {
+      width: 60%;
+      height: 100%;
+      background-color: #222;
+      z-index: 1;
+    }
+    .selectedProductBox {
+      position: absolute;
+      @include max1500 {
+        width: 980px;
+      }
+      @include max1000 {
+        width: 800px;
+        box-shadow: none;
+      }
+      @include max850 {
+        width: 680px;
+      }
+      @include max700 {
+        width: 550px;
+      }
+      @include max550 {
+        width: 450px;
+      }
+      @include max450 {
+        width: 320px;
+      }
+      width: 1400px;
+      height: 700px;
+      z-index: 3;
+      box-shadow: 0 0 10px 10px #0000000e;
+      &__container {
+        @include flexcenter(center, center, row);
+        @include max850 {
+          flex-direction: column-reverse;
+        }
+        width: 100%;
+        height: 100%;
+        .leftSide {
+          width: 100%;
+          &__container {
+            @include max850 {
+              padding-left: 0;
+            }
+            width: 90%;
+            padding-left: 50px;
+            .headerSection {
+              width: 100%;
+              margin: 20px 0;
+              .brandPart {
+                width: 100%;
+                &__text {
+                  font-size: larger;
+                  font-family: sans-serif;
+                  font-weight: bold;
+                  color: #fff;
+                }
+              }
+              .namePart {
+                width: 100%;
+                &__text {
+                  @include max700 {
+                    font-size: 35px;
+                  }
+                  font-size: 50px;
+                  font-family: "mont";
+                  color: #6987c9;
+                }
+              }
+              .pricePart {
+                width: 100%;
+                &__text {
+                  font-size: larger;
+                  font-family: "mont";
+                  color: #fff;
+                }
+              }
+            }
+            .descriptionSection {
+              width: 100%;
+              margin-bottom: 20px;
+              &__header {
+                width: 100%;
+                font-size: larger;
+                font-family: "mont";
+                color: #6987c9;
+                margin-bottom: 20px;
+              }
+              &__text {
+                width: 100%;
+                text-align: justify;
+                font-family: system-ui, -apple-system, BlinkMacSystemFont,
+                  "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+                  "Helvetica Neue", sans-serif;
+                font-weight: 600;
+                color: #fff;
+              }
+            }
+            .optionsSection {
+              width: 100%;
+              &__header {
+                width: 100%;
+                &__text {
+                  font-size: larger;
+                  color: #6987c9;
+                  font-family: "mont";
+                }
+              }
+              &__sizes {
+                @include flexcenter("", flex-start, row);
+                @include max1500 {
+                  width: 100%;
+                }
+                width: 60%;
+                flex-wrap: wrap;
+                .size {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  transition: all 0.4s ease-in-out;
+                  width: 60px;
+                  height: 60px;
+                  margin: 5px;
+                  background-color: rgb(223, 223, 223);
+                  color: #6987c9;
+                  font-size: medium;
+                  font-family: "mont";
+                  border-radius: 3px;
+                  cursor: pointer;
+                  position: relative;
+                  overflow: hidden;
+                  z-index: 2;
+                  &::after {
+                    transition: all 0.5s ease-in-out;
+                    content: "";
+                    position: absolute;
+                    width: 100px;
+                    height: 500px;
+                    z-index: -1;
+                    top: 100%;
+                    border-radius: 100px;
+                    background-color: #6987c9;
+                  }
+                  &:hover {
+                    color: #fff;
+                    scale: 1.1;
+                    &::after {
+                      transform: translateY(-80%);
+                    }
+                  }
+                  &.active {
+                    background-color: #a27b5c;
+                    color: #fff;
+                    pointer-events: none;
+                  }
+                }
+              }
+            }
+            .btnSection {
+              @include max450 {
+                align-items: center;
+                margin-left: 5px;
+              }
+              width: 100%;
+              margin-top: 10px;
+              margin-left: 4px;
+              &__btn {
+                padding: 10px 83px;
+                border: none;
+                border-radius: 3px;
+                background-color: #6987c9;
+                cursor: pointer;
+                box-shadow: 0 0 10px 1px rgba(128, 128, 128, 0.315);
+                overflow: hidden;
+                z-index: 1;
+                position: relative;
+                &:hover {
+                  &::after {
+                    transform: translateX(-16%) translateY(-70%);
+                  }
+                }
+                &::after {
+                  transition: all 0.4s ease-in-out;
+                  content: "";
+                  position: absolute;
+                  width: 350px;
+                  height: 350px;
+                  z-index: -1;
+                  top: 110%;
+                  left: 0;
+                  transform: translateX(-16%);
+                  border-radius: 200px;
+                  background-color: #344f85;
+                }
+                &__text {
+                  color: #fff;
+                  margin-left: 10px;
+                  font-family: "mont";
+                }
+                &__icon {
+                  transform: translateY(-3px);
+                  color: #fff;
+                }
+              }
+            }
+          }
+        }
+        .rightSide {
+          width: 100%;
+          height: 100%;
+          &__container {
+            width: 100%;
+            overflow: hidden;
+            @include flexcenter(center, center, column);
+            .pictureSection {
+              @include max1500 {
+                width: 55%;
+              }
+              @include max850 {
+                transform: translateX(0) translateY(15%);
+              }
+              width: 100%;
+              pointer-events: none;
+              transform: translateX(-40px) translateY(-30px);
+              &__img {
+                @include max1500 {
+                  width: 180%;
+                }
+                @include max850 {
+                  width: 100%;
+                }
+                @include max700 {
+                  width: 100%;
+                }
+                @include max450 {
+                  margin-bottom: 10px;
+                }
+                transition: all 0.4s ease-in-out;
+                pointer-events: painted;
+                width: 90%;
+                rotate: 5deg;
+                &:hover {
+                  scale: 1.1;
+                  rotate: 10deg;
+                }
+              }
+            }
+            .rateSection {
+              @include max850 {
+                transform: translateX(0%) translateY(-30px);
+                width: 50%;
+              }
+              width: 30%;
+              background-color: #4e4e4e9d;
+              border-radius: 100px;
+              transform: translateX(43%) translateY(-30px);
+              padding: 10px;
+              .rateStarsBox {
+                @include flexcenter(center, center, row);
+                width: 100%;
+                .stars {
+                  transition: all 0.4s ease-in-out;
+                  -webkit-text-stroke: rgb(240, 213, 60) 1px;
+                  color: transparent;
+                  cursor: pointer;
+                  &:hover {
+                    scale: 1.2;
+                    color: rgb(240, 213, 60);
+                  }
+                  &.active {
+                    color: rgb(240, 213, 60);
+                  }
+                }
+              }
+              .rateStarsText {
+                @include flexcenter(center, center, row);
+                width: 100%;
+                margin-top: 4px;
+                &__text {
+                  font-family: "mont";
+                  font-size: medium;
+                  color: #ffec3f;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

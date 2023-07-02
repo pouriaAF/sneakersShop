@@ -1,0 +1,394 @@
+@font-face {
+  font-family: "trakya";
+  src: url("../../fonts/bulent-yuksel-trakya-rounded-300-light.otf");
+}
+body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  background-color: #e7e7e7;
+}
+
+textarea {
+  resize: none;
+}
+
+.contactBg {
+  position: absolute;
+  z-index: -1;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.543), transparent), url(../../images/contactsPage/AdobeStock-F8nPhd45c1.jpg);
+  width: 100%;
+  height: 1000px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(3px) brightness(50%);
+  -webkit-clip-path: polygon(0 0, 0% 100%, 89% 0);
+          clip-path: polygon(0 0, 0% 100%, 89% 0);
+}
+
+.contact {
+  width: 100%;
+  height: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+.contact .contactBox {
+  transition: all 0.5s ease-in-out;
+  width: 60%;
+  height: 70%;
+  z-index: 1;
+  transform: translateX(30%);
+}
+@media screen and (max-width: 1000px) {
+  .contact .contactBox {
+    transform: translateX(0);
+    height: 75%;
+    width: 80%;
+  }
+}
+.contact .contactBox.active {
+  transform: translateX(0);
+}
+.contact .contactBox__container {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+@media screen and (max-width: 1000px) {
+  .contact .contactBox__container {
+    flex-direction: column;
+    height: 100%;
+  }
+}
+.contact .contactBox__container .leftSide {
+  transition: all 0.5s ease-in-out;
+  position: relative;
+  width: 51%;
+  height: 99%;
+  background-color: #1a292b;
+  overflow: hidden;
+  box-shadow: 0 0 5px 0 black;
+  border-radius: 0.3rem;
+  border-top-left-radius: 0.3rem;
+  border-bottom-left-radius: 0.3rem;
+}
+@media screen and (max-width: 1700px) {
+  .contact .contactBox__container .leftSide {
+    width: 68%;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .contact .contactBox__container .leftSide {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .contact .contactBox__container .leftSide {
+    width: 100%;
+    border-radius: 0;
+  }
+}
+.contact .contactBox__container .leftSide.active {
+  border-radius: 0;
+  border-top-left-radius: 0.3rem;
+  border-bottom-left-radius: 0.3rem;
+  transform: translateX(500px);
+}
+@media screen and (max-width: 1000px) {
+  .contact .contactBox__container .leftSide.active {
+    transform: translateX(0);
+  }
+}
+.contact .contactBox__container .leftSide__socialMedias {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.contact .contactBox__container .leftSide__socialMedias .socialMediaIcon {
+  transition: all 0.4s ease-in-out;
+  margin: 15px;
+  font-size: 22px;
+  color: #dcd7c9;
+  background-color: #af815b;
+  padding: 8px 10px 8px 11px;
+  border-radius: 100px;
+  cursor: pointer;
+  animation: opacityDance 1.5s infinite linear;
+}
+@media screen and (max-width: 500px) {
+  .contact .contactBox__container .leftSide__socialMedias .socialMediaIcon {
+    scale: 0.9;
+  }
+}
+.contact .contactBox__container .leftSide__socialMedias .socialMediaIcon:hover {
+  padding: 8px 30px 8px 11px;
+}
+@media screen and (max-width: 500px) {
+  .contact .contactBox__container .leftSide__socialMedias .socialMediaIcon:hover {
+    padding: 8px 10px 8px 11px;
+  }
+}
+.contact .contactBox__container .leftSide__socialMedias .socialMediaIcon:nth-child(1) {
+  animation-delay: 100ms;
+}
+.contact .contactBox__container .leftSide__socialMedias .socialMediaIcon:nth-child(2) {
+  animation-delay: 300ms;
+}
+.contact .contactBox__container .leftSide__socialMedias .socialMediaIcon:nth-child(3) {
+  animation-delay: 500ms;
+}
+.contact .contactBox__container .leftSide__socialMedias .socialMediaIcon:nth-child(4) {
+  animation-delay: 700ms;
+}
+.contact .contactBox__container .leftSide__container {
+  width: 100%;
+  height: 100%;
+}
+.contact .contactBox__container .leftSide__container .firstPart {
+  width: 100%;
+  height: 30%;
+}
+.contact .contactBox__container .leftSide__container .firstPart__header {
+  width: 100%;
+  color: #dcd7c9;
+  padding-left: 3%;
+  font-family: "trakya";
+  font-size: 25px;
+  font-weight: bold;
+}
+@media screen and (max-width: 500px) {
+  .contact .contactBox__container .leftSide__container .firstPart__header {
+    font-size: 20px;
+  }
+}
+.contact .contactBox__container .leftSide__container .firstPart__description {
+  width: 95%;
+  color: rgba(220, 215, 201, 0.8431372549);
+  font-family: "trakya";
+  padding-left: 3%;
+  text-align: justify;
+  font-size: 14px;
+}
+@media screen and (max-width: 500px) {
+  .contact .contactBox__container .leftSide__container .firstPart__description {
+    font-size: 13px;
+  }
+}
+.contact .contactBox__container .leftSide__container .secondPart {
+  width: 100%;
+  height: 50%;
+}
+.contact .contactBox__container .leftSide__container .secondPart__items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  margin: 30px 0;
+}
+.contact .contactBox__container .leftSide__container .secondPart__items .textIcon {
+  padding: 0 3%;
+  color: #a27b5c;
+}
+@media screen and (max-width: 500px) {
+  .contact .contactBox__container .leftSide__container .secondPart__items .textIcon {
+    font-size: 14px;
+  }
+}
+.contact .contactBox__container .leftSide__container .secondPart__items .textItem {
+  width: 100%;
+  color: rgba(255, 255, 255, 0.8156862745);
+  font-family: "trakya";
+}
+@media screen and (max-width: 500px) {
+  .contact .contactBox__container .leftSide__container .secondPart__items .textItem {
+    font-size: 14px;
+  }
+}
+.contact .contactBox__container .leftSide__container .thirdPart {
+  width: 100%;
+  height: 20%;
+}
+.contact .contactBox__container .leftSide__container .thirdPart .sendTicketBtn {
+  background-color: transparent;
+  border: none;
+  padding-left: 13%;
+  cursor: pointer;
+}
+@media screen and (max-width: 1000px) {
+  .contact .contactBox__container .leftSide__container .thirdPart .sendTicketBtn {
+    display: none;
+  }
+}
+.contact .contactBox__container .leftSide__container .thirdPart .sendTicketBtn:hover .sendTicketBtn__text {
+  letter-spacing: 1px;
+}
+.contact .contactBox__container .leftSide__container .thirdPart .sendTicketBtn__text {
+  transition: all 0.4s ease-in-out;
+  color: #fff;
+  font-family: "trakya";
+}
+.contact .contactBox__container .rightSide {
+  transition: all 0.5s ease-in-out;
+  z-index: 3;
+  width: 0%;
+  overflow: hidden;
+  height: 100%;
+  background-color: #ffffff;
+  border-radius: 0.3rem;
+  box-shadow: 0 0 5px 0 black;
+}
+.contact .contactBox__container .rightSide.active {
+  width: 80%;
+}
+@media screen and (max-width: 1700px) {
+  .contact .contactBox__container .rightSide.active {
+    width: 100%;
+    transform: translateX(80px);
+  }
+}
+@media screen and (max-width: 1200px) {
+  .contact .contactBox__container .rightSide.active {
+    width: 180%;
+    transform: translateX(120px);
+  }
+}
+@media screen and (max-width: 1000px) {
+  .contact .contactBox__container .rightSide {
+    width: 100%;
+    border-radius: 0;
+  }
+}
+.contact .contactBox__container .rightSide__container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.contact .contactBox__container .rightSide__container .returnSection {
+  position: relative;
+  width: 100%;
+}
+@media screen and (max-width: 1000px) {
+  .contact .contactBox__container .rightSide__container .returnSection {
+    display: none;
+  }
+}
+.contact .contactBox__container .rightSide__container .returnSection .returnBtn {
+  transition: all 0.5s ease-in-out;
+  position: absolute;
+  right: 0;
+  padding: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 17px;
+  cursor: pointer;
+}
+.contact .contactBox__container .rightSide__container .returnSection .returnBtn:hover {
+  transform: translateX(-10px);
+}
+.contact .contactBox__container .rightSide__container .InputSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  height: 25%;
+}
+.contact .contactBox__container .rightSide__container .InputSection .inputBox {
+  width: 40%;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.contact .contactBox__container .rightSide__container .InputSection .inputBox .inputTitle {
+  width: 100%;
+  text-align: start;
+  font-size: small;
+  font-family: "trakya";
+  color: #444;
+}
+.contact .contactBox__container .rightSide__container .InputSection .inputBox .ticketInput {
+  width: 100%;
+  margin: 5px;
+  padding: 9px 5px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #070835;
+}
+.contact .contactBox__container .rightSide__container .InputSection .inputBox .ticketInput:focus {
+  border-bottom: 1px solid #6668d1;
+}
+.contact .contactBox__container .rightSide__container .yourTicket {
+  width: 100%;
+  height: 50%;
+}
+.contact .contactBox__container .rightSide__container .yourTicket .yourTicketSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 80%;
+}
+.contact .contactBox__container .rightSide__container .yourTicket .yourTicketSection .ticketLable {
+  font-family: "trakya";
+  font-size: small;
+  margin-bottom: 10px;
+}
+.contact .contactBox__container .rightSide__container .yourTicket .yourTicketSection .ticketInput {
+  width: 80%;
+  height: 30%;
+  resize: none;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #070835;
+}
+.contact .contactBox__container .rightSide__container .yourTicket .yourTicketSection .ticketInput:focus {
+  border-bottom: 1px solid #6668d1;
+}
+.contact .contactBox__container .rightSide__container .yourTicket .yourTicketButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 20%;
+}
+.contact .contactBox__container .rightSide__container .yourTicket .yourTicketButton .addticketBtn {
+  transition: all 0.4s ease-in-out;
+  width: 50%;
+  padding: 10px;
+  border: none;
+  background-color: #1a292b;
+  border-radius: 3px;
+  color: #fff;
+  cursor: pointer;
+}
+.contact .contactBox__container .rightSide__container .yourTicket .yourTicketButton .addticketBtn__text {
+  font-family: "trakya";
+}
+.contact .contactBox__container .rightSide__container .yourTicket .yourTicketButton .addticketBtn:hover {
+  opacity: 0.7;
+}
+
+@keyframes opacityDance {
+  0%, 100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  50% {
+    opacity: 0.3;
+    transform: translateX(4px);
+  }
+}/*# sourceMappingURL=contact.css.map */

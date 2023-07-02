@@ -1,0 +1,278 @@
+@mixin flexcenter($justify, $align, $direction) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+@mixin transition($type, $time) {
+  transition: $type $time ease-in-out;
+}
+@mixin max600 {
+  @media screen and (max-width: 600px) {
+    @content;
+  }
+}
+@mixin max509 {
+  @media screen and (max-width: 509px) {
+    @content;
+  }
+}
+@mixin max400 {
+  @media screen and (max-width: 400px) {
+    @content;
+  }
+}
+@mixin max350 {
+  @media screen and (max-width: 350px) {
+    @content;
+  }
+}
+@font-face {
+  font-family: "mont";
+  src: url(../../fonts/Mont-Black.ttf);
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+.product-cards {
+  @include flexcenter(space-between, center, column);
+  @include transition(all, 0.5s);
+  width: 260px;
+  height: 335px;
+  border-radius: 4px;
+  position: relative;
+  cursor: pointer;
+  scale: 0;
+  margin: 0 5px;
+  &.fadeIn {
+    animation: introScale 1s forwards;
+  }
+  &:hover {
+    .flipy-section__container {
+      transform: rotateY(180deg);
+    }
+  }
+  .flipy-section {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    box-sizing: border-box;
+    &__container {
+      @include flexcenter(flex-end, center, column);
+      @include transition(all, 0.6s);
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      .front-face {
+        width: 100%;
+        backface-visibility: hidden;
+        overflow: hidden;
+        transform-style: preserve-3d;
+        background-color: #dcd7c9;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        &__content {
+          width: 100%;
+          .front-product-image {
+            width: 100%;
+            &__container {
+              width: 100%;
+              .unfliped-product-image {
+                width: 100%;
+                height: 240px;
+              }
+            }
+          }
+        }
+      }
+      .back-face {
+        position: absolute;
+        width: 100%;
+        height: 98%;
+        backface-visibility: hidden;
+        overflow: hidden;
+        transform: rotateY(-180deg) translateY(4px);
+        background-color: #dcd7c925;
+        border-radius: 2px;
+        &__content {
+          width: 100%;
+          .back-product-image {
+            width: 100%;
+            &__container {
+              @include flexcenter(center, center, column);
+              width: 100%;
+              .fliped-product-image {
+                width: 68%;
+                transform: rotate(15deg);
+                padding-bottom: 40px;
+              }
+              .button-section {
+                width: 100%;
+                padding-bottom: 15px;
+                position: absolute;
+                bottom: -7%;
+                &__btn {
+                  @include transition(all, 0.4s);
+                  background-color: #6987c9;
+                  border: none;
+                  width: 100%;
+                  color: #2c3639;
+                  font-family: "mont";
+                  cursor: pointer;
+                  padding: 3px 25px;
+                  font-size: large;
+                  position: relative;
+                  &::after {
+                    content: "";
+                    animation: arrowAnimation 5s linear infinite;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(
+                      to left,
+                      #6987c9eb,
+                      transparent,
+                      transparent
+                    );
+                  }
+                  &:hover {
+                    letter-spacing: 6px;
+                  }
+                  .button-text:nth-child(1) {
+                    opacity: 0.5;
+                  }
+                  .button-text:nth-child(2) {
+                    opacity: 0.8;
+                  }
+                  .button-text {
+                    animation: arrowAnimationText 1s infinite;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .title-section {
+    width: 100%;
+    background: #2c3639;
+    &__container {
+      @include flexcenter(space-between, center, row);
+      width: 100%;
+      .shoe-name {
+        &__text {
+          font-weight: bold;
+          padding: 10px;
+          font-family: "mont";
+          color: #dcd7c9;
+        }
+      }
+      .shoe-price {
+        @include flexcenter(center, center, column);
+        &__text {
+          font-weight: lighter;
+          font-size: large;
+          color: #6987c9;
+          font-family: "mont";
+          text-shadow: 0 2px 1px black;
+          padding: 10px;
+        }
+      }
+    }
+  }
+  .rate-section {
+    width: 100%;
+    background: #2c3639;
+    &__container {
+      @include flexcenter(space-between, center, row);
+      width: 100%;
+      .product-stars {
+        width: 100%;
+        &__container {
+          @include flexcenter(flex-end, center, row);
+          width: 100%;
+          direction: rtl;
+          padding-left: 10px;
+          .stars {
+            @include transition(all, 0.3s);
+            font-size: large;
+            text-shadow: #666666 2px 2px 2px;
+            color: #dcd7c9;
+          }
+        }
+      }
+      .product-rate {
+        padding: 10px;
+        &__container {
+          &__text {
+            color: #dcd7c9;
+            font-family: "mont";
+          }
+        }
+      }
+    }
+  }
+}
+@for $i from 0 through 12 {
+  .product-cards:nth-child(#{$i}) {
+    animation-delay: $i * 100ms;
+  }
+}
+@keyframes arrowAnimation {
+  0% {
+    background-position: 0;
+  }
+  100% {
+    background-position: 800px;
+  }
+}
+@keyframes introScale {
+  from {
+    scale: 0;
+  }
+  to {
+    scale: 1;
+  }
+}
+@keyframes introScaleMax509 {
+  from {
+    scale: 0;
+  }
+  to {
+    scale: 1.5;
+  }
+}
+@keyframes introScaleMax400 {
+  from {
+    scale: 0;
+  }
+  to {
+    scale: 1.3;
+  }
+}
+@keyframes introScaleMax350 {
+  from {
+    scale: 0;
+  }
+  to {
+    scale: 1.1;
+  }
+}
+@keyframes arrowAnimationText {
+  0% {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+}

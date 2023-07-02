@@ -1,0 +1,612 @@
+@font-face {
+  font-family: "mont";
+  src: url(../../fonts/Mont-Black.ttf);
+}
+@font-face {
+  font-family: "trakya";
+  src: url(../../fonts/bulent-yuksel-trakya-rounded-300-light.otf);
+}
+@font-face {
+  font-family: "hiruko";
+  src: url(../../fonts/HirukoBlackAlternate.ttf);
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.largeNavBar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+}
+@media screen and (max-width: 600px) {
+  .largeNavBar {
+    display: none;
+  }
+}
+.largeNavBar__container {
+  width: 100%;
+}
+.largeNavBar__container .largeMenu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  background-color: rgba(44, 54, 57, 0.6078431373);
+  padding: 20px;
+  margin: 0;
+}
+.largeNavBar__container .largeMenu .largeMenuRouters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  list-style-type: none;
+}
+.largeNavBar__container .largeMenu .largeMenuRouters .largeMenu-items__text {
+  transition: all 0.3s ease-in-out;
+  color: #6987c9;
+  color: #dcd7c9;
+  text-decoration: none;
+  font-family: "mont";
+  font-size: small;
+  padding: 10px 15px;
+  border-radius: 30px;
+}
+.largeNavBar__container .largeMenu .largeMenuRouters .largeMenu-items__text:hover {
+  background-color: #a27b5c;
+}
+.largeNavBar__container .largeMenu .largeMenuRouters .largeMenu-items__text.active {
+  background-color: #dcd7c9;
+  color: #2c3639;
+  pointer-events: none;
+}
+.largeNavBar__container .largeMenu .largeMenuButtons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  list-style-type: none;
+  gap: 10px;
+}
+.largeNavBar__container .largeMenu .largeMenuButtons .largeMenu-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  position: relative;
+}
+.largeNavBar__container .largeMenu .largeMenuButtons .largeMenu-items:hover .myCartBox {
+  opacity: 1;
+  visibility: visible;
+}
+.largeNavBar__container .largeMenu .largeMenuButtons .largeMenu-items:hover .loginMiniDashboard {
+  opacity: 1;
+  visibility: visible;
+}
+.largeNavBar__container .largeMenu .largeMenuButtons .largeMenu-items .loginMiniDashboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: all 0.4s ease-in-out;
+  color: #6987c9;
+  width: 200px;
+  height: 100px;
+  position: absolute;
+  padding: 10px;
+  top: 0;
+  transform: translateY(52px);
+  background-color: #fff;
+  box-shadow: 0 0 5px 0 #222;
+  opacity: 0;
+  visibility: hidden;
+}
+.largeNavBar__container .largeMenu .largeMenuButtons .largeMenu-items .loginMiniDashboard .loginAlert {
+  width: 100%;
+  text-align: center;
+  font-family: "trakya";
+}
+.largeNavBar__container .largeMenu .largeMenuButtons .largeMenu-items .loginMiniDashboard .userImg {
+  width: 20%;
+}
+.largeNavBar__container .largeMenu .largeMenuButtons .largeMenu-items .loginMiniDashboard .accUser {
+  width: 100%;
+  text-align: center;
+  font-family: "trakya";
+}
+.largeNavBar__container .largeMenu .largeMenuButtons .largeMenu-items .loginMiniDashboard .accId {
+  width: 100%;
+  text-align: center;
+  font-family: "trakya";
+}
+.largeNavBar__container .largeMenu .largeMenuButtons .largeMenu-items .loginButton__btn {
+  transition: all 0.3s ease-in-out;
+  color: #6987c9;
+  padding: 13px 15px;
+  border-radius: 100px;
+  border: 2px solid #a27b5c;
+  background-color: transparent;
+  cursor: pointer;
+}
+.largeNavBar__container .largeMenu .largeMenuButtons .largeMenu-items .loginButton__btn__text {
+  transition: all 0.3s ease-in-out;
+  color: #6987c9;
+  color: #a27b5c;
+  font-weight: bold;
+  font-size: medium;
+  pointer-events: none;
+}
+.largeNavBar__container .largeMenu .largeMenuButtons .largeMenu-items .loginButton__btn:hover {
+  background-color: #a27b5c;
+}
+.largeNavBar__container .largeMenu .largeMenuButtons .largeMenu-items .loginButton__btn:hover .loginButton__btn__text {
+  color: #dcd7c9;
+}
+.largeNavBar__container .largeMenu .largeMenuButtons .largeMenu-items .shoppingCart-text {
+  transition: all 0.3s ease-in-out;
+  color: #6987c9;
+  padding: 13px;
+  background-color: transparent;
+  border-radius: 50px;
+  border: 2px solid #6987c9;
+  color: #6987c9;
+  cursor: pointer;
+}
+.largeNavBar__container .largeMenu .largeMenuButtons .largeMenu-items .shoppingCart-text:hover {
+  background-color: #6987c9;
+  color: #dcd7c9;
+}
+.largeNavBar__container .largeMenu .largeMenuButtons .largeMenu-items .cartCount {
+  position: absolute;
+  bottom: -7px;
+  right: 0;
+  padding: 0 4px;
+  border-radius: 50px;
+  background-color: #2c2c2c;
+  color: #fdfffc;
+  font-family: "mont";
+  font-size: small;
+}
+.largeNavBar__container .largeMenu .largeMenuButtons .largeMenu-items .myCartBox {
+  transition: all 0.5s ease-in-out;
+  color: #6987c9;
+  opacity: 0;
+  visibility: hidden;
+  width: 500px;
+  height: 420px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(43px) translateX(-30px);
+  background-color: #ececec;
+  border-radius: 2px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+@media screen and (max-width: 1000px) {
+  .largeNavBar__container .largeMenu .largeMenuButtons .largeMenu-items .myCartBox {
+    transform: translateX(-80px) translateY(43px);
+  }
+}
+@media screen and (max-width: 850px) {
+  .largeNavBar__container .largeMenu .largeMenuButtons .largeMenu-items .myCartBox {
+    transform: translateX(-120px) translateY(43px);
+  }
+}
+@media screen and (max-width: 650px) {
+  .largeNavBar__container .largeMenu .largeMenuButtons .largeMenu-items .myCartBox {
+    transform: translateX(-150px) translateY(43px);
+  }
+}
+.largeNavBar__container .largeMenu .largeMenuButtons .largeMenu-items .myCartBox__container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding: 10px;
+}
+.largeNavBar__container .largeMenu .largeMenuButtons .largeMenu-items .myCartBox__container::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 10px;
+  bottom: 14%;
+  background: linear-gradient(to bottom, transparent, #ececec);
+}
+.largeNavBar__container .largeMenu .largeMenuButtons .largeMenu-items .myCartBox__container::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 10px;
+  top: 10%;
+  z-index: 2;
+  transform: translateY(10px);
+  background: linear-gradient(to top, transparent, #ececec);
+}
+.largeNavBar__container .largeMenu .largeMenuButtons .largeMenu-items .myCartBox__container__header {
+  width: 100%;
+  padding: 10px;
+}
+.largeNavBar__container .largeMenu .largeMenuButtons .largeMenu-items .myCartBox__container__header .myCartBox-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+}
+.largeNavBar__container .largeMenu .largeMenuButtons .largeMenu-items .myCartBox__container__header .myCartBox-title .basketIcon {
+  color: #222;
+  font-size: 15px;
+}
+.largeNavBar__container .largeMenu .largeMenuButtons .largeMenu-items .myCartBox__container__header .myCartBox-title__text {
+  color: #222;
+  padding-left: 10px;
+  font-family: "trakya";
+}
+.largeNavBar__container .largeMenu .largeMenuButtons .largeMenu-items .myCartBox__container__header .myCartBox-removeAll {
+  width: 100%;
+}
+.largeNavBar__container .largeMenu .largeMenuButtons .largeMenu-items .myCartBox__container__header .myCartBox-removeAll__text {
+  transition: all 0.4s ease-in-out;
+  color: #6987c9;
+  color: #777;
+  font-family: "trakya";
+  font-size: 13px;
+  cursor: pointer;
+  position: relative;
+}
+.largeNavBar__container .largeMenu .largeMenuButtons .largeMenu-items .myCartBox__container__header .myCartBox-removeAll__text:hover {
+  color: rgb(255, 0, 34);
+}
+.largeNavBar__container .largeMenu .largeMenuButtons .largeMenu-items .myCartBox__container__items {
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  scrollbar-color: transparent;
+  scrollbar-width: none;
+  position: relative;
+}
+.largeNavBar__container .largeMenu .largeMenuButtons .largeMenu-items .myCartBox__container__items::-webkit-scrollbar {
+  display: none;
+}
+.largeNavBar__container .largeMenu .largeMenuButtons .largeMenu-items .myCartBox__container__items .emptyTextViewer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  gap: 10px;
+  font-family: "trakya";
+  color: #222;
+  font-size: larger;
+}
+.largeNavBar__container .largeMenu .largeMenuButtons .largeMenu-items .myCartBox__container__items .myCartBox-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  margin: 10px 0;
+  background-color: #fdfffc;
+  border-radius: 10px;
+}
+.largeNavBar__container .largeMenu .largeMenuButtons .largeMenu-items .myCartBox__container__items .myCartBox-item__firstPart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 50%;
+  height: 100%;
+}
+.largeNavBar__container .largeMenu .largeMenuButtons .largeMenu-items .myCartBox__container__items .myCartBox-item__firstPart__imageSection {
+  width: 100%;
+}
+.largeNavBar__container .largeMenu .largeMenuButtons .largeMenu-items .myCartBox__container__items .myCartBox-item__firstPart__imageSection .myCartBox-productImg {
+  width: 100%;
+}
+.largeNavBar__container .largeMenu .largeMenuButtons .largeMenu-items .myCartBox__container__items .myCartBox-item__firstPart__titleSection {
+  width: 100%;
+}
+.largeNavBar__container .largeMenu .largeMenuButtons .largeMenu-items .myCartBox__container__items .myCartBox-item__firstPart__titleSection .myCartBox-productTitle {
+  width: 100%;
+  font-family: "trakya";
+  font-size: 15px;
+  color: #222;
+}
+.largeNavBar__container .largeMenu .largeMenuButtons .largeMenu-items .myCartBox__container__items .myCartBox-item__firstPart__titleSection .myCartBox-productDescription {
+  width: 50%;
+  font-size: 10px;
+  background-color: #222;
+  padding: 5px 0;
+  border-radius: 100px;
+  font-family: "trakya";
+  color: #fff;
+  text-align: center;
+}
+.largeNavBar__container .largeMenu .largeMenuButtons .largeMenu-items .myCartBox__container__items .myCartBox-item__secondPart {
+  width: 50%;
+  height: 100%;
+}
+.largeNavBar__container .largeMenu .largeMenuButtons .largeMenu-items .myCartBox__container__items .myCartBox-item__secondPart__priceSection {
+  width: 100%;
+}
+.largeNavBar__container .largeMenu .largeMenuButtons .largeMenu-items .myCartBox__container__items .myCartBox-item__secondPart__priceSection .myCartBox-productPrice {
+  color: #222;
+  font-family: "trakya";
+  text-align: center;
+  transform: translateX(35px);
+}
+.largeNavBar__container .largeMenu .largeMenuButtons .largeMenu-items .myCartBox__container__footer {
+  width: 100%;
+  padding: 10px;
+}
+.largeNavBar__container .largeMenu .largeMenuButtons .largeMenu-items .myCartBox__container__footer .myCartBox-showAll {
+  width: 100%;
+  padding: 5px;
+}
+.largeNavBar__container .largeMenu .largeMenuButtons .largeMenu-items .myCartBox__container__footer .myCartBox-showAll .showAllMyCart {
+  transition: all 0.4s ease-in-out;
+  color: #6987c9;
+  width: 100%;
+  border-radius: 100px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  color: #222;
+  font-family: "trakya";
+  position: relative;
+}
+.largeNavBar__container .largeMenu .largeMenuButtons .largeMenu-items .myCartBox__container__footer .myCartBox-showAll .showAllMyCart:hover::after {
+  width: 60px;
+}
+.largeNavBar__container .largeMenu .largeMenuButtons .largeMenu-items .myCartBox__container__footer .myCartBox-showAll .showAllMyCart::after {
+  transition: all 0.3s ease-in-out;
+  color: #6987c9;
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  background-color: #222;
+  bottom: -5px;
+  transform: translateX(-53px);
+  border-radius: 100px;
+}
+
+.smallNavBar {
+  width: 100%;
+  height: 100vh;
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  visibility: hidden;
+  display: none;
+}
+@media screen and (max-width: 600px) {
+  .smallNavBar {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+.smallNavBar.active {
+  display: flex;
+}
+.smallNavBar__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-color: rgba(30, 35, 37, 0.6078431373);
+}
+.smallNavBar__container .smallMenu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  height: 50%;
+  list-style-type: none;
+  pointer-events: painted;
+  flex-wrap: wrap;
+  z-index: 2;
+  gap: 10px;
+  transform: translateY(50px);
+}
+.smallNavBar__container .smallMenu__items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  width: 150px;
+  height: 140px;
+  padding: 15px 10px 10px 10px;
+  cursor: pointer;
+  overflow: hidden;
+  animation: boxesIntro 1s forwards;
+  scale: 0;
+  border-radius: 3px;
+}
+.smallNavBar__container .smallMenu__items::after {
+  content: "";
+  transition: all 0.4s ease-in-out;
+  color: #6987c9;
+  position: absolute;
+  left: -50%;
+  top: 100%;
+  width: 200%;
+  height: 200%;
+  border-radius: 100%;
+  background-color: #a27b5c;
+}
+.smallNavBar__container .smallMenu__items:hover::after {
+  top: -20%;
+}
+.smallNavBar__container .smallMenu__items:hover .smallMenu__items__logo {
+  animation: logoVibrate 0.2s infinite;
+}
+.smallNavBar__container .smallMenu__items:hover .smallMenu__items__text {
+  animation: textVibrate 0.2s infinite;
+}
+.smallNavBar__container .smallMenu__items:nth-child(1) {
+  background-color: rgb(0, 54, 0);
+  animation-delay: 0.8s;
+}
+.smallNavBar__container .smallMenu__items:nth-child(2) {
+  background-color: rgb(0, 54, 50);
+  animation-delay: 1s;
+}
+.smallNavBar__container .smallMenu__items:nth-child(3) {
+  background-color: rgb(0, 63, 101);
+  animation-delay: 1.2s;
+}
+.smallNavBar__container .smallMenu__items:nth-child(4) {
+  background-color: rgb(155, 113, 8);
+  animation-delay: 1.4s;
+}
+.smallNavBar__container .smallMenu__items:nth-child(5) {
+  background-color: rgb(3, 139, 224);
+  animation-delay: 1.6s;
+}
+.smallNavBar__container .smallMenu__items:nth-child(6) {
+  background-color: rgb(224, 3, 66);
+  animation-delay: 1.8s;
+}
+.smallNavBar__container .smallMenu__items__text {
+  transition: all 0.3s ease-in-out;
+  color: #6987c9;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: #fdfffc;
+  border: 2px solid transparent;
+  padding: 10px;
+  font-size: larger;
+  font-family: "mont";
+  border-radius: 50px;
+  z-index: 3;
+  text-align: center;
+}
+.smallNavBar__container .smallMenu__items__logo {
+  width: 100%;
+  height: 100%;
+  font-size: 40px;
+  color: #dcd7c9;
+  z-index: 3;
+  text-align: center;
+}
+.smallNavBar__container .scaledCircle {
+  transition: all 1.5s;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: -150%;
+  top: -100%;
+  background-color: rgba(0, 0, 0, 0.8745098039);
+  border-radius: 100%;
+}
+.smallNavBar__container .scaledCircle.active {
+  left: 0;
+  top: 0;
+  scale: 2;
+}
+
+.navIcon {
+  transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  position: fixed;
+  top: 2%;
+  left: 3%;
+  z-index: 1000;
+  display: none;
+  cursor: pointer;
+}
+@media screen and (max-width: 600px) {
+  .navIcon {
+    display: flex;
+  }
+}
+.navIcon.active {
+  left: 84%;
+}
+.navIcon:hover {
+  opacity: 0.5;
+}
+.navIcon__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px;
+  background-color: #a27b5c;
+  border-radius: 1px;
+  overflow: hidden;
+}
+.navIcon__container .navIcon-part {
+  transition: all 0.4s ease-in-out;
+  color: #6987c9;
+  width: 30px;
+  height: 5px;
+  border-radius: 40px;
+  background-color: #dcd7c9;
+}
+.navIcon__container .navIcon-part.active:nth-child(1) {
+  transform: rotate(45deg) translateY(4px) translateX(4px);
+}
+.navIcon__container .navIcon-part.active:nth-child(2) {
+  transform: translateX(500%);
+  opacity: 0;
+}
+.navIcon__container .navIcon-part.active:nth-child(3) {
+  transform: rotate(-45deg) translateY(-6px) translateX(5.5px);
+}
+
+@keyframes logoVibrate {
+  0%, 100% {
+    rotate: 0;
+  }
+  33% {
+    rotate: 3deg;
+  }
+  66% {
+    rotate: -3deg;
+  }
+  99% {
+    rotate: 0;
+  }
+}
+@keyframes textVibrate {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  33% {
+    transform: translateX(1px);
+  }
+  66% {
+    transform: translateX(-1px);
+  }
+  99% {
+    transform: translateX(0);
+  }
+}
+@keyframes boxesIntro {
+  from {
+    scale: 0;
+  }
+  to {
+    scale: 1;
+  }
+}/*# sourceMappingURL=navbar.css.map */

@@ -1,0 +1,530 @@
+.accordionFilterBox {
+  position: sticky;
+  width: 370px;
+  top: 11%;
+  border-radius: 0.2rem;
+  background-color: #1f2629;
+  overflow: hidden;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  margin-top: 7px;
+}
+@media screen and (max-width: 1200px) {
+  .accordionFilterBox {
+    transform: translateX(10%);
+    animation: filterBoxIntro 0.4s forwards;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .accordionFilterBox {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 20;
+    top: -9.4%;
+    right: 10%;
+    display: none;
+  }
+}
+.accordionFilterBox.active {
+  display: flex;
+}
+.accordionFilterBox__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.accordionFilterBox__container .hideBoxBtn {
+  padding-right: 24px;
+  margin-top: 14%;
+  width: 100%;
+  display: none;
+}
+@media screen and (max-width: 1000px) {
+  .accordionFilterBox__container .hideBoxBtn {
+    display: flex;
+  }
+}
+.accordionFilterBox__container .hideBoxBtn__icon {
+  transition: all 0.4s ease-in-out;
+  color: #dcd7c9;
+  cursor: pointer;
+}
+.accordionFilterBox__container .hideBoxBtn__icon:hover {
+  scale: 1.3;
+}
+@media screen and (max-width: 600px) {
+  .accordionFilterBox__container .hideBoxBtn {
+    margin-top: 0;
+  }
+}
+.accordionFilterBox__container .searchBox {
+  width: 100%;
+}
+.accordionFilterBox__container .searchBox__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 40px;
+  margin-bottom: 10px;
+  position: relative;
+  overflow: hidden;
+}
+.accordionFilterBox__container .searchBox__container .searchInput {
+  width: 100%;
+  height: 100%;
+  padding: 0 43px 0 7px;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  border: 1px solid transparent;
+  background-color: #444;
+  color: #fff;
+  font-family: "trakya";
+  letter-spacing: 2px;
+  outline: none;
+}
+.accordionFilterBox__container .searchBox__container .searchInput::-moz-placeholder {
+  color: #fff;
+}
+.accordionFilterBox__container .searchBox__container .searchInput::placeholder {
+  color: #fff;
+}
+.accordionFilterBox__container .searchBox__container .searchIcon {
+  position: absolute;
+  padding: 12px;
+  cursor: pointer;
+  color: #dcd7c9;
+  right: 0;
+  background-color: #a27b5c;
+}
+.accordionFilterBox__container .searchBox__container .searchIcon i {
+  transition: all 0.4s ease-in-out;
+}
+.accordionFilterBox__container .searchBox__container .searchIcon:hover i {
+  rotate: 90deg;
+}
+.accordionFilterBox__container .accordionPriceSection {
+  width: 100%;
+  height: 100%;
+}
+.accordionFilterBox__container .accordionPriceSection__container {
+  width: 100%;
+  height: 100%;
+}
+.accordionFilterBox__container .accordionPriceSection__container .priceSection-header {
+  width: 100%;
+}
+.accordionFilterBox__container .accordionPriceSection__container .priceSection-header__text {
+  width: 100%;
+  text-align: center;
+  color: aliceblue;
+  font-size: larger;
+  font-family: "mont";
+}
+.accordionFilterBox__container .accordionPriceSection__container .priceSection-range {
+  width: 100%;
+}
+.accordionFilterBox__container .accordionPriceSection__container .priceSection-range__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+}
+.accordionFilterBox__container .accordionPriceSection__container .priceSection-range__container .inputPriceValues {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 50%;
+}
+.accordionFilterBox__container .accordionPriceSection__container .priceSection-range__container .inputPriceValues .priceValues {
+  width: 50%;
+  text-align: center;
+  padding: 5px;
+  -webkit-appearance: textfield;
+     -moz-appearance: textfield;
+          appearance: textfield;
+  border-radius: 3px;
+  background-color: #dcd7c9;
+  color: #1f2629;
+  font-family: "mont";
+  border: 2px solid transparent;
+}
+.accordionFilterBox__container .accordionPriceSection__container .priceSection-range__container .inputPriceValues .priceValues::-webkit-inner-spin-button, .accordionFilterBox__container .accordionPriceSection__container .priceSection-range__container .inputPriceValues .priceValues::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+          appearance: none;
+}
+.accordionFilterBox__container .accordionPriceSection__container .priceSection-range__container .inputPriceRange {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 5px;
+  position: relative;
+  background-color: #dcd7c9;
+  border-radius: 100px;
+}
+.accordionFilterBox__container .accordionPriceSection__container .priceSection-range__container .inputPriceRange .progressBar {
+  height: 100%;
+  position: absolute;
+  background-color: #a27b5c;
+  border-radius: 100px;
+  left: 25%;
+  right: 25%;
+}
+.accordionFilterBox__container .accordionPriceSection__container .priceSection-range__container .inputPriceRange .priceRange {
+  width: 100%;
+  position: absolute;
+  pointer-events: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: none;
+}
+.accordionFilterBox__container .accordionPriceSection__container .priceSection-range__container .inputPriceRange .priceRange::-webkit-slider-thumb {
+  pointer-events: painted;
+  cursor: pointer;
+  border: transparent 2px solid;
+  background-color: #dcd7c9;
+  background-color: #a27b5c;
+  border-radius: 100px;
+  cursor: e-resize;
+}
+.accordionFilterBox__container .accordionPriceSection__container .priceSection-range__container .inputPriceRange .priceRange::-moz-range-thumb {
+  pointer-events: painted;
+  background-color: #a27b5c;
+  border: 2px solid transparent;
+  border-radius: 100px;
+  cursor: e-resize;
+}
+.accordionFilterBox__container .accordionPriceSection__container .priceSection-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+.accordionFilterBox__container .accordionPriceSection__container .priceSection-button .priceSectionBtn {
+  transition: all 0.4s ease-in-out;
+  padding: 7px 25px;
+  background-color: transparent;
+  border: 2px solid #6987c9;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.accordionFilterBox__container .accordionPriceSection__container .priceSection-button .priceSectionBtn:hover {
+  background-color: #6987c9;
+}
+.accordionFilterBox__container .accordionPriceSection__container .priceSection-button .priceSectionBtn:hover .priceSectionBtn__text {
+  color: #dcd7c9;
+}
+.accordionFilterBox__container .accordionPriceSection__container .priceSection-button .priceSectionBtn__text {
+  transition: all 0.4s ease-in-out;
+  color: #6987c9;
+  font-family: "mont";
+}
+.accordionFilterBox__container .accordionMoreOptions {
+  width: 100%;
+  height: 100%;
+}
+.accordionFilterBox__container .accordionMoreOptions__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.accordionFilterBox__container .accordionMoreOptions__container .accordionOptions {
+  width: 100%;
+  height: 100%;
+}
+.accordionFilterBox__container .accordionMoreOptions__container .accordionOptions__container {
+  width: 100%;
+  height: 100%;
+}
+.accordionFilterBox__container .accordionMoreOptions__container .accordionOptions__container .accordionOptions-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  padding: 20px 0;
+  cursor: pointer;
+}
+.accordionFilterBox__container .accordionMoreOptions__container .accordionOptions__container .accordionOptions-header.active .accordionOptions-header__icon i {
+  rotate: 180deg;
+}
+.accordionFilterBox__container .accordionMoreOptions__container .accordionOptions__container .accordionOptions-header__text {
+  width: 100%;
+  margin-left: 15px;
+  font-family: "mont";
+  color: #dcd7c9;
+}
+.accordionFilterBox__container .accordionMoreOptions__container .accordionOptions__container .accordionOptions-header__text__icon {
+  margin-right: 10px;
+}
+.accordionFilterBox__container .accordionMoreOptions__container .accordionOptions__container .accordionOptions-header__icon {
+  transform: translateX(-20px);
+}
+.accordionFilterBox__container .accordionMoreOptions__container .accordionOptions__container .accordionOptions-header__icon i {
+  transition: all 0.4s ease-in-out;
+  color: #dcd7c9;
+}
+.accordionFilterBox__container .accordionMoreOptions__container .accordionOptions__container .accordionOptions-header__icon .thumbHandler {
+  transition: all 0.4s ease-in-out;
+  rotate: 180deg;
+}
+.accordionFilterBox__container .accordionMoreOptions__container .accordionOptions__container .accordionOptions-header__icon .thumbHandler.active {
+  rotate: 360deg;
+  color: #b19207;
+}
+.accordionFilterBox__container .accordionMoreOptions__container .accordionOptions__container .accordionOptions-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  transition: all 0.4s ease-in-out;
+  width: 100%;
+  max-height: 0;
+  overflow: hidden;
+  background-color: #222;
+}
+.accordionFilterBox__container .accordionMoreOptions__container .accordionOptions__container .accordionOptions-content.active {
+  max-height: 120px;
+}
+.accordionFilterBox__container .accordionMoreOptions__container .accordionOptions__container .accordionOptions-content .brandsInput {
+  width: 100%;
+  padding: 10px;
+}
+.accordionFilterBox__container .accordionMoreOptions__container .accordionOptions__container .accordionOptions-content .brandsInput__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+}
+.accordionFilterBox__container .accordionMoreOptions__container .accordionOptions__container .accordionOptions-content .brandsInput__container__header {
+  width: 100%;
+}
+.accordionFilterBox__container .accordionMoreOptions__container .accordionOptions__container .accordionOptions-content .brandsInput__container__header .brandsInput-text {
+  font-family: "mont";
+  font-size: small;
+  font-weight: bold;
+  color: #dcd7c9;
+}
+@media screen and (max-width: 350px) {
+  .accordionFilterBox__container .accordionMoreOptions__container .accordionOptions__container .accordionOptions-content .brandsInput__container__header .brandsInput-text {
+    font-size: 11px;
+  }
+}
+.accordionFilterBox__container .accordionMoreOptions__container .accordionOptions__container .accordionOptions-content .brandsInput__container__switchBtn {
+  width: 100%;
+}
+.accordionFilterBox__container .accordionMoreOptions__container .accordionOptions__container .accordionOptions-content .brandsInput__container__switchBtn .brandsInputSwitchBtn {
+  transition: all 0.2s ease-in-out;
+  padding: 10px 20px;
+  border-radius: 100px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  position: relative;
+  background-color: #dcd7c9;
+}
+@media screen and (max-width: 350px) {
+  .accordionFilterBox__container .accordionMoreOptions__container .accordionOptions__container .accordionOptions-content .brandsInput__container__switchBtn .brandsInputSwitchBtn {
+    padding: 8px 18px;
+  }
+}
+.accordionFilterBox__container .accordionMoreOptions__container .accordionOptions__container .accordionOptions-content .brandsInput__container__switchBtn .brandsInputSwitchBtn:hover {
+  opacity: 0.7;
+}
+.accordionFilterBox__container .accordionMoreOptions__container .accordionOptions__container .accordionOptions-content .brandsInput__container__switchBtn .brandsInputSwitchBtn.active::after {
+  transform: translateY(-1px) translateX(-18px);
+  background-color: gray;
+}
+@media screen and (max-width: 350px) {
+  .accordionFilterBox__container .accordionMoreOptions__container .accordionOptions__container .accordionOptions-content .brandsInput__container__switchBtn .brandsInputSwitchBtn.active::after {
+    transform: translateY(-2px) translateX(-17px);
+  }
+}
+.accordionFilterBox__container .accordionMoreOptions__container .accordionOptions__container .accordionOptions-content .brandsInput__container__switchBtn .brandsInputSwitchBtn::after {
+  transition: all 0.4s ease-in-out;
+  content: "";
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateY(-1px);
+  background-color: #6987c9;
+  border-radius: 20px;
+}
+@media screen and (max-width: 350px) {
+  .accordionFilterBox__container .accordionMoreOptions__container .accordionOptions__container .accordionOptions-content .brandsInput__container__switchBtn .brandsInputSwitchBtn::after {
+    width: 20px;
+    height: 20px;
+    transform: translateY(-2px) translateX(1px);
+  }
+}
+.accordionFilterBox__container .accordionMoreOptions__container .accordionOptions__container .accordionOptions-content__colorsIconBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.accordionFilterBox__container .accordionMoreOptions__container .accordionOptions__container .accordionOptions-content__colorsIconBox .colorsIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: all 0.4s ease-in-out;
+  width: 38px;
+  height: 38px;
+  background-color: #6987c9;
+  color: #dcd7c9;
+  margin: 8px;
+  border-radius: 100px;
+  cursor: pointer;
+  position: relative;
+}
+.accordionFilterBox__container .accordionMoreOptions__container .accordionOptions__container .accordionOptions-content__colorsIconBox .colorsIcon.active .dropLetHandler {
+  display: none;
+}
+.accordionFilterBox__container .accordionMoreOptions__container .accordionOptions__container .accordionOptions-content__colorsIconBox .colorsIcon.active .checkHandler {
+  display: flex;
+}
+.accordionFilterBox__container .accordionMoreOptions__container .accordionOptions__container .accordionOptions-content__colorsIconBox .colorsIcon .dropLetHandler {
+  display: flex;
+}
+.accordionFilterBox__container .accordionMoreOptions__container .accordionOptions__container .accordionOptions-content__colorsIconBox .colorsIcon .checkHandler {
+  display: none;
+}
+.accordionFilterBox__container .accordionMoreOptions__container .accordionOptions__container .accordionOptions-content__colorsIconBox .colorsIcon:hover {
+  opacity: 0.6;
+}
+.accordionFilterBox__container .accordionMoreOptions__container .accordionOptions__container .accordionOptions-content__colorsIconBox .colorsIcon:nth-child(1) {
+  background-color: rgb(255, 0, 76);
+  color: #dcd7c9;
+}
+.accordionFilterBox__container .accordionMoreOptions__container .accordionOptions__container .accordionOptions-content__colorsIconBox .colorsIcon:nth-child(2) {
+  background-color: rgb(2, 110, 43);
+  color: #dcd7c9;
+}
+.accordionFilterBox__container .accordionMoreOptions__container .accordionOptions__container .accordionOptions-content__colorsIconBox .colorsIcon:nth-child(3) {
+  background-color: rgb(0, 132, 255);
+  color: #dcd7c9;
+}
+.accordionFilterBox__container .accordionMoreOptions__container .accordionOptions__container .accordionOptions-content__colorsIconBox .colorsIcon:nth-child(4) {
+  background-color: rgb(80, 80, 80);
+  color: #dcd7c9;
+}
+.accordionFilterBox__container .accordionMoreOptions__container .accordionOptions__container .accordionOptions-content__colorsIconBox .colorsIcon:nth-child(5) {
+  background-color: rgb(49, 49, 49);
+  color: #dcd7c9;
+}
+.accordionFilterBox__container .accordionMoreOptions__container .accordionOptions__container .accordionOptions-content__colorsIconBox .colorsIcon:nth-child(6) {
+  background-color: #dcd7c9;
+  color: rgb(49, 49, 49);
+}
+.accordionFilterBox__container .accordionMoreOptions__container .accordionOptions__container .accordionOptions-content__colorsIconBox .colorsIcon:nth-child(7) {
+  background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet);
+  color: #dcd7c9;
+}
+.accordionFilterBox__container .accordionMoreOptions__container .accordionOptions__container .accordionOptions-content__calendarBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+}
+.accordionFilterBox__container .accordionMoreOptions__container .accordionOptions__container .accordionOptions-content__calendarBox .calendarProgressBar {
+  width: 80%;
+  height: 90%;
+  padding: 7px;
+  background-color: #a27b5c;
+  border-radius: 100px;
+  position: relative;
+  overflow: hidden;
+}
+.accordionFilterBox__container .accordionMoreOptions__container .accordionOptions__container .accordionOptions-content__calendarBox .calendarProgressBar__tracker {
+  transition: all 0.4s ease-in-out;
+  width: 33%;
+  height: 100%;
+  background-color: #6987c9;
+  position: absolute;
+  top: 0;
+  transform: translateX(100%);
+  left: 0;
+  border-radius: 100px;
+}
+.accordionFilterBox__container .accordionMoreOptions__container .accordionOptions__container .accordionOptions-content__calendarBox .calendarProgressBar__tracker.newest {
+  transform: translateX(203%);
+}
+.accordionFilterBox__container .accordionMoreOptions__container .accordionOptions__container .accordionOptions-content__calendarBox .calendarProgressBar__tracker.oldest {
+  transform: translateX(-1%);
+}
+.accordionFilterBox__container .accordionMoreOptions__container .accordionOptions__container .accordionOptions-content__calendarBox .calendarProgressBar__textIcon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+}
+.accordionFilterBox__container .accordionMoreOptions__container .accordionOptions__container .accordionOptions-content__calendarBox .calendarProgressBar__textIcon__text {
+  transition: all 0.4s ease-in-out;
+  width: 100%;
+  cursor: pointer;
+  color: #dcd7c9;
+  z-index: 100;
+  font-family: "mont";
+  font-size: 11px;
+  text-align: center;
+}
+@media screen and (max-width: 350px) {
+  .accordionFilterBox__container .accordionMoreOptions__container .accordionOptions__container .accordionOptions-content__calendarBox .calendarProgressBar__textIcon__text {
+    font-size: 10px;
+  }
+}
+.accordionFilterBox__container .accordionMoreOptions__container .accordionOptions__container .accordionOptions-content__calendarBox .calendarProgressBar__textIcon__text:hover {
+  opacity: 0.7;
+}
+.accordionFilterBox__container .accordionMoreOptions__container .accordionOptions__container .accordionOptions-content__calendarBox .calendarProgressBar__textIcon__text i {
+  margin-right: 3px;
+}
+
+.icon-Op1 {
+  color: #6987c9;
+}
+
+.icon-Op2 {
+  color: #c9697e;
+}
+
+.icon-Op3 {
+  color: #a27b5c;
+}
+
+.icon-Op4 {
+  color: #e4883c;
+}
+
+@keyframes filterBoxIntro {
+  from {
+    scale: 0;
+  }
+  to {
+    scale: 1;
+  }
+}/*# sourceMappingURL=filterBox.css.map */

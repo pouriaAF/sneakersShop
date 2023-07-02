@@ -1,0 +1,579 @@
+@mixin flexcenter($justify, $align, $direction) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+@mixin transition($type, $time) {
+  transition: $type $time ease-in-out;
+}
+@mixin max1200 {
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
+@mixin max1600 {
+  @media screen and (max-width: 1600px) {
+    @content;
+  }
+}
+@mixin max1000 {
+  @media screen and (max-width: 1000px) {
+    @content;
+  }
+}
+@mixin max850 {
+  @media screen and (max-width: 850px) {
+    @content;
+  }
+}
+@mixin max600 {
+  @media screen and (max-width: 600px) {
+    @content;
+  }
+}
+@mixin max500 {
+  @media screen and (max-width: 500px) {
+    @content;
+  }
+}
+.storePage {
+  width: 100%;
+  height: 100%;
+  &__container {
+    @include max1000 {
+      flex-direction: column;
+    }
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    background-image: url(../../images/storePage/26564155.jpg);
+    background-size: 500px;
+    background-color: #222222bb;
+    background-blend-mode: color-burn;
+    padding-top: 90px;
+    padding-bottom: 5px;
+    &__products {
+      @include max1600 {
+        width: 78%;
+      }
+      @include max1200 {
+        width: 70%;
+      }
+      @include max1000 {
+        width: 100%;
+      }
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      &__notFound {
+        @include flexcenter(center, center, column);
+        width: 100%;
+        display: none;
+        transform: translateY(50%);
+        &.active {
+          display: flex;
+        }
+        &__text {
+          font-size: 50px;
+          font-family: "mont";
+          color: #dcd7c9;
+        }
+      }
+      &__container {
+        @include flexcenter(center, center, row);
+        width: 100%;
+        height: 100%;
+        min-height: 820px;
+        overflow: hidden;
+        flex-wrap: wrap;
+      }
+    }
+    &__filters {
+      @include max1000 {
+        width: 0;
+      }
+      width: 35%;
+      &__container {
+        @include flexcenter(flex-start, center, column);
+        width: 100%;
+        height: 100%;
+      }
+    }
+    &__filtersSm {
+      @include max1000 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      width: 100%;
+      padding: 10px;
+      display: none;
+      .filterSmIcon {
+        margin: 5px;
+        &__btn {
+          transition: all 0.2s ease-in-out;
+          padding: 15px 20px;
+          cursor: pointer;
+          background-color: #6987c9;
+          border: none;
+          color: #dcd7c9;
+          border-radius: 2px;
+          outline: none;
+          &:active {
+            rotate: 12deg;
+          }
+          .btnIcon {
+            font-size: 20px;
+          }
+        }
+      }
+      .searchBox {
+        margin: 5px;
+        .searchBtn {
+          transition: all 0.2s ease-in-out;
+          padding: 19px 21.5px;
+          cursor: pointer;
+          background-color: #ef3144;
+          border: none;
+          color: #dcd7c9;
+          border-radius: 2px;
+          outline: none;
+          &:active {
+            rotate: -12deg;
+          }
+          .btnIcon {
+            font-size: 20px;
+          }
+        }
+        &__container {
+          @include flexcenter(center, center, row);
+          position: fixed;
+          z-index: 100;
+          width: 100%;
+          height: 100%;
+          background-color: #222222cc;
+          top: 0;
+          left: 0;
+          display: none;
+          .searchInput {
+            width: 250px;
+            padding: 6px;
+            outline: none;
+          }
+          .applyButton {
+            padding: 6px 10px;
+            margin-left: 5px;
+            background-color: #6987c9;
+            border: none;
+            font-family: "mont";
+            color: #dcd7c9;
+            border-radius: 2px;
+          }
+        }
+      }
+      .filterSmBox {
+        @include flexcenter(center, center, column);
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        visibility: hidden;
+        background-color: #333;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        &__container {
+          @include max500 {
+            width: 300px;
+          }
+          margin-top: 5%;
+          width: 450px;
+          height: 80%;
+          .headerSection {
+            width: 100%;
+            margin-bottom: 5%;
+            font-size: 50px;
+            font-family: "mont";
+            color: #dcd7c9;
+            &__text {
+              width: 100%;
+              text-align: center;
+            }
+          }
+          .priceSection-range {
+            width: 100%;
+            margin-bottom: 5%;
+            &__container {
+              @include flexcenter(center, center, row);
+              width: 100%;
+              .inputPriceValues {
+                @include flexcenter(center, center, column);
+                width: 50%;
+                .priceValues {
+                  @include max500 {
+                    width: 70%;
+                  }
+                  width: 50%;
+                  text-align: center;
+                  padding: 5px;
+                  appearance: textfield;
+                  border-radius: 3px;
+                  background-color: #dcd7c9;
+                  color: #1f2629;
+                  font-family: "mont";
+                  border: 2px solid transparent;
+                  &::-webkit-inner-spin-button,
+                  &::-webkit-outer-spin-button {
+                    appearance: none;
+                  }
+                }
+              }
+              .inputPriceRange {
+                @include flexcenter(center, center, column);
+                width: 100%;
+                height: 5px;
+                position: relative;
+                background-color: #dcd7c9;
+                border-radius: 100px;
+                .progressBar {
+                  height: 100%;
+                  position: absolute;
+                  background-color: #a27b5c;
+                  border-radius: 100px;
+                  left: 25%;
+                  right: 25%;
+                }
+                .priceRange {
+                  width: 100%;
+                  position: absolute;
+                  pointer-events: none;
+                  appearance: none;
+                  background: none;
+                  &::-webkit-slider-thumb {
+                    pointer-events: painted;
+                    cursor: pointer;
+                    border: transparent 2px solid;
+                    background-color: #dcd7c9;
+                    background-color: #a27b5c;
+                    border-radius: 100px;
+                    cursor: e-resize;
+                  }
+                  &::-moz-range-thumb {
+                    pointer-events: painted;
+                    background-color: #a27b5c;
+                    border: 2px solid transparent;
+                    border-radius: 100px;
+                    cursor: e-resize;
+                  }
+                }
+              }
+            }
+          }
+          .brandsSection {
+            width: 100%;
+            margin-bottom: 5%;
+            &__header {
+              width: 100%;
+              &__text {
+                width: 100%;
+                text-align: center;
+                font-size: 20px;
+                font-family: "mont";
+                color: #adaca7;
+              }
+            }
+            &__container {
+              @include flexcenter(center, center, row);
+              .brandsInput {
+                @include max500 {
+                  transform: translateX(0);
+                  padding: 10px 5px;
+                }
+                width: 100%;
+                padding: 10px;
+                transform: translateX(10px);
+                &__container {
+                  @include flexcenter(center, center, row);
+                  width: 100%;
+                  &__header {
+                    width: 100%;
+                    @include max500 {
+                      margin-right: 3px;
+                    }
+                    .brandsInput-text {
+                      // @include max350{
+                      //     font-size: 11px;
+                      // }
+                      @include max500 {
+                        font-size: smaller;
+                      }
+                      font-family: "mont";
+                      font-size: small;
+                      font-weight: bold;
+                      color: #dcd7c9;
+                    }
+                  }
+                  &__switchBtn {
+                    width: 100%;
+                    .brandsInputSwitchBtn {
+                      @include transition(all, 0.2s);
+                      padding: 10px 20px;
+                      border-radius: 100px;
+                      border: 2px solid transparent;
+                      cursor: pointer;
+                      position: relative;
+                      background-color: #dcd7c9;
+                      &:hover {
+                        opacity: 0.7;
+                      }
+                      &.active {
+                        &::after {
+                          transform: translateY(-1px) translateX(-18px);
+                          background-color: gray;
+                        }
+                      }
+                      &::after {
+                        @include transition(all, 0.4s);
+                        content: "";
+                        width: 22px;
+                        height: 22px;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        transform: translateY(-1px);
+                        background-color: #6987c9;
+                        border-radius: 20px;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          .colorsSection {
+            width: 100%;
+            margin-bottom: 5%;
+            &__header {
+              width: 100%;
+              &__text {
+                width: 100%;
+                text-align: center;
+                color: #adaca7;
+                font-size: 20px;
+                font-family: "mont";
+              }
+            }
+            &__container {
+              @include flexcenter(center, center, row);
+              width: 100%;
+              flex-wrap: wrap;
+              .colorsIcon {
+                @include flexcenter(center, center, column);
+                @include transition(all, 0.4s);
+                width: 38px;
+                height: 38px;
+                background-color: #6987c9;
+                color: #dcd7c9;
+                margin: 8px;
+                border-radius: 100px;
+                cursor: pointer;
+                position: relative;
+                &.active {
+                  .dropLetHandler {
+                    display: none;
+                  }
+                  .checkHandler {
+                    display: flex;
+                  }
+                }
+                .dropLetHandler {
+                  display: flex;
+                }
+                .checkHandler {
+                  display: none;
+                }
+                &:hover {
+                  opacity: 0.6;
+                }
+                &:nth-child(1) {
+                  background-color: rgb(255, 0, 76);
+                  color: #dcd7c9;
+                }
+                &:nth-child(2) {
+                  background-color: rgb(2, 110, 43);
+                  color: #dcd7c9;
+                }
+                &:nth-child(3) {
+                  background-color: rgb(0, 132, 255);
+                  color: #dcd7c9;
+                }
+                &:nth-child(4) {
+                  background-color: rgb(80, 80, 80);
+                  color: #dcd7c9;
+                }
+                &:nth-child(5) {
+                  background-color: rgb(49, 49, 49);
+                  color: #dcd7c9;
+                }
+                &:nth-child(6) {
+                  background-color: #dcd7c9;
+                  color: rgb(49, 49, 49);
+                }
+                &:nth-child(7) {
+                  background: linear-gradient(
+                    45deg,
+                    red,
+                    orange,
+                    yellow,
+                    green,
+                    blue,
+                    indigo,
+                    violet
+                  );
+                  color: #dcd7c9;
+                }
+              }
+            }
+          }
+          .dateSection {
+            width: 100%;
+            margin-bottom: 5%;
+            &__header {
+              width: 100%;
+              &__text {
+                width: 100%;
+                text-align: center;
+                font-size: 20px;
+                color: #adaca7;
+                font-family: "mont";
+              }
+            }
+            &__container {
+              width: 100%;
+              padding: 10px;
+              @include flexcenter(center, center, column);
+              .calendarProgressBar {
+                @include max500 {
+                  width: 90%;
+                }
+                width: 80%;
+                height: 90%;
+                padding: 7px;
+                background-color: #a27b5c;
+                border-radius: 100px;
+                position: relative;
+                overflow: hidden;
+                &__tracker {
+                  @include transition(all, 0.4s);
+                  @include max500 {
+                    width: 33.5%;
+                  }
+                  width: 33%;
+                  height: 100%;
+                  background-color: #6987c9;
+                  position: absolute;
+                  top: 0;
+                  transform: translateX(100%);
+                  left: 0;
+                  border-radius: 100px;
+                  &.newest {
+                    transform: translateX(203%);
+                  }
+                  &.oldest {
+                    transform: translateX(-1%);
+                  }
+                }
+                &__textIcon {
+                  @include flexcenter(space-between, center, row);
+                  width: 100%;
+                  &__text {
+                    @include transition(all, 0.4s);
+                    width: 100%;
+                    cursor: pointer;
+                    color: #dcd7c9;
+                    z-index: 100;
+                    font-family: "mont";
+                    font-size: 11px;
+                    text-align: center;
+                    &:hover {
+                      opacity: 0.7;
+                    }
+                    i {
+                      margin-right: 3px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+          .applyBtnSection {
+            @include flexcenter(center, center, column);
+            width: 100%;
+            .applyButton {
+              width: 50%;
+              padding: 5px 0;
+              font-size: 17px;
+              font-family: "mont";
+              background-color: #6987c9;
+              border-radius: 100px;
+              border: none;
+              color: #222;
+            }
+          }
+          .cancleBtnSection {
+            @include flexcenter(center, center, column);
+            width: 100%;
+            margin-top: 5px;
+            .cancleBtn {
+              width: 50%;
+              padding: 7px;
+              border-radius: 100px;
+              background-color: rgba(255, 0, 51, 0.635);
+              color: #fff;
+              border: none;
+              font-family: "mont";
+              font-size: 17px;
+            }
+          }
+          // .priceSection-button{
+          //     @include flexcenter(center,center,column);
+          //     width: 100%;
+          //     .priceSectionBtn{
+          //         @include transition(all,0.4s);
+          //         padding: 7px 25px;
+          //         background-color: transparent;
+          //         border: 2px solid #6987C9;
+          //         border-radius: 4px;
+          //         cursor: pointer;
+          //         &:hover{
+          //             background-color: #6987C9;
+          //             .priceSectionBtn__text{
+          //                 color: #DCD7C9;
+          //             }
+          //         }
+          //         &__text{
+          //             @include transition(all,0.4s);
+          //             color: #6987C9;
+          //             font-family: 'mont';
+          //         }
+          //     }
+          // }
+        }
+      }
+    }
+  }
+}
+
+@keyframes battreyAnimation {
+  0%,
+  100% {
+    rotate: 0deg;
+  }
+  33% {
+    rotate: 5deg;
+  }
+  66% {
+    rotate: -5deg;
+  }
+}

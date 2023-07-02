@@ -1,0 +1,578 @@
+.storePage {
+  width: 100%;
+  height: 100%;
+}
+.storePage__container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  background-image: url(../../images/storePage/26564155.jpg);
+  background-size: 500px;
+  background-color: rgba(34, 34, 34, 0.7333333333);
+  background-blend-mode: color-burn;
+  padding-top: 90px;
+  padding-bottom: 5px;
+}
+@media screen and (max-width: 1000px) {
+  .storePage__container {
+    flex-direction: column;
+  }
+}
+.storePage__container__products {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+@media screen and (max-width: 1600px) {
+  .storePage__container__products {
+    width: 78%;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .storePage__container__products {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .storePage__container__products {
+    width: 100%;
+  }
+}
+.storePage__container__products__notFound {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  display: none;
+  transform: translateY(50%);
+}
+.storePage__container__products__notFound.active {
+  display: flex;
+}
+.storePage__container__products__notFound__text {
+  font-size: 50px;
+  font-family: "mont";
+  color: #dcd7c9;
+}
+.storePage__container__products__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  min-height: 820px;
+  overflow: hidden;
+  flex-wrap: wrap;
+}
+.storePage__container__filters {
+  width: 35%;
+}
+@media screen and (max-width: 1000px) {
+  .storePage__container__filters {
+    width: 0;
+  }
+}
+.storePage__container__filters__container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.storePage__container__filtersSm {
+  width: 100%;
+  padding: 10px;
+  display: none;
+}
+@media screen and (max-width: 1000px) {
+  .storePage__container__filtersSm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.storePage__container__filtersSm .filterSmIcon {
+  margin: 5px;
+}
+.storePage__container__filtersSm .filterSmIcon__btn {
+  transition: all 0.2s ease-in-out;
+  padding: 15px 20px;
+  cursor: pointer;
+  background-color: #6987c9;
+  border: none;
+  color: #dcd7c9;
+  border-radius: 2px;
+  outline: none;
+}
+.storePage__container__filtersSm .filterSmIcon__btn:active {
+  rotate: 12deg;
+}
+.storePage__container__filtersSm .filterSmIcon__btn .btnIcon {
+  font-size: 20px;
+}
+.storePage__container__filtersSm .searchBox {
+  margin: 5px;
+}
+.storePage__container__filtersSm .searchBox .searchBtn {
+  transition: all 0.2s ease-in-out;
+  padding: 19px 21.5px;
+  cursor: pointer;
+  background-color: #ef3144;
+  border: none;
+  color: #dcd7c9;
+  border-radius: 2px;
+  outline: none;
+}
+.storePage__container__filtersSm .searchBox .searchBtn:active {
+  rotate: -12deg;
+}
+.storePage__container__filtersSm .searchBox .searchBtn .btnIcon {
+  font-size: 20px;
+}
+.storePage__container__filtersSm .searchBox__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(34, 34, 34, 0.8);
+  top: 0;
+  left: 0;
+  display: none;
+}
+.storePage__container__filtersSm .searchBox__container .searchInput {
+  width: 250px;
+  padding: 6px;
+  outline: none;
+}
+.storePage__container__filtersSm .searchBox__container .applyButton {
+  padding: 6px 10px;
+  margin-left: 5px;
+  background-color: #6987c9;
+  border: none;
+  font-family: "mont";
+  color: #dcd7c9;
+  border-radius: 2px;
+}
+.storePage__container__filtersSm .filterSmBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  visibility: hidden;
+  background-color: #333;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+.storePage__container__filtersSm .filterSmBox__container {
+  margin-top: 5%;
+  width: 450px;
+  height: 80%;
+}
+@media screen and (max-width: 500px) {
+  .storePage__container__filtersSm .filterSmBox__container {
+    width: 300px;
+  }
+}
+.storePage__container__filtersSm .filterSmBox__container .headerSection {
+  width: 100%;
+  margin-bottom: 5%;
+  font-size: 50px;
+  font-family: "mont";
+  color: #dcd7c9;
+}
+.storePage__container__filtersSm .filterSmBox__container .headerSection__text {
+  width: 100%;
+  text-align: center;
+}
+.storePage__container__filtersSm .filterSmBox__container .priceSection-range {
+  width: 100%;
+  margin-bottom: 5%;
+}
+.storePage__container__filtersSm .filterSmBox__container .priceSection-range__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+}
+.storePage__container__filtersSm .filterSmBox__container .priceSection-range__container .inputPriceValues {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 50%;
+}
+.storePage__container__filtersSm .filterSmBox__container .priceSection-range__container .inputPriceValues .priceValues {
+  width: 50%;
+  text-align: center;
+  padding: 5px;
+  -webkit-appearance: textfield;
+     -moz-appearance: textfield;
+          appearance: textfield;
+  border-radius: 3px;
+  background-color: #dcd7c9;
+  color: #1f2629;
+  font-family: "mont";
+  border: 2px solid transparent;
+}
+@media screen and (max-width: 500px) {
+  .storePage__container__filtersSm .filterSmBox__container .priceSection-range__container .inputPriceValues .priceValues {
+    width: 70%;
+  }
+}
+.storePage__container__filtersSm .filterSmBox__container .priceSection-range__container .inputPriceValues .priceValues::-webkit-inner-spin-button, .storePage__container__filtersSm .filterSmBox__container .priceSection-range__container .inputPriceValues .priceValues::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+          appearance: none;
+}
+.storePage__container__filtersSm .filterSmBox__container .priceSection-range__container .inputPriceRange {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 5px;
+  position: relative;
+  background-color: #dcd7c9;
+  border-radius: 100px;
+}
+.storePage__container__filtersSm .filterSmBox__container .priceSection-range__container .inputPriceRange .progressBar {
+  height: 100%;
+  position: absolute;
+  background-color: #a27b5c;
+  border-radius: 100px;
+  left: 25%;
+  right: 25%;
+}
+.storePage__container__filtersSm .filterSmBox__container .priceSection-range__container .inputPriceRange .priceRange {
+  width: 100%;
+  position: absolute;
+  pointer-events: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: none;
+}
+.storePage__container__filtersSm .filterSmBox__container .priceSection-range__container .inputPriceRange .priceRange::-webkit-slider-thumb {
+  pointer-events: painted;
+  cursor: pointer;
+  border: transparent 2px solid;
+  background-color: #dcd7c9;
+  background-color: #a27b5c;
+  border-radius: 100px;
+  cursor: e-resize;
+}
+.storePage__container__filtersSm .filterSmBox__container .priceSection-range__container .inputPriceRange .priceRange::-moz-range-thumb {
+  pointer-events: painted;
+  background-color: #a27b5c;
+  border: 2px solid transparent;
+  border-radius: 100px;
+  cursor: e-resize;
+}
+.storePage__container__filtersSm .filterSmBox__container .brandsSection {
+  width: 100%;
+  margin-bottom: 5%;
+}
+.storePage__container__filtersSm .filterSmBox__container .brandsSection__header {
+  width: 100%;
+}
+.storePage__container__filtersSm .filterSmBox__container .brandsSection__header__text {
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+  font-family: "mont";
+  color: #adaca7;
+}
+.storePage__container__filtersSm .filterSmBox__container .brandsSection__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.storePage__container__filtersSm .filterSmBox__container .brandsSection__container .brandsInput {
+  width: 100%;
+  padding: 10px;
+  transform: translateX(10px);
+}
+@media screen and (max-width: 500px) {
+  .storePage__container__filtersSm .filterSmBox__container .brandsSection__container .brandsInput {
+    transform: translateX(0);
+    padding: 10px 5px;
+  }
+}
+.storePage__container__filtersSm .filterSmBox__container .brandsSection__container .brandsInput__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+}
+.storePage__container__filtersSm .filterSmBox__container .brandsSection__container .brandsInput__container__header {
+  width: 100%;
+}
+@media screen and (max-width: 500px) {
+  .storePage__container__filtersSm .filterSmBox__container .brandsSection__container .brandsInput__container__header {
+    margin-right: 3px;
+  }
+}
+.storePage__container__filtersSm .filterSmBox__container .brandsSection__container .brandsInput__container__header .brandsInput-text {
+  font-family: "mont";
+  font-size: small;
+  font-weight: bold;
+  color: #dcd7c9;
+}
+@media screen and (max-width: 500px) {
+  .storePage__container__filtersSm .filterSmBox__container .brandsSection__container .brandsInput__container__header .brandsInput-text {
+    font-size: smaller;
+  }
+}
+.storePage__container__filtersSm .filterSmBox__container .brandsSection__container .brandsInput__container__switchBtn {
+  width: 100%;
+}
+.storePage__container__filtersSm .filterSmBox__container .brandsSection__container .brandsInput__container__switchBtn .brandsInputSwitchBtn {
+  transition: all 0.2s ease-in-out;
+  padding: 10px 20px;
+  border-radius: 100px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  position: relative;
+  background-color: #dcd7c9;
+}
+.storePage__container__filtersSm .filterSmBox__container .brandsSection__container .brandsInput__container__switchBtn .brandsInputSwitchBtn:hover {
+  opacity: 0.7;
+}
+.storePage__container__filtersSm .filterSmBox__container .brandsSection__container .brandsInput__container__switchBtn .brandsInputSwitchBtn.active::after {
+  transform: translateY(-1px) translateX(-18px);
+  background-color: gray;
+}
+.storePage__container__filtersSm .filterSmBox__container .brandsSection__container .brandsInput__container__switchBtn .brandsInputSwitchBtn::after {
+  transition: all 0.4s ease-in-out;
+  content: "";
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateY(-1px);
+  background-color: #6987c9;
+  border-radius: 20px;
+}
+.storePage__container__filtersSm .filterSmBox__container .colorsSection {
+  width: 100%;
+  margin-bottom: 5%;
+}
+.storePage__container__filtersSm .filterSmBox__container .colorsSection__header {
+  width: 100%;
+}
+.storePage__container__filtersSm .filterSmBox__container .colorsSection__header__text {
+  width: 100%;
+  text-align: center;
+  color: #adaca7;
+  font-size: 20px;
+  font-family: "mont";
+}
+.storePage__container__filtersSm .filterSmBox__container .colorsSection__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.storePage__container__filtersSm .filterSmBox__container .colorsSection__container .colorsIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: all 0.4s ease-in-out;
+  width: 38px;
+  height: 38px;
+  background-color: #6987c9;
+  color: #dcd7c9;
+  margin: 8px;
+  border-radius: 100px;
+  cursor: pointer;
+  position: relative;
+}
+.storePage__container__filtersSm .filterSmBox__container .colorsSection__container .colorsIcon.active .dropLetHandler {
+  display: none;
+}
+.storePage__container__filtersSm .filterSmBox__container .colorsSection__container .colorsIcon.active .checkHandler {
+  display: flex;
+}
+.storePage__container__filtersSm .filterSmBox__container .colorsSection__container .colorsIcon .dropLetHandler {
+  display: flex;
+}
+.storePage__container__filtersSm .filterSmBox__container .colorsSection__container .colorsIcon .checkHandler {
+  display: none;
+}
+.storePage__container__filtersSm .filterSmBox__container .colorsSection__container .colorsIcon:hover {
+  opacity: 0.6;
+}
+.storePage__container__filtersSm .filterSmBox__container .colorsSection__container .colorsIcon:nth-child(1) {
+  background-color: rgb(255, 0, 76);
+  color: #dcd7c9;
+}
+.storePage__container__filtersSm .filterSmBox__container .colorsSection__container .colorsIcon:nth-child(2) {
+  background-color: rgb(2, 110, 43);
+  color: #dcd7c9;
+}
+.storePage__container__filtersSm .filterSmBox__container .colorsSection__container .colorsIcon:nth-child(3) {
+  background-color: rgb(0, 132, 255);
+  color: #dcd7c9;
+}
+.storePage__container__filtersSm .filterSmBox__container .colorsSection__container .colorsIcon:nth-child(4) {
+  background-color: rgb(80, 80, 80);
+  color: #dcd7c9;
+}
+.storePage__container__filtersSm .filterSmBox__container .colorsSection__container .colorsIcon:nth-child(5) {
+  background-color: rgb(49, 49, 49);
+  color: #dcd7c9;
+}
+.storePage__container__filtersSm .filterSmBox__container .colorsSection__container .colorsIcon:nth-child(6) {
+  background-color: #dcd7c9;
+  color: rgb(49, 49, 49);
+}
+.storePage__container__filtersSm .filterSmBox__container .colorsSection__container .colorsIcon:nth-child(7) {
+  background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet);
+  color: #dcd7c9;
+}
+.storePage__container__filtersSm .filterSmBox__container .dateSection {
+  width: 100%;
+  margin-bottom: 5%;
+}
+.storePage__container__filtersSm .filterSmBox__container .dateSection__header {
+  width: 100%;
+}
+.storePage__container__filtersSm .filterSmBox__container .dateSection__header__text {
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+  color: #adaca7;
+  font-family: "mont";
+}
+.storePage__container__filtersSm .filterSmBox__container .dateSection__container {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.storePage__container__filtersSm .filterSmBox__container .dateSection__container .calendarProgressBar {
+  width: 80%;
+  height: 90%;
+  padding: 7px;
+  background-color: #a27b5c;
+  border-radius: 100px;
+  position: relative;
+  overflow: hidden;
+}
+@media screen and (max-width: 500px) {
+  .storePage__container__filtersSm .filterSmBox__container .dateSection__container .calendarProgressBar {
+    width: 90%;
+  }
+}
+.storePage__container__filtersSm .filterSmBox__container .dateSection__container .calendarProgressBar__tracker {
+  transition: all 0.4s ease-in-out;
+  width: 33%;
+  height: 100%;
+  background-color: #6987c9;
+  position: absolute;
+  top: 0;
+  transform: translateX(100%);
+  left: 0;
+  border-radius: 100px;
+}
+@media screen and (max-width: 500px) {
+  .storePage__container__filtersSm .filterSmBox__container .dateSection__container .calendarProgressBar__tracker {
+    width: 33.5%;
+  }
+}
+.storePage__container__filtersSm .filterSmBox__container .dateSection__container .calendarProgressBar__tracker.newest {
+  transform: translateX(203%);
+}
+.storePage__container__filtersSm .filterSmBox__container .dateSection__container .calendarProgressBar__tracker.oldest {
+  transform: translateX(-1%);
+}
+.storePage__container__filtersSm .filterSmBox__container .dateSection__container .calendarProgressBar__textIcon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+}
+.storePage__container__filtersSm .filterSmBox__container .dateSection__container .calendarProgressBar__textIcon__text {
+  transition: all 0.4s ease-in-out;
+  width: 100%;
+  cursor: pointer;
+  color: #dcd7c9;
+  z-index: 100;
+  font-family: "mont";
+  font-size: 11px;
+  text-align: center;
+}
+.storePage__container__filtersSm .filterSmBox__container .dateSection__container .calendarProgressBar__textIcon__text:hover {
+  opacity: 0.7;
+}
+.storePage__container__filtersSm .filterSmBox__container .dateSection__container .calendarProgressBar__textIcon__text i {
+  margin-right: 3px;
+}
+.storePage__container__filtersSm .filterSmBox__container .applyBtnSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+.storePage__container__filtersSm .filterSmBox__container .applyBtnSection .applyButton {
+  width: 50%;
+  padding: 5px 0;
+  font-size: 17px;
+  font-family: "mont";
+  background-color: #6987c9;
+  border-radius: 100px;
+  border: none;
+  color: #222;
+}
+.storePage__container__filtersSm .filterSmBox__container .cancleBtnSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 5px;
+}
+.storePage__container__filtersSm .filterSmBox__container .cancleBtnSection .cancleBtn {
+  width: 50%;
+  padding: 7px;
+  border-radius: 100px;
+  background-color: rgba(255, 0, 51, 0.635);
+  color: #fff;
+  border: none;
+  font-family: "mont";
+  font-size: 17px;
+}
+
+@keyframes battreyAnimation {
+  0%, 100% {
+    rotate: 0deg;
+  }
+  33% {
+    rotate: 5deg;
+  }
+  66% {
+    rotate: -5deg;
+  }
+}/*# sourceMappingURL=storePage.css.map */

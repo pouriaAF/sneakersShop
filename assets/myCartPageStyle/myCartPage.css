@@ -1,0 +1,708 @@
+.myCartPage {
+  width: 100%;
+  height: 900px;
+  padding-top: 40px;
+  background: linear-gradient(45deg, #222, #777);
+}
+.myCartPage__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.myCartPage__container .myCartBox {
+  width: 80%;
+  height: 80%;
+}
+.myCartPage__container .myCartBox__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 5px 0 rgba(68, 68, 68, 0.5411764706);
+  border-radius: 0.2rem;
+}
+.myCartPage__container .myCartBox__container .leftSide {
+  width: 70%;
+  height: 100%;
+  background-color: #fff;
+}
+.myCartPage__container .myCartBox__container .leftSide__container {
+  width: 100%;
+  height: 100%;
+}
+.myCartPage__container .myCartBox__container .leftSide__container .leftSide-header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  height: 10%;
+  padding-top: 20px;
+}
+.myCartPage__container .myCartBox__container .leftSide__container .leftSide-header .headerLs {
+  width: 50%;
+}
+.myCartPage__container .myCartBox__container .leftSide__container .leftSide-header .headerLs__text {
+  width: 100%;
+  text-align: center;
+  font-family: "trakya";
+  color: #222;
+  font-size: 30px;
+}
+.myCartPage__container .myCartBox__container .leftSide__container .leftSide-header .itemsLs {
+  width: 50%;
+}
+.myCartPage__container .myCartBox__container .leftSide__container .leftSide-header .itemsLs__text {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-family: "trakya";
+  color: #333;
+  font-size: 20px;
+}
+.myCartPage__container .myCartBox__container .leftSide__container .leftSide-body {
+  width: 100%;
+  height: 80%;
+}
+.myCartPage__container .myCartBox__container .leftSide__container .leftSide-body__container {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  scrollbar-width: none;
+}
+.myCartPage__container .myCartBox__container .leftSide__container .leftSide-body__container .emptyCartAlaram {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  font-family: "trakya";
+  font-size: 25px;
+  transform: translateY(250px);
+}
+.myCartPage__container .myCartBox__container .leftSide__container .leftSide-body__container::-webkit-scrollbar {
+  display: none;
+}
+.myCartPage__container .myCartBox__container .leftSide__container .leftSide-body__container .cartItem {
+  width: 100%;
+  padding: 20px;
+  overflow: hidden;
+  position: relative;
+}
+.myCartPage__container .myCartBox__container .leftSide__container .leftSide-body__container .cartItem::after {
+  transition: all 0.6s ease-in-out;
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200px;
+  background-color: rgba(105, 135, 201, 0.5333333333);
+  border-radius: 1000px;
+  left: 0;
+  top: 0;
+  transform: translateX(-100%);
+  z-index: 0;
+  filter: blur(0);
+}
+.myCartPage__container .myCartBox__container .leftSide__container .leftSide-body__container .cartItem.active::after {
+  transform: translateX(-10%);
+  filter: blur(50px);
+}
+.myCartPage__container .myCartBox__container .leftSide__container .leftSide-body__container .cartItem:hover .cartItem__container .cartItem-removeSection .removeIcon i {
+  transform: translateX(0);
+}
+.myCartPage__container .myCartBox__container .leftSide__container .leftSide-body__container .cartItem__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  z-index: 10;
+  position: relative;
+}
+.myCartPage__container .myCartBox__container .leftSide__container .leftSide-body__container .cartItem__container .cartItem-imageSection {
+  width: 100%;
+}
+.myCartPage__container .myCartBox__container .leftSide__container .leftSide-body__container .cartItem__container .cartItem-imageSection .cartItemImg {
+  width: 70%;
+}
+@media screen and (max-width: 1200px) {
+  .myCartPage__container .myCartBox__container .leftSide__container .leftSide-body__container .cartItem__container .cartItem-imageSection .cartItemImg {
+    width: 100%;
+  }
+}
+.myCartPage__container .myCartBox__container .leftSide__container .leftSide-body__container .cartItem__container .cartItem-headerSection {
+  width: 100%;
+}
+.myCartPage__container .myCartBox__container .leftSide__container .leftSide-body__container .cartItem__container .cartItem-headerSection .cartItem-name {
+  width: 100%;
+}
+.myCartPage__container .myCartBox__container .leftSide__container .leftSide-body__container .cartItem__container .cartItem-headerSection .cartItem-name__text {
+  font-family: "trakya";
+  color: #222;
+  font-size: 20px;
+  text-align: center;
+}
+@media screen and (max-width: 1200px) {
+  .myCartPage__container .myCartBox__container .leftSide__container .leftSide-body__container .cartItem__container .cartItem-headerSection .cartItem-name__text {
+    font-size: 15px;
+  }
+}
+.myCartPage__container .myCartBox__container .leftSide__container .leftSide-body__container .cartItem__container .cartItem-headerSection .cartItem-description {
+  width: 100%;
+  background-color: #222;
+  border-radius: 100px;
+  padding: 3px;
+}
+.myCartPage__container .myCartBox__container .leftSide__container .leftSide-body__container .cartItem__container .cartItem-headerSection .cartItem-description__text {
+  width: 100%;
+  font-size: 12px;
+  color: #fff;
+  font-family: "trakya";
+  text-align: center;
+}
+@media screen and (max-width: 1200px) {
+  .myCartPage__container .myCartBox__container .leftSide__container .leftSide-body__container .cartItem__container .cartItem-headerSection .cartItem-description__text {
+    font-size: 10px;
+  }
+}
+.myCartPage__container .myCartBox__container .leftSide__container .leftSide-body__container .cartItem__container .cartItem-countSection {
+  width: 100%;
+  position: relative;
+}
+.myCartPage__container .myCartBox__container .leftSide__container .leftSide-body__container .cartItem__container .cartItem-countSection .countSectionHeader {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: -20%;
+  transform: translateX(1px);
+  font-size: small;
+  font-family: "trakya";
+  color: #222;
+}
+@media screen and (max-width: 1200px) {
+  .myCartPage__container .myCartBox__container .leftSide__container .leftSide-body__container .cartItem__container .cartItem-countSection .countSectionHeader {
+    font-size: 12px;
+    transform: translateX(1px) translateY(-1px);
+  }
+}
+.myCartPage__container .myCartBox__container .leftSide__container .leftSide-body__container .cartItem__container .cartItem-countSection .countSectionBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  padding: 10px 0;
+}
+.myCartPage__container .myCartBox__container .leftSide__container .leftSide-body__container .cartItem__container .cartItem-countSection .countSectionBox .decreasingBtn {
+  font-size: medium;
+  color: #222;
+  margin-right: 8px;
+}
+@media screen and (max-width: 1200px) {
+  .myCartPage__container .myCartBox__container .leftSide__container .leftSide-body__container .cartItem__container .cartItem-countSection .countSectionBox .decreasingBtn {
+    font-size: small;
+  }
+}
+.myCartPage__container .myCartBox__container .leftSide__container .leftSide-body__container .cartItem__container .cartItem-countSection .countSectionBox .decreasingBtn.active {
+  color: #777;
+  pointer-events: none;
+}
+.myCartPage__container .myCartBox__container .leftSide__container .leftSide-body__container .cartItem__container .cartItem-countSection .countSectionBox .decreasingBtn__icon {
+  cursor: pointer;
+}
+.myCartPage__container .myCartBox__container .leftSide__container .leftSide-body__container .cartItem__container .cartItem-countSection .countSectionBox .increasingBtn {
+  font-size: medium;
+  color: #222;
+  margin-left: 7px;
+}
+@media screen and (max-width: 1200px) {
+  .myCartPage__container .myCartBox__container .leftSide__container .leftSide-body__container .cartItem__container .cartItem-countSection .countSectionBox .increasingBtn {
+    font-size: small;
+  }
+}
+.myCartPage__container .myCartBox__container .leftSide__container .leftSide-body__container .cartItem__container .cartItem-countSection .countSectionBox .increasingBtn__icon {
+  cursor: pointer;
+}
+.myCartPage__container .myCartBox__container .leftSide__container .leftSide-body__container .cartItem__container .cartItem-countSection .countSectionBox .countValue {
+  padding: 5px 10px;
+  border: 1px solid #222;
+  border-radius: 3px;
+}
+@media screen and (max-width: 1200px) {
+  .myCartPage__container .myCartBox__container .leftSide__container .leftSide-body__container .cartItem__container .cartItem-countSection .countSectionBox .countValue {
+    padding: 0 5px;
+  }
+}
+.myCartPage__container .myCartBox__container .leftSide__container .leftSide-body__container .cartItem__container .cartItem-priceSection {
+  width: 100%;
+  position: relative;
+}
+.myCartPage__container .myCartBox__container .leftSide__container .leftSide-body__container .cartItem__container .cartItem-priceSection .cartItemPriceHeader {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: -70%;
+  font-size: small;
+  font-family: "trakya";
+  color: #222;
+}
+.myCartPage__container .myCartBox__container .leftSide__container .leftSide-body__container .cartItem__container .cartItem-priceSection .cartItemPrice {
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: #333;
+  font-family: "trakya";
+}
+.myCartPage__container .myCartBox__container .leftSide__container .leftSide-body__container .cartItem__container .cartItem-totalPriceSection {
+  width: 100%;
+  position: relative;
+}
+.myCartPage__container .myCartBox__container .leftSide__container .leftSide-body__container .cartItem__container .cartItem-totalPriceSection .cartItemTotalPriceHeader {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: -80%;
+  font-size: small;
+  font-family: "trakya";
+  color: #222;
+}
+.myCartPage__container .myCartBox__container .leftSide__container .leftSide-body__container .cartItem__container .cartItem-totalPriceSection .cartItemTotalPrice {
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: #333;
+  font-family: "trakya";
+}
+.myCartPage__container .myCartBox__container .leftSide__container .leftSide-body__container .cartItem__container .cartItem-removeSection {
+  transition: all 0.4s ease-in-out;
+  width: 100%;
+  text-align: end;
+  position: absolute;
+  right: 0;
+  pointer-events: none;
+}
+.myCartPage__container .myCartBox__container .leftSide__container .leftSide-body__container .cartItem__container .cartItem-removeSection .removeIcon {
+  width: 100%;
+}
+.myCartPage__container .myCartBox__container .leftSide__container .leftSide-body__container .cartItem__container .cartItem-removeSection .removeIcon i {
+  pointer-events: painted;
+  transform: translateX(100px);
+  transition: all 0.4s ease-in-out;
+  font-size: 16px;
+  cursor: pointer;
+  color: rgb(255, 0, 43);
+}
+.myCartPage__container .myCartBox__container .leftSide__container .leftSide-body__container .cartItem__container .cartItem-removeSection .removeIcon i:hover {
+  scale: 1.2;
+}
+.myCartPage__container .myCartBox__container .leftSide__container .leftSide-footer {
+  width: 100%;
+  height: 10%;
+  padding: 10px 0;
+}
+.myCartPage__container .myCartBox__container .leftSide__container .leftSide-footer .removeFromCart {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  padding-left: 30px;
+}
+.myCartPage__container .myCartBox__container .leftSide__container .leftSide-footer .removeFromCart .btnRemover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.myCartPage__container .myCartBox__container .leftSide__container .leftSide-footer .removeFromCart .btnRemover__btn {
+  transition: all 0.3s ease-in-out;
+  padding: 5px 10px;
+  background-color: transparent;
+  border-radius: 100px;
+  border: 2px solid black;
+  cursor: pointer;
+}
+.myCartPage__container .myCartBox__container .leftSide__container .leftSide-footer .removeFromCart .btnRemover__btn:hover {
+  background-color: #222;
+}
+.myCartPage__container .myCartBox__container .leftSide__container .leftSide-footer .removeFromCart .btnRemover__btn:hover .btnRemover__btn__text {
+  color: #fff;
+}
+.myCartPage__container .myCartBox__container .leftSide__container .leftSide-footer .removeFromCart .btnRemover__btn:active {
+  opacity: 0.6;
+}
+.myCartPage__container .myCartBox__container .leftSide__container .leftSide-footer .removeFromCart .btnRemover__btn__text {
+  transition: all 0.3s ease-in-out;
+  color: #111;
+  font-family: "trakya";
+}
+.myCartPage__container .myCartBox__container .rightSide {
+  width: 30%;
+  height: 100%;
+  background-color: #333;
+}
+.myCartPage__container .myCartBox__container .rightSide__container {
+  width: 100%;
+  height: 100%;
+}
+.myCartPage__container .myCartBox__container .rightSide__container .rightSide-header {
+  width: 100%;
+}
+.myCartPage__container .myCartBox__container .rightSide__container .rightSide-header .headerRs {
+  width: 100%;
+  text-align: center;
+  font-family: "trakya";
+  color: #fff;
+  padding-top: 10px;
+}
+.myCartPage__container .myCartBox__container .rightSide__container .rightSide-body {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+.myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .totalbf {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+}
+.myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .totalbf__text {
+  font-family: "trakya";
+  color: #fff;
+  font-size: 20px;
+}
+.myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .comboBox-delivery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+  height: 110px;
+  margin-top: 20px;
+}
+.myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .comboBox-delivery.active {
+  height: 200px;
+}
+.myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .comboBox-delivery.active .comboBox-delivery__container .combo .comboIcon__icon {
+  rotate: -180deg;
+}
+.myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .comboBox-delivery.active .comboBox-delivery__container .comboBox {
+  transform: translateY(0);
+}
+.myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .comboBox-delivery__container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  width: 80%;
+  height: 100%;
+  overflow: hidden;
+}
+@media screen and (max-width: 900px) {
+  .myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .comboBox-delivery__container {
+    width: 90%;
+  }
+}
+.myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .comboBox-delivery__container .combo {
+  width: 100%;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 2px;
+  position: relative;
+  z-index: 10;
+  cursor: pointer;
+}
+.myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .comboBox-delivery__container .combo .comboTitle {
+  width: 100%;
+  top: 15%;
+  position: absolute;
+}
+.myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .comboBox-delivery__container .combo .comboTitle__text {
+  font-family: "trakya";
+  color: #222;
+  padding-left: 10px;
+}
+@media screen and (max-width: 1200px) {
+  .myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .comboBox-delivery__container .combo .comboTitle__text {
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .comboBox-delivery__container .combo .comboTitle__text {
+    font-size: 11px;
+  }
+}
+.myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .comboBox-delivery__container .combo .comboIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  top: 28%;
+  right: 4%;
+  position: absolute;
+}
+.myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .comboBox-delivery__container .combo .comboIcon__icon {
+  transition: all 0.4s ease-in-out;
+  scale: 0.8;
+}
+.myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .comboBox-delivery__container .comboBox {
+  transition: all 0.2s ease-in-out;
+  width: 100%;
+  height: 66%;
+  background-color: #fff;
+  z-index: 9;
+  transform: translateY(-200px);
+  position: relative;
+  padding-bottom: 27px;
+}
+.myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .comboBox-delivery__container .comboBox__container {
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+.myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .comboBox-delivery__container .comboBox__container .comboOption {
+  transition: all 0.4s ease-in-out;
+  width: 100%;
+  cursor: pointer;
+}
+.myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .comboBox-delivery__container .comboBox__container .comboOption:hover {
+  background-color: #6987c9;
+}
+.myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .comboBox-delivery__container .comboBox__container .comboOption:hover .comboOption__text {
+  color: #fff;
+}
+.myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .comboBox-delivery__container .comboBox__container .comboOption.active {
+  background-color: #445e97;
+  pointer-events: none;
+}
+.myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .comboBox-delivery__container .comboBox__container .comboOption.active .comboOption__text {
+  color: #fff;
+}
+.myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .comboBox-delivery__container .comboBox__container .comboOption__text {
+  transition: all 0.4s ease-in-out;
+  position: relative;
+  display: block;
+  width: 100%;
+  text-align: start;
+  padding: 10px;
+  font-family: "trakya";
+  color: #222;
+  font-size: 15px;
+}
+@media screen and (max-width: 1000px) {
+  .myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .comboBox-delivery__container .comboBox__container .comboOption__text {
+    font-size: 10px;
+  }
+}
+.myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .promoSection {
+  width: 100%;
+}
+.myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .promoSection__header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+}
+.myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .promoSection__header__text {
+  width: 69%;
+  text-align: center;
+  font-family: "trakya";
+  color: #fff;
+  font-size: 15px;
+}
+.myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .promoSection__container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .promoSection__container .promoInput {
+  width: 69%;
+  padding: 10px;
+  text-transform: uppercase;
+  outline: none;
+  border: 1px solid #333;
+  border-radius: 3px;
+}
+@media screen and (max-width: 1000px) {
+  .myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .promoSection__container .promoInput {
+    width: 69%;
+    padding: 7px;
+  }
+}
+.myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .promoSection__container .promoInput::-moz-placeholder {
+  text-transform: none;
+}
+.myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .promoSection__container .promoInput::placeholder {
+  text-transform: none;
+}
+.myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .promoSection__container .checkPromoValidationBtn {
+  padding: 8px 5px;
+  border: none;
+  border-radius: 2px;
+  background-color: #6987c9;
+  cursor: pointer;
+}
+@media screen and (max-width: 1000px) {
+  .myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .promoSection__container .checkPromoValidationBtn {
+    padding: 6px 3px;
+  }
+}
+.myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .promoSection__container .checkPromoValidationBtn__text {
+  color: #fff;
+  font-family: "trakya";
+}
+.myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .checkOutSection {
+  width: 100%;
+  height: 90%;
+  pointer-events: none;
+}
+.myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .checkOutSection__container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  transform: translateY(-50px);
+}
+.myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .checkOutSection__container .totalPriceCheckOut {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding: 10px;
+}
+.myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .checkOutSection__container .totalPriceCheckOut__header {
+  font-family: "trakya";
+  color: #fff;
+  font-size: 18px;
+}
+@media screen and (max-width: 1000px) {
+  .myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .checkOutSection__container .totalPriceCheckOut__header {
+    font-size: 15px;
+  }
+}
+.myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .checkOutSection__container .totalPriceCheckOut__text {
+  font-family: "trakya";
+  color: rgba(255, 255, 255, 0.8549019608);
+  font-size: 15px;
+}
+@media screen and (max-width: 1000px) {
+  .myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .checkOutSection__container .totalPriceCheckOut__text {
+    font-size: 12px;
+  }
+}
+.myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .checkOutSection__container .deliveryPriceCheckOut {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding: 10px;
+}
+.myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .checkOutSection__container .deliveryPriceCheckOut__header {
+  font-family: "trakya";
+  color: rgba(255, 255, 255, 0.6431372549);
+  font-size: 16px;
+}
+@media screen and (max-width: 1000px) {
+  .myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .checkOutSection__container .deliveryPriceCheckOut__header {
+    font-size: 13px;
+  }
+}
+.myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .checkOutSection__container .deliveryPriceCheckOut__text {
+  font-family: "trakya";
+  color: rgba(255, 255, 255, 0.6039215686);
+  font-size: 13px;
+}
+@media screen and (max-width: 1000px) {
+  .myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .checkOutSection__container .deliveryPriceCheckOut__text {
+    font-size: 12px;
+  }
+}
+.myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .checkOutSection__container .taxCheckOut {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding: 10px;
+}
+.myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .checkOutSection__container .taxCheckOut__header {
+  font-family: "trakya";
+  color: rgba(255, 255, 255, 0.6431372549);
+  font-size: 16px;
+}
+.myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .checkOutSection__container .taxCheckOut__text {
+  font-family: "trakya";
+  color: rgba(255, 255, 255, 0.6039215686);
+  font-size: 13px;
+}
+.myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .checkOutSection__container .subTotal {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding: 10px;
+}
+.myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .checkOutSection__container .subTotal__header {
+  font-family: "trakya";
+  color: #fff;
+  font-size: 20px;
+}
+@media screen and (max-width: 1000px) {
+  .myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .checkOutSection__container .subTotal__header {
+    font-size: 17px;
+  }
+}
+.myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .checkOutSection__container .subTotal__text {
+  font-family: "trakya";
+  color: rgba(255, 255, 255, 0.8549019608);
+  font-size: 17px;
+}
+@media screen and (max-width: 1000px) {
+  .myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .checkOutSection__container .subTotal__text {
+    font-size: 15px;
+  }
+}
+.myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .checkOutSection__container .checkOutButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: painted;
+}
+.myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .checkOutSection__container .checkOutButton .checkOutBtn {
+  transition: all 0.4s ease-in-out;
+  width: 95%;
+  padding: 5px 0;
+  background-color: #a27b5c;
+  border: 2px solid transparent;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .checkOutSection__container .checkOutButton .checkOutBtn:hover {
+  opacity: 0.7;
+}
+.myCartPage__container .myCartBox__container .rightSide__container .rightSide-body .checkOutSection__container .checkOutButton .checkOutBtn__text {
+  color: #fff;
+  font-family: "trakya";
+  font-size: medium;
+}/*# sourceMappingURL=myCartPage.css.map */

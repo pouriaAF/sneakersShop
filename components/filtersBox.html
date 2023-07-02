@@ -1,0 +1,218 @@
+<div class="accordionFilterBox">
+  <div class="accordionFilterBox__container">
+    <div class="searchBox">
+      <div class="searchBox__container">
+        <input type="search" class="searchInput" placeholder="search..." />
+        <span class="searchIcon"><i class="fa fa-search"></i></span>
+      </div>
+    </div>
+    <div class="accordionPriceSection">
+      <div class="accordionPriceSection__container">
+        <div class="priceSection-header">
+          <h6 class="priceSection-header__text">Filter by price:</h6>
+        </div>
+        <div class="priceSection-range">
+          <div class="priceSection-range__container">
+            <div class="inputPriceValues">
+              <input
+                class="priceValues"
+                type="number"
+                disabled
+                min="0"
+                max="250"
+                value="46"
+                autocomplete="off"
+              />
+            </div>
+            <div class="inputPriceRange">
+              <div class="progressBar"></div>
+              <input
+                class="priceRange"
+                type="range"
+                max="250"
+                min="0"
+                value="46"
+                autocomplete="off"
+              />
+              <input
+                class="priceRange"
+                type="range"
+                max="250"
+                min="0"
+                value="200"
+                autocomplete="off"
+              />
+            </div>
+            <div class="inputPriceValues">
+              <input
+                class="priceValues"
+                type="number"
+                disabled
+                min="0"
+                max="250"
+                value="200"
+                autocomplete="off"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="priceSection-button">
+          <div class="priceSection-button__container">
+            <button class="priceSectionBtn" onclick="filterByPrice()">
+              <span class="priceSectionBtn__text">Apply</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="accordionMoreOptions">
+      <div class="accordionMoreOptions__container">
+        <div class="accordionOptions">
+          <div class="accordionOptions__container">
+            <div class="accordionOptions-header">
+              <h5 class="accordionOptions-header__text">
+                <span class="accordionOptions-header__text__icon icon-Op1"
+                  ><i class="fa fa-code-branch"></i
+                ></span>
+                Filter by brands
+              </h5>
+              <span class="accordionOptions-header__icon"
+                ><i class="fa fa-angle-down"></i
+              ></span>
+            </div>
+            <div class="accordionOptions-content">
+              <div class="brandsInput">
+                <div class="brandsInput__container">
+                  <div class="brandsInput__container__header">
+                    <h2 class="brandsInput-text">Nike</h2>
+                  </div>
+                  <div class="brandsInput__container__switchBtn">
+                    <button class="brandsInputSwitchBtn"></button>
+                  </div>
+                </div>
+              </div>
+              <div class="brandsInput">
+                <div class="brandsInput__container">
+                  <div class="brandsInput__container__header">
+                    <h2 class="brandsInput-text">Adidas</h2>
+                  </div>
+                  <div class="brandsInput__container__switchBtn">
+                    <button class="brandsInputSwitchBtn"></button>
+                  </div>
+                </div>
+              </div>
+              <div class="brandsInput">
+                <div class="brandsInput__container">
+                  <div class="brandsInput__container__header">
+                    <h2 class="brandsInput-text">Jordan</h2>
+                  </div>
+                  <div class="brandsInput__container__switchBtn">
+                    <button class="brandsInputSwitchBtn"></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordionOptions">
+          <div class="accordionOptions__container">
+            <div class="accordionOptions-header">
+              <h5 class="accordionOptions-header__text">
+                <span class="accordionOptions-header__text__icon icon-Op2"
+                  ><i class="fa fa-palette"></i
+                ></span>
+                Filter by colors
+              </h5>
+              <span class="accordionOptions-header__icon"
+                ><i class="fa fa-angle-down"></i
+              ></span>
+            </div>
+            <div class="accordionOptions-content">
+              <div class="accordionOptions-content__colorsIconBox">
+                <span class="colorsIcon fa"
+                  ><i class="fa fa-droplet dropLetHandler"></i
+                  ><i class="fa fa-check checkHandler"></i
+                ></span>
+                <span class="colorsIcon fa"
+                  ><i class="fa fa-droplet dropLetHandler"></i
+                  ><i class="fa fa-check checkHandler"></i
+                ></span>
+                <span class="colorsIcon fa"
+                  ><i class="fa fa-droplet dropLetHandler"></i
+                  ><i class="fa fa-check checkHandler"></i
+                ></span>
+                <span class="colorsIcon fa"
+                  ><i class="fa fa-droplet dropLetHandler"></i
+                  ><i class="fa fa-check checkHandler"></i
+                ></span>
+                <span class="colorsIcon fa"
+                  ><i class="fa fa-droplet dropLetHandler"></i
+                  ><i class="fa fa-check checkHandler"></i
+                ></span>
+                <span class="colorsIcon fa"
+                  ><i class="fa fa-droplet dropLetHandler"></i
+                  ><i class="fa fa-check checkHandler"></i
+                ></span>
+                <span class="colorsIcon fa"
+                  ><i class="fa fa-droplet dropLetHandler"></i
+                  ><i class="fa fa-check checkHandler"></i
+                ></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordionOptions">
+          <div class="accordionOptions__container">
+            <div class="accordionOptions-header">
+              <h5 class="accordionOptions-header__text">
+                <span class="accordionOptions-header__text__icon icon-Op3"
+                  ><i class="fa fa-calendar-days"></i
+                ></span>
+                Filter by release date
+              </h5>
+              <span class="accordionOptions-header__icon"
+                ><i class="fa fa-angle-down"></i
+              ></span>
+            </div>
+            <div class="accordionOptions-content">
+              <div class="accordionOptions-content__calendarBox">
+                <div class="calendarProgressBar">
+                  <span class="calendarProgressBar__tracker"></span>
+                  <div class="calendarProgressBar__textIcon">
+                    <span
+                      class="calendarProgressBar__textIcon__text dateFilterBtn"
+                      ><i class="fa fa-hat-cowboy"></i> Oldest</span
+                    >
+                    <span
+                      class="calendarProgressBar__textIcon__text dateFilterBtn"
+                      ><i class="fa fa-circle-xmark"></i> Not Matter</span
+                    >
+                    <span
+                      class="calendarProgressBar__textIcon__text dateFilterBtn"
+                      ><i class="fa fa-building"></i> Newest</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordionOptions">
+          <div class="accordionOptions__container">
+            <div class="accordionOptions-header">
+              <h5 class="accordionOptions-header__text">
+                <span class="accordionOptions-header__text__icon icon-Op4"
+                  ><i class="fa fa-fire"></i
+                ></span>
+                Filter by popularity
+              </h5>
+              <span class="accordionOptions-header__icon"
+                ><i class="fa fa-thumbs-up thumbHandler"></i
+              ></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

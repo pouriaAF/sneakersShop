@@ -1,0 +1,153 @@
+<div class="largeNavBar">
+  <div class="largeNavBar__container">
+    <ul class="largeMenu">
+      <div class="largeMenuRouters">
+        <li class="largeMenu-items">
+          <a
+            href="/app.html"
+            class="largeMenu-items__text active"
+            onclick="route()"
+            >Home</a
+          >
+        </li>
+        <li class="largeMenu-items">
+          <a
+            href="/app.html?page=store"
+            class="largeMenu-items__text"
+            onclick="route()"
+            >Store</a
+          >
+        </li>
+        <li class="largeMenu-items">
+          <a
+            href="/app.html?page=contacts"
+            class="largeMenu-items__text"
+            onclick="route()"
+            >Contacts</a
+          >
+        </li>
+        <li class="largeMenu-items">
+          <a
+            href="/app.html?page=about"
+            class="largeMenu-items__text"
+            onclick="route()"
+            >About Us</a
+          >
+        </li>
+      </div>
+      <div class="largeMenuButtons">
+        <li class="largeMenu-items">
+          <div class="loginMiniDashboard">
+            <p class="loginAlert">You should login first</p>
+          </div>
+          <div class="loginButton">
+            <a
+              onclick="route()"
+              href="/app.html?page=login"
+              class="loginButton__btn"
+              ><span class="loginButton__btn__text fas fa-user"></span
+            ></a>
+          </div>
+        </li>
+        <li class="largeMenu-items">
+          <span class="shoppingCart-text fas fa-shopping-cart"></span>
+          <span class="cartCount">0</span>
+          <div class="myCartBox">
+            <div class="myCartBox__container">
+              <div class="myCartBox__container__header">
+                <div class="myCartBox-title">
+                  <span class="basketIcon"
+                    ><i class="fa fa-shopping-basket"></i
+                  ></span>
+                  <h4 class="myCartBox-title__text">Oreder summary</h4>
+                </div>
+              </div>
+              <div class="myCartBox__container__items">
+                <p class="emptyTextViewer">
+                  <span class="emptyTextViewer__icon"
+                    ><i class="fa fa-circle-xmark"></i></span
+                  >Your cart is empty!
+                </p>
+              </div>
+              <div class="myCartBox__container__footer">
+                <div class="myCartBox-showAll">
+                  <button class="showAllMyCart" onclick="loadCartPage()">
+                    <span>Show All</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </div>
+    </ul>
+  </div>
+</div>
+<div class="smallNavBar">
+  <div class="smallNavBar__container">
+    <span class="scaledCircle"></span>
+    <!-- <div class="headerMenu">
+            <div class="headerMenu__container">
+                <h4 class="headerMenuText"><span class="headerMenuIcon"><i class="fa fa-bars"></i></span>Menu</h4>
+            </div>
+        </div> -->
+    <ul class="smallMenu">
+      <li class="smallMenu__items">
+        <span class="smallMenu__items__logo fa fa-home"></span
+        ><a href="/app.html" class="smallMenu__items__text" onclick="route()"
+          >Home</a
+        >
+      </li>
+      <li class="smallMenu__items">
+        <span class="smallMenu__items__logo fa fa-store"></span
+        ><a
+          href="/app.html?page=store"
+          class="smallMenu__items__text"
+          onclick="route()"
+          >Store</a
+        >
+      </li>
+      <li class="smallMenu__items">
+        <span class="smallMenu__items__logo fa fa-phone"></span
+        ><a
+          href="/app.html?page=contacts"
+          class="smallMenu__items__text"
+          onclick="route()"
+          >Contacts</a
+        >
+      </li>
+      <li class="smallMenu__items">
+        <span class="smallMenu__items__logo fa fa-users"></span
+        ><a
+          href="/app.html?page=about"
+          class="smallMenu__items__text"
+          onclick="route()"
+          >About Us</a
+        >
+      </li>
+      <li class="smallMenu__items">
+        <span class="smallMenu__items__logo fa fa-user"></span
+        ><a
+          href="/app.html?page=login"
+          class="smallMenu__items__text"
+          onclick="route()"
+          >Login</a
+        >
+      </li>
+      <li class="smallMenu__items">
+        <span
+          class="smallMenu__items__logo fa fa-shopping-cart"
+          onclick="loadCartPage()"
+        ></span
+        ><a class="smallMenu__items__text">Cart</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="navIcon" onclick="navIconEvent()">
+  <div class="navIcon__container">
+    <span class="navIcon-part"></span>
+    <span class="navIcon-part"></span>
+    <span class="navIcon-part"></span>
+  </div>
+</div>

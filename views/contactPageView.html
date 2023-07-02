@@ -1,0 +1,112 @@
+<div class="contactBg"></div>
+<div class="contact">
+  <div class="contactBox">
+    <div class="contactBox__container">
+      <div class="leftSide">
+        <div class="leftSide__socialMedias">
+          <span class="socialMediaIcon"><i class="fa fa-instagram"></i></span>
+          <span class="socialMediaIcon"><i class="fa fa-telegram"></i></span>
+          <span class="socialMediaIcon"><i class="fa fa-youtube"></i></span>
+          <span class="socialMediaIcon"><i class="fa fa-linkedin"></i></span>
+        </div>
+        <div class="leftSide__container">
+          <div class="firstPart">
+            <h2 class="firstPart__header">Contact Us</h2>
+            <p class="firstPart__description">
+              You can contact us with our information blow or send us ticket
+            </p>
+          </div>
+          <div class="secondPart">
+            <div class="secondPart__items">
+              <span class="textIcon"><i class="fa fa-phone"></i></span>
+              <p class="textItem">+1 253 4528</p>
+            </div>
+            <div class="secondPart__items">
+              <span class="textIcon"><i class="fa fa-envelope"></i></span>
+              <p class="textItem">contactUs0011@gmail.com</p>
+            </div>
+            <div class="secondPart__items">
+              <span class="textIcon"><i class="fa fa-map-marker"></i></span>
+              <p class="textItem">9123 STREET , 242 DOM</p>
+            </div>
+          </div>
+          <div class="thirdPart">
+            <button class="sendTicketBtn" onclick="showTicketBox()">
+              <span class="sendTicketBtn__text">Send Ticket</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="rightSide">
+        <div class="rightSide__container">
+          <div class="returnSection">
+            <button class="returnBtn" onclick="hideTicketBox()">
+              <span class="returnBtn__text"
+                ><i class="fa fa-arrow-left"></i
+              ></span>
+            </button>
+          </div>
+          <div class="InputSection">
+            <div class="inputBox">
+              <label for="ticketInputName" class="inputTitle">First Name</label>
+              <input
+                type="text"
+                id="ticketInputName"
+                class="ticketInput"
+                placeholder="Enter your name"
+              />
+            </div>
+            <div class="inputBox">
+              <label for="ticketInputLastName" class="inputTitle"
+                >Last Name</label
+              >
+              <input
+                type="text"
+                id="ticketInputLastName"
+                class="ticketInput"
+                placeholder="Enter your last name"
+              />
+            </div>
+          </div>
+          <div class="InputSection">
+            <div class="inputBox">
+              <label for="ticketInputName" class="inputTitle">Email</label>
+              <input
+                type="text"
+                id="ticketInputName"
+                class="ticketInput"
+                placeholder="Enter your email"
+              />
+            </div>
+            <div class="inputBox">
+              <label for="ticketInputLastName" class="inputTitle">Phone</label>
+              <input
+                type="text"
+                id="ticketInputLastName"
+                class="ticketInput"
+                placeholder="Enter your phone"
+              />
+            </div>
+          </div>
+          <div class="yourTicket">
+            <div class="yourTicketSection">
+              <label for="ticketInput" class="ticketLable">Your ticket</label>
+              <textarea
+                class="ticketInput"
+                resize="disabled"
+                id="ticketInput"
+                placeholder="Explain your questions or problem"
+                autocomplete="off"
+              ></textarea>
+            </div>
+            <div class="yourTicketButton">
+              <button class="addticketBtn">
+                <span class="addticketBtn__text">Add Ticket</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

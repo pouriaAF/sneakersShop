@@ -1,0 +1,1076 @@
+@mixin flexcenter($justify, $align, $direction) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+@mixin transition($type, $time) {
+  transition: $type $time ease-in-out;
+}
+@font-face {
+  font-family: "mont";
+  src: url(../../fonts/Mont-Black.ttf);
+}
+@font-face {
+  font-family: "couture";
+  src: url("../../fonts/couture-bld.otf");
+}
+@font-face {
+  font-family: "futura";
+  src: url("../../fonts/FuturaFuturisBlackC.otf");
+}
+@font-face {
+  font-family: "bigJohn";
+  src: url("../../fonts/FontsFree-Net-BIGJOHN.ttf");
+}
+$key: true;
+@mixin max400 {
+  @media screen and (max-width: 400px) {
+    @content;
+  }
+}
+@mixin max509 {
+  @media screen and (max-width: 509px) {
+    @content;
+  }
+}
+@mixin max600 {
+  @media screen and (max-width: 600px) {
+    @content;
+  }
+}
+@mixin max800 {
+  @media screen and (max-width: 800px) {
+    @content;
+  }
+}
+@mixin max1000 {
+  @media screen and (max-width: 1000px) {
+    @content;
+  }
+}
+@mixin max1200 {
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
+@mixin max1300 {
+  @media screen and (max-width: 1300px) {
+    @content;
+  }
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.homePage {
+  width: 100%;
+  height: 100%;
+  &__container {
+    @include flexcenter(center, center, column);
+    width: 100%;
+    height: 100%;
+    .homePageHeader {
+      @include max1200 {
+        margin-top: 12%;
+      }
+      @include max800 {
+        margin-top: 15%;
+      }
+      @include max400 {
+        margin-top: 20%;
+      }
+      width: 100%;
+      margin-top: 8%;
+      &__container {
+        @include flexcenter(center, center, column);
+        width: 100%;
+        .homePageHeaderBackground {
+          @include transition(all, 1s);
+          position: absolute;
+          width: 100%;
+          top: 0;
+          overflow: hidden;
+          z-index: -1;
+          opacity: 0;
+          &.fadeIn {
+            opacity: 1;
+          }
+          &__img {
+            width: 100%;
+            height: 600px;
+            background: url(../../images/homePage/newBg2.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            position: relative;
+            @include max600 {
+              height: 400px;
+            }
+            @include max400 {
+              height: 350px;
+            }
+          }
+        }
+        .homePageHeaderTitle {
+          width: 100%;
+          will-change: transform;
+          &__text {
+            @include transition(all, 1s);
+            @include max600 {
+              font-size: 30px;
+            }
+            @include max400 {
+              font-size: 20px;
+            }
+            width: 100%;
+            color: #fdfffc;
+            font-family: "mont";
+            font-size: 40px;
+            will-change: transform;
+            background: url(../../images/homePage/lines.png) repeat-y;
+            background-clip: text;
+            color: transparent;
+            animation: headerTextAnimation 80s linear infinite;
+            text-transform: uppercase;
+            text-align: center;
+            filter: hue-rotate(220deg);
+            text-shadow: 0 0 50px rgb(188, 188, 188);
+            transform: translateX(-30%);
+            opacity: 0;
+            &.fadeIn {
+              transform: translateX(0);
+              opacity: 1;
+            }
+          }
+        }
+        .homePageHeaderDescription {
+          @include max1200 {
+            width: 65%;
+          }
+          @include max800 {
+            width: 80%;
+          }
+          @include max600 {
+            width: 75%;
+          }
+          @include max400 {
+            width: 80%;
+          }
+          width: 45%;
+          margin-top: 1.5%;
+          overflow: hidden;
+          &__text {
+            @include transition(all, 1s);
+            @include max800 {
+              font-size: 16px;
+            }
+            @include max600 {
+              font-size: 15px;
+            }
+            @include max400 {
+              font-size: 13px;
+            }
+            width: 100%;
+            font-family: "couture";
+            font-size: large;
+            text-align: justify;
+            color: #bebdbd;
+            transform: translateX(30%);
+            opacity: 0;
+            &.fadeIn {
+              opacity: 1;
+              transform: translateX(0);
+            }
+          }
+        }
+        .homePageHeaderButton {
+          @include flexcenter(center, center, column);
+          @include max800 {
+            margin-top: 3%;
+          }
+          width: 100%;
+          margin-top: 1%;
+          &__btn {
+            @include transition(all, 0.4s);
+            padding: 10px 20px;
+            @include max400 {
+              padding: 8px 10px;
+            }
+            background-color: transparent;
+            border: 2px solid #a27b5c;
+            border-radius: 5px;
+            cursor: pointer;
+            transform: translateX(-70%);
+            opacity: 0;
+            @include transition(all, 0.3s);
+            color: #a27b5c;
+            font-weight: bold;
+            text-decoration: none;
+            font-family: "mont";
+            &.fadeIn {
+              transform: translateX(0);
+              opacity: 1;
+            }
+            &:hover {
+              background-color: #a27b5c;
+              color: #dcd7c9;
+            }
+          }
+        }
+        .homePageHeaderCarousel {
+          @include flexcenter(center, center, column);
+          @include max1200 {
+            width: 500px;
+            height: 400px;
+            margin-top: 3%;
+          }
+          @include max800 {
+            width: 480px;
+            height: 300px;
+            margin-top: 15%;
+          }
+          @include max600 {
+            width: 420px;
+            height: 360px;
+            margin-top: 1%;
+          }
+          @include max509 {
+            width: 380px;
+          }
+          @include max400 {
+            width: 320px;
+            height: 300px;
+          }
+          width: 600px;
+          height: 400px;
+          margin-top: 1%;
+          &__container {
+            @include flexcenter(center, center, column);
+            @include transition(all, 1s);
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            scale: 0;
+            &.fadeIn {
+              scale: 1;
+              opacity: 1;
+            }
+            .carouselContent {
+              transition: all 1s cubic-bezier(0.13, 1.77, 0.68, 1.27);
+              width: 100%;
+              position: absolute;
+              &:nth-child(1) {
+                left: 0px;
+              }
+              &:nth-child(2) {
+                left: -600px;
+              }
+              &:nth-child(3) {
+                left: -1200px;
+              }
+              &:nth-child(4) {
+                left: -1800px;
+              }
+              &:nth-child(5) {
+                left: -2400px;
+              }
+              &__container {
+                width: 100%;
+                &__image {
+                  width: 100%;
+                }
+              }
+            }
+          }
+          &__buttons {
+            @include flexcenter(center, center, row);
+            @include max1200 {
+              gap: 600px;
+            }
+            @include max800 {
+              gap: 500px;
+            }
+            @include max600 {
+              position: relative;
+              gap: 15px;
+              margin-bottom: 5%;
+              padding: 10px 0;
+            }
+            width: 100%;
+            position: absolute;
+            pointer-events: none;
+            gap: 800px;
+            overflow: hidden;
+            .homePageHeaderCarousel-prevButton {
+              .mainCarouselPrevBtn {
+                @include transition(all, 0.2s);
+                pointer-events: painted;
+                padding: 10px;
+                border-radius: 100px;
+                background-color: #6987c9;
+                border: 2px solid #6987c9;
+                cursor: pointer;
+                visibility: hidden;
+                &:hover {
+                  opacity: 0.7;
+                  .mainCarouselPrevBtn__text {
+                    rotate: -360deg;
+                  }
+                }
+                &__text {
+                  @include transition(all, 0.2s);
+                  color: #dcd7c9;
+                  font-weight: bold;
+                  font-size: large;
+                }
+              }
+            }
+            .homePageHeaderCarousel-nextButton {
+              .mainCarouselNextBtn {
+                @include transition(all, 0.5s);
+                pointer-events: painted;
+                padding: 10px;
+                border-radius: 100px;
+                background-color: #6987c9;
+                border: 2px solid #6987c9;
+                cursor: pointer;
+                transform: translateX(100%);
+                opacity: 0;
+                &.fadeIn {
+                  opacity: 1;
+                  transform: translateX(0);
+                }
+                &:hover {
+                  opacity: 0.7;
+                  .mainCarouselNextBtn__text {
+                    rotate: 360deg;
+                  }
+                }
+                &__text {
+                  @include transition(all, 0.2s);
+                  color: #dcd7c9;
+                  font-weight: bold;
+                  font-size: large;
+                }
+              }
+            }
+          }
+          &__dots {
+            width: 100%;
+            &__container {
+              @include flexcenter(center, center, row);
+              @include transition(all, 1s);
+              width: 100%;
+              gap: 10px;
+              opacity: 0;
+              &.fadeIn {
+                opacity: 1;
+              }
+              .mainCarouselDots {
+                @include transition(all, 0.4s);
+                width: 12px;
+                height: 12px;
+                background-color: rgb(125, 125, 125);
+                border-radius: 50px;
+                cursor: pointer;
+                &.active {
+                  width: 20px;
+                  background-color: #000;
+                }
+              }
+            }
+          }
+        }
+        .homePageHeaderBrandSupports {
+          @include flexcenter(center, center, column);
+          @include max800 {
+            margin-top: 40%;
+          }
+          width: 90%;
+          height: 100%;
+          margin-top: 10%;
+          position: relative;
+          &::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            pointer-events: none;
+            will-change: transform;
+            background: linear-gradient(
+              to right,
+              #dcd7c9,
+              transparent,
+              transparent,
+              #dcd7c9
+            );
+            @if $key {
+              animation: backgroundPositionAnimation 5s infinite;
+            } @else {
+              animation: none;
+            }
+          }
+          overflow: hidden;
+          &__container {
+            @include flexcenter(center, center, row);
+            @include max800 {
+              flex-direction: column;
+              width: 50%;
+            }
+            width: 100%;
+            overflow: hidden;
+            .brandsImageBox {
+              margin-bottom: 40px;
+              @include flexcenter(center, center, column);
+              width: 100%;
+              position: relative;
+              transform: translateX(-800%);
+              &.fadeIn {
+                animation: introBrandsLogo 1s forwards
+                  cubic-bezier(0.5, -0.11, 0.14, 1.61);
+                @include max800 {
+                  animation: none;
+                  transform: translateX(0);
+                }
+              }
+              &:nth-child(1) {
+                opacity: 0.4;
+                animation-delay: 0.6s;
+              }
+              &:nth-child(2) {
+                animation-delay: 0.5s;
+              }
+              &:nth-child(3) {
+                animation-delay: 0.4s;
+                opacity: 0.4;
+              }
+              &:nth-child(4) {
+                animation-delay: 0.3s;
+              }
+              &:nth-child(5) {
+                animation-delay: 0.2s;
+              }
+              &:nth-child(6) {
+                opacity: 0.4;
+              }
+              .brandsImage {
+                @include transition(all, 0.3s);
+                width: 90%;
+                opacity: 0.7;
+                cursor: pointer;
+                position: relative;
+                &:hover {
+                  scale: 1.1;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .homePageNewArrival {
+      @include max1000 {
+        margin-top: 15%;
+      }
+      @include max800 {
+        margin-top: 20%;
+      }
+      @include max600 {
+        margin-top: 30%;
+      }
+      @include max400 {
+        margin-top: 40%;
+      }
+      width: 100%;
+      height: 100%;
+      margin-top: 10%;
+      background-color: #393939;
+      background-image: url(../../images/homePage/vecteezy_neutral-texture-with-simple-hand-drawn-colorful-spots_.jpg);
+      background-size: 500px;
+      background-blend-mode: color-burn;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        will-change: transform;
+        bottom: -80px;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        opacity: 1;
+        z-index: 3;
+        background: linear-gradient(
+          to bottom,
+          #000000,
+          #020206ea,
+          #020206bd,
+          transparent
+        );
+      }
+      &__header {
+        @include max800 {
+          flex-direction: column-reverse;
+          gap: 20px;
+        }
+        width: 100%;
+        height: 100%;
+        padding: 100px 0;
+        position: relative;
+        &__titleSection {
+          width: 100%;
+          height: 100%;
+          &__container {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            .homePageNewArrivalHeaderTitle {
+              @include transition(all, 1s);
+              width: 100%;
+              transform: translateY(-50%);
+              opacity: 0;
+              &.fadeIn {
+                opacity: 1;
+                transform: translateY(0);
+              }
+              .firstLine {
+                @include flexcenter(center, center, row);
+                width: 100%;
+                @for $i from 0 through 3 {
+                  .firstLine__text:nth-child(#{$i}) {
+                    animation-delay: $i * 0.1s;
+                  }
+                }
+                &__text {
+                  @include max1200 {
+                    font-size: 60px;
+                  }
+                  @include max1000 {
+                    font-size: 50px;
+                    line-height: 3.5rem;
+                  }
+                  animation: textAnimation 1s infinite;
+                  font-size: 80px;
+                  font-family: "bigJohn";
+                  font-weight: bold;
+                  line-height: 5rem;
+                  color: #dcd7c9;
+                }
+              }
+              .secondLine {
+                @include flexcenter(center, center, row);
+                width: 100%;
+                @for $i from 0 through 8 {
+                  .secondLine__text:nth-child(#{$i}) {
+                    animation-delay: $i * 0.1s;
+                  }
+                }
+                &__text {
+                  @include max1200 {
+                    font-size: 60px;
+                  }
+                  @include max1000 {
+                    font-size: 50px;
+                    line-height: 3.5rem;
+                  }
+                  animation-delay: 1s;
+                  animation: textAnimation 1s infinite;
+                  font-size: 80px;
+                  font-family: "bigJohn";
+                  font-weight: bold;
+                  line-height: 5rem;
+                  color: #dcd7c9;
+                }
+              }
+            }
+            .homePageNewArrivalHeaderDescription {
+              @include transition(all, 2s);
+              width: 100%;
+              margin-top: 1%;
+              opacity: 0;
+              &.fadeIn {
+                opacity: 1;
+              }
+              &__text {
+                width: 100%;
+                @include max1000 {
+                  font-size: medium;
+                }
+                font-family: "couture";
+                font-size: large;
+                text-align: center;
+                color: #dcd7c9;
+              }
+            }
+          }
+        }
+      }
+      &__container {
+        @include flexcenter(center, center, row);
+        @include max509 {
+          margin-top: 100px;
+        }
+        width: 100%;
+        height: 100%;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: -1%;
+        padding-bottom: 150px;
+      }
+    }
+    .homePageBestSeller {
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      &__container {
+        @include flexcenter(center, center, row);
+        @include max1000 {
+          flex-direction: column;
+        }
+        width: 100%;
+        height: 100%;
+        background: url(../../images/homePage/sneakerShelf.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        overflow: hidden;
+        position: relative;
+        .bestSellerHeader {
+          @include flexcenter(center, flex-start, column);
+          @include max1000 {
+            width: 90%;
+            height: 50%;
+            align-items: center;
+            margin-left: 0;
+          }
+          @include max600 {
+            width: 99%;
+          }
+          width: 50%;
+          height: 100%;
+          margin-left: 5%;
+          &__container {
+            .bestSellerHeader-title {
+              position: relative;
+              &__text {
+                &:nth-child(1) {
+                  position: absolute;
+                  color: #dcd7c9;
+                  -webkit-text-stroke: 2px #a27b5c;
+                  left: 0;
+                }
+                &:nth-child(2) {
+                  color: #a27b5c;
+                  animation: oceanAnimation 4s ease-in-out infinite;
+                }
+                @include transition(all, 1s);
+                @include max1300 {
+                  font-size: 70px;
+                }
+                @include max1000 {
+                  font-size: 80px;
+                }
+                @include max600 {
+                  font-size: 60px;
+                }
+                @include max400 {
+                  font-size: 50px;
+                }
+                font-family: "mont";
+                font-size: 100px;
+                transform: translateX(-50%);
+                opacity: 0;
+                width: 100%;
+                text-align: center;
+                &.fadeIn {
+                  transform: translateX(0);
+                  opacity: 1;
+                }
+              }
+            }
+            .bestSellerHeader-description {
+              &__text {
+                @include transition(all, 2s);
+                @include max1300 {
+                  font-size: medium;
+                }
+                @include max1000 {
+                  font-size: larger;
+                }
+                @include max800 {
+                  font-size: medium;
+                }
+                @include max600 {
+                  font-size: small;
+                }
+                @include max400 {
+                  text-align: center;
+                }
+                opacity: 0;
+                &.fadeIn {
+                  opacity: 1;
+                }
+                text-align: center;
+                font-size: large;
+                color: #dcd7c9;
+                font-family: "mont";
+              }
+            }
+          }
+        }
+        .bestSellerCarousel {
+          display: flex;
+          justify-content: center;
+          width: 43%;
+          position: relative;
+          @include max1000 {
+            width: 90%;
+          }
+          .embla {
+            overflow-x: hidden;
+            &__container {
+              will-change: transform;
+              display: flex;
+              width: 100%;
+            }
+          }
+          .embla__slide {
+            width: 100%;
+            position: relative;
+            flex: 0 0 auto;
+          }
+          .draggableCarousel {
+            @include transition(opacity, 1s);
+            @include max1200 {
+              width: 80%;
+            }
+            @include max1000 {
+              width: 100%;
+              transform: translateX(0);
+            }
+            @include max509 {
+              width: 310px;
+            }
+            width: 100%;
+            transform: translateX(-3%);
+            cursor: grab;
+            position: relative;
+            opacity: 0;
+            &.fadeIn {
+              opacity: 1;
+            }
+            &:active {
+              cursor: grabbing;
+            }
+            &__container {
+              width: 100%;
+              &__content {
+                @include flexcenter(center, center, column);
+                width: 300px;
+                height: 300px;
+                margin: 5px;
+                &:nth-child(2) {
+                  .content-container {
+                    &::after {
+                      animation-delay: 1s;
+                    }
+                  }
+                }
+                &:nth-child(3) {
+                  .content-container {
+                    &::after {
+                      animation-delay: 1.3s;
+                    }
+                  }
+                }
+                &:nth-child(4) {
+                  .content-container {
+                    &::after {
+                      animation-delay: 0.4s;
+                    }
+                  }
+                }
+                &:nth-child(5) {
+                  .content-container {
+                    &::after {
+                      animation-delay: 1.1;
+                    }
+                  }
+                }
+                &:nth-child(6) {
+                  .content-container {
+                    &::after {
+                      animation-delay: 0.6;
+                    }
+                  }
+                }
+                &:nth-child(7) {
+                  .content-container {
+                    &::after {
+                      animation-delay: 0.7;
+                    }
+                  }
+                }
+                &:nth-child(8) {
+                  .content-container {
+                    &::after {
+                      animation-delay: 1.2;
+                    }
+                  }
+                }
+                &:nth-child(9) {
+                  .content-container {
+                    &::after {
+                      animation-delay: 0.3;
+                    }
+                  }
+                }
+                &:nth-child(10) {
+                  .content-container {
+                    &::after {
+                      animation-delay: 1;
+                    }
+                  }
+                }
+                &:nth-child(11) {
+                  .content-container {
+                    &::after {
+                      animation-delay: 0.8;
+                    }
+                  }
+                }
+                &:nth-child(12) {
+                  .content-container {
+                    &::after {
+                      animation-delay: 1.2;
+                    }
+                  }
+                }
+                .content-container {
+                  width: 100%;
+                  height: 100%;
+                  background-image: url(../../images/homePage/2838458.png);
+                  background-size: cover;
+                  position: relative;
+                  border-radius: 1rem;
+                  position: relative;
+                  overflow: hidden;
+                  border: 1px solid #a27b5c;
+                  &::after {
+                    content: "";
+                    position: absolute;
+                    width: 200%;
+                    height: 10px;
+                    will-change: transform;
+                    background-color: #f0ede4;
+                    top: 0%;
+                    left: 0;
+                    filter: blur(30px);
+                    rotate: 45deg;
+                    animation: lighting 2s linear infinite;
+                  }
+                  &__header {
+                    width: 100%;
+                    position: absolute;
+                    bottom: 2%;
+                    &__text {
+                      text-align: center;
+                      user-select: none;
+                      font-family: "mont";
+                      color: #6987c9;
+                    }
+                  }
+                  &__img {
+                    user-select: none;
+                    width: 100%;
+                  }
+                }
+              }
+            }
+          }
+          &__buttons {
+            @include flexcenter(flex-end, center, row);
+            @include max1200 {
+              right: 11%;
+            }
+            @include max1000 {
+              right: 0;
+            }
+            @include max509 {
+              justify-content: center;
+              right: -0.1;
+            }
+            width: 100%;
+            gap: 10px;
+            position: absolute;
+            top: -15%;
+            right: 3%;
+            .embla__prev {
+              @include flexcenter(center, center, column);
+              @include transition(all, 0.6s);
+              @include max509 {
+                right: 50%;
+              }
+              padding: 10px 10px;
+              border-radius: 100px;
+              border: 2px solid transparent;
+              cursor: pointer;
+              background-color: #a27b5c;
+              transform: translateY(-150%);
+              opacity: 0;
+              &.fadeIn {
+                transform: translateY(0);
+                opacity: 1;
+              }
+              &:hover {
+                opacity: 0.7;
+                .embla__prev__icon {
+                  rotate: -360deg;
+                }
+              }
+              &__icon {
+                @include transition(all, 0.4s);
+                color: #dcd7c9;
+              }
+            }
+            .embla__next {
+              @include flexcenter(center, center, column);
+              @include transition(all, 0.4s);
+              @include max509 {
+                right: 50%;
+              }
+              padding: 10px 10px;
+              border-radius: 100px;
+              border: 2px solid transparent;
+              cursor: pointer;
+              background-color: #a27b5c;
+              transform: translateY(-150%);
+              opacity: 0;
+              &.fadeIn {
+                transform: translateY(0);
+                opacity: 1;
+              }
+              &:hover {
+                opacity: 0.7;
+                .embla__next__icon {
+                  rotate: 360deg;
+                }
+              }
+              &__icon {
+                @include transition(all, 0.4s);
+                color: #dcd7c9;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@keyframes homaPageNewArrivalHeaderTitleAnimation {
+  0%,
+  100% {
+    letter-spacing: 0px;
+  }
+  50% {
+    letter-spacing: 3px;
+  }
+}
+@keyframes headerTextAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+@keyframes backgroundPositionAnimation {
+  0%,
+  100% {
+    background-position: -1000px;
+  }
+  50% {
+    background-position: 1000px;
+  }
+}
+@keyframes spaceTime {
+  0%,
+  100% {
+    rotate: 15deg;
+    transform: translateX(0) translateY(0);
+  }
+  25% {
+    rotate: 10deg;
+    transform: translateX(5px) translateY(5px);
+  }
+  50% {
+    rotate: 0deg;
+    transform: translateX(0) translateY(0);
+  }
+  75% {
+    rotate: -15deg;
+    transform: translateX(-10px) translateY(-10px);
+  }
+}
+@keyframes lighting {
+  from {
+    top: -5%;
+    left: 0;
+  }
+  to {
+    top: 200%;
+    left: -200%;
+  }
+}
+@keyframes textAnimation {
+  0%,
+  40%,
+  100% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-10px);
+  }
+}
+@keyframes introBrandsLogo {
+  from {
+    transform: translateX(-1000%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes oceanAnimation {
+  0%,
+  100% {
+    clip-path: polygon(
+      0% 45%,
+      16% 44%,
+      33% 50%,
+      54% 60%,
+      70% 61%,
+      84% 59%,
+      100% 52%,
+      100% 100%,
+      0% 100%
+    );
+  }
+  50% {
+    clip-path: polygon(
+      0% 60%,
+      15% 65%,
+      34% 66%,
+      51% 62%,
+      67% 50%,
+      84% 45%,
+      100% 46%,
+      100% 100%,
+      0% 100%
+    );
+  }
+}
